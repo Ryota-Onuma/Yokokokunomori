@@ -1,0 +1,39 @@
+<head>
+<%= stylesheet_link_tag "lectures/lecture_index", :media => "all" %>
+  </head>
+  <section id="index-lecture">
+    <div id="index-lecture-mask">
+    <div >
+      <h2 id="lecturetitle">授業一覧</h2>
+    </div>
+    <div class="addlectures">
+      <div class="addlecture-container">
+        <%= link_to new_lecture_path, class:"addlecture",method: :get do %>
+          <i class="fas fa-user-plus" id="addlecture-span"></i>&ensp;授業を追加する
+        <% end %>
+      </div>
+      <div class="search-lecture">
+        <%= form_tag('/lectures', method: :get) do %>
+         <%= text_field_tag :search, '',class: 'search-box',placeholder: "授業名か開講学科を入力してください。",size:50 %>
+         <%= submit_tag '検索',:name => nil ,class: "search-button" %>
+        <% end %>
+      </div>
+    </div>
+
+      <div class="lecture-index-container">
+        <% @search.each do |t| %>
+          <div class="card border border-warning lecture-card" style="width: 35rem;">
+            <div class="card-header">
+              <%= t.department %>
+            </div>
+            <div class="card-body">
+              <h4><%= t.name %></h4>
+              <p class="card-text"></p>
+            </div>
+            <div class="prof-card-footer">
+              <%= link_to "詳細をみる", lecture_path(t.id),class:"lecture-info" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+  </section>

@@ -1,0 +1,194 @@
+
+#top{
+  text-align: center;
+}
+.top-image{
+  background-image: url('/ノートブック.jpg');
+  background-size: cover;
+  width:100%;
+  height: 100vh;
+}
+#top-image-mask{
+   height:100%;
+
+}
+.top-image-adjaster{
+  width:50%;
+  height: 100%;
+  padding: 100px;
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+　align-content: space-around;
+
+}
+#first-container{
+  position: absolute;
+  z-index: 3;
+  height: 100vh;
+  width:100%;
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center;
+}
+#index1-title{
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  width: 250px;
+  margin: 0 auto;
+  color: #1CA1F2;
+}
+#index1-title h2{
+  border-bottom: double 6px  #1CA1F2;
+}
+#search-prof-container{
+  border: 2px solid  #1CA1F2;
+  width:700px;
+  background-color: white;
+  border-radius: 20px;
+  padding-bottom: 50px;
+  margin: 0 auto 50px auto;
+}
+#search-botton-2-adjuster{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.search-box-2{
+  padding: 5px 10px;
+  margin: 0 auto;
+  outline: 0;
+  border: double 6px #1CA1F2 ;
+  border-radius: 20px;
+}
+.search-button-2{
+  border: double 6px #1CA1F2 ;
+  border-radius: 40px;
+  padding: 5px 20px;
+  color: #1CA1F2;
+  }
+.search-button-2:focus{
+  outline: 0;
+}
+.search-button-2:hover{
+  text-decoration: none;
+  color: white;
+  background-color: #1CA1F2;
+  border: double 6px white;
+
+}
+#main-logo{
+  width:400px;
+  margin: 50px auto 150px auto;
+}
+#to-container{
+  width:400px;
+  margin: 0 auto 100px auto;
+
+}
+#prof-search{
+display:block;
+font-size: 25px;
+color:#1CA1F2;
+padding:10px 70px;
+margin:0px 15px 30px 15px;
+border: double 6px #1CA1F2;
+border-radius: 3px;
+transition: .2s;
+}
+#prof-search:hover{
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #1CA1F2;
+  color:white;
+  border: double 6px white;
+}
+#prof-search:focus{
+  outline: 0;
+}
+#lecture-search{
+display:block;
+font-size: 25px;
+margin:20px 15px;
+padding:10px 70px;
+color:#9acd32;
+border: double 6px #9acd32;
+border-radius: 3px;
+transition: .2s;
+}
+#lecture-search:hover{
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #9acd32;
+  color:white;
+  border: double 6px white;
+}
+#lecture-search:focus{
+  outline:0;
+}
+
+#second-container{
+  position: absolute;
+  z-index: 4;
+  height: 100vh;
+  width:100%;
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center;
+}
+#search-lecture-container{
+  border: 2px solid  #9acd32;
+  width:700px;
+  padding-bottom: 50px;
+  background-color: white;
+  border-radius: 20px;
+  margin: 0 auto 50px auto;
+}
+#index2-title{
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  width: 250px;
+  margin: 0 auto;
+  color: #9acd32;
+}
+#index2-title h2{
+  border-bottom: double 6px  #9acd32;
+}
+.search-box-3{
+  padding: 5px 10px;
+  margin: 0 auto;
+  outline: 0;
+  border: double 6px #9acd32 ;
+  border-radius: 20px;
+}
+.search-button-3{
+  border: double 6px #9acd32 ;
+  border-radius: 40px;
+  padding: 5px 20px;
+  color: #9acd32;
+  }
+.search-button-3:focus{
+  outline: 0;
+}
+.search-button-3:hover{
+  text-decoration: none;
+  color: white;
+  background-color: #9acd32;
+  border: double 6px white;
+
+}
+#search-botton-3-adjuster{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 50px;
+
+}

@@ -1,0 +1,42 @@
+<head>
+  <%= stylesheet_link_tag "professors/professors_new", :media => "all" %>
+</head>
+
+<section id="index-prof">
+  <div id="index-prof-container">
+      <div >
+        <h2 id="proftitle">教員一覧</h2>
+      </div>
+      <div class="addprofs">
+        <div class="addprof-container">
+          <%= link_to new_professor_path, class:"addprof",method: :get do %>
+          <i class="fas fa-user-plus"></i>&emsp;教員を追加する
+          <% end %>
+        </div>
+        <div class="search-prof">
+          <%= form_tag('/professors', method: :get) do %>
+           <%= text_field_tag :search, '',class: 'search-box',placeholder: "教員名か所属を入力してください。",size:50 %>
+           <%= submit_tag '検索',:name => nil ,class: "search-button" %>
+          <% end %>
+        </div>
+      </div>
+
+    <div class="index-prof-container">
+      <% @search.each do |t| %>
+        <div class="card border border-primary prof-card" style="width: 35rem;">
+          <div class="card-header">
+            <%= t.department %>
+          </div>
+          <div class="card-body">
+            <h4><%= t.name %></h4>
+            <p class="card-text"><%= t.info %></p>
+          </div>
+          <div class="prof-card-footer">
+            <%= link_to "詳細をみる", professor_path(t.id),class:"link-show" %>
+          </div>
+        </div>
+      <% end %>
+  </div>
+  </div>
+  <a href="#">ページトップへ移動</a>
+</section>

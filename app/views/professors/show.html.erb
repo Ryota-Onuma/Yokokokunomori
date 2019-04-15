@@ -1,0 +1,67 @@
+<head>
+  <%= stylesheet_link_tag "professors/professors_show", :media => "all" %>
+
+</head>
+
+<section id="detail-prof-info">
+  <div id="detail-prof-info-contaier">
+
+      <div class="details-container" >
+        <div class="details-theme">
+          <div style="margin-left:70px;">
+              <h6 class="label-department">&nbsp;<strong><%= @professor.department %></strong></h6>
+              <h1 style="margin: 0 20px 20px 0; "><%= @professor.name %></h1>
+          </div>
+          <div class="linklink">
+              <%= link_to professors_path, method: :get do %>
+                <h6 class="toProfIndex"><i class="fas fa-undo"></i></h6>
+               <% end %>
+              <%= link_to ratedoctor_path(@professor.id),class:"toRateProfs",method: :get do %>
+                <h6 class="toRateProf">この先生をレビューする</h6>
+              <% end %>
+          </div>
+        </div>
+
+
+      <div class="main-rating-prof">
+        <div class="main-rating-prof-container">
+          <div class="infofo">
+      　 <h3>総合満足度　<%= @displaytotalsatis %> <span style="font-size:0.5em;">(<%= @howmanyTotalsatis %>)</span></h3>
+         <h3>ためになる授業度　<%= @displayInterest %> <span style="font-size:0.5em;">(<%= @howmanyInterest %>)</span></h3>
+         <h3>楽単度　<%= @displayEasy %> <span style="font-size:0.5em;">(<%= @howmanyEasy %>)</span></h3>
+         <h3>退屈度　<%= @displayBoring %> <span style="font-size:0.5em;">(<%= @howmanyBoring %>)</span></h3>
+        </div>
+         <div style="display:flex; flex-direction:row; justify-content:space-around; ">
+         <div class="tagtag">
+           <h6 class="bad">出席が厳しい</h6>
+           <h6 class="good">出席しなくていい</h6>
+           <h6 class="bad">テストが難しい</h6>
+           <h6 class="good">テストが簡単</h6>
+           </div>
+           <div class="tagtag">
+             <h6 class="bad">良や可が来やすい</h6>
+             <h6 class="good">秀や優が来やすい</h6>
+             <h6 class="bad">課題がキツイ</h6>
+             <h6 class="good">課題が楽</h6>
+           </div>
+          </div>
+          </div>
+          <div class="prof-comments-container">
+            <% @comments.each do |f| %>
+            <div class="each-prof-container">
+             <%= f.comments_for_prof %>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      <div class="professor-show-footer">
+
+
+     </div>
+      </div>
+    </div>
+
+</section>
+<script type="text/javascript">
+
+</script>

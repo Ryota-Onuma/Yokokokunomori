@@ -1,0 +1,20 @@
+<head>
+<%= stylesheet_link_tag "lectures/lecture_show", :media => "all" %>
+</head>
+ <section id="lecture-show">
+   <div class="container">
+     <div class="row">
+       <div class="col-lg-8 offset-2 lecture-show-container" >
+         <div class="lecture-details-theme">
+           <h1 style="margin: 0 20px 20px 0; display:inline-block"><%= @lecture.name %></h1>
+           <h6 style="display:inline-block">開講学部 : <strong><%= @lecture.department %></strong></h6>
+         </div>
+         <div class="lecture-detail-info">
+
+          </div>
+         <div class="lecture-show-footer">
+        <%= link_to "授業一覧へ戻る",lectures_path, class:"toLectureIndex", method: :get %>
+        </div>
+       </div>
+  </div>
+ </section>

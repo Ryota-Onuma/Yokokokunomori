@@ -1,0 +1,72 @@
+@charset "UTF-8";
+/* line 1, /Users/ryota/Desktop/ynureview/app/assets/stylesheets/professors/professors_show.css.scss */
+#detail-prof-info {
+  background-image: url("/教員背景.jpg");
+  background-size: cover;
+  width: 100%;
+}
+
+/* line 7, /Users/ryota/Desktop/ynureview/app/assets/stylesheets/professors/professors_show.css.scss */
+#detail-prof-info-contaier {
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 100%;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+/* line 13, /Users/ryota/Desktop/ynureview/app/assets/stylesheets/professors/professors_show.css.scss */
+.details-container {
+  background-color: white;
+  border: 4px solid #1CA1F2;
+  border-radius: 20px;
+  padding: 40px 70px;
+  box-shadow: 0px 4px 10px 2px gray;
+}
+
+/* line 20, /Users/ryota/Desktop/ynureview/app/assets/stylesheets/professors/professors_show.css.scss */
+.details-theme {
+  border-bottom: 1px solid black;
+}
+
+/* line 23, /Users/ryota/Desktop/ynureview/app/assets/stylesheets/professors/professors_show.css.scss */
+.professor-show-footer {
+  width: 100%;
+  display: flex;
+  margin-top: 40px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* line 30, /Users/ryota/Desktop/ynureview/app/assets/stylesheets/professors/professors_show.css.scss */
+.toProfIndex {
+  text-decoration: none;
+  border: 2px solid #1CA1F2;
+  border-radius: 40px;
+  padding: 10px 40px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+/* line 38, /Users/ryota/Desktop/ynureview/app/assets/stylesheets/professors/professors_show.css.scss */
+.toProfIndex:hover {
+  text-decoration: none;
+  background-color: #1CA1F2;
+  color: white;
+}
+
+/* line 43, /Users/ryota/Desktop/ynureview/app/assets/stylesheets/professors/professors_show.css.scss */
+.toRateProf {
+  text-decoration: none;
+  border: 2px solid #1CA1F2;
+  border-radius: 40px;
+  padding: 10px 40px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+/* line 51, /Users/ryota/Desktop/ynureview/app/assets/stylesheets/professors/professors_show.css.scss */
+.toRateProf:hover {
+  text-decoration: none;
+  background-color: #1CA1F2;
+  color: white;
+}

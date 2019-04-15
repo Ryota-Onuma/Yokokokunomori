@@ -1,0 +1,3 @@
+class RatedoctorLevel < ApplicationRecord
+
+end

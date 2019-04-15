@@ -1,0 +1,84 @@
+<head>
+  <%= stylesheet_link_tag "home", :media => "all" %>
+</head>
+
+
+<section id="top">
+  <div class="top-image">
+    <div id="top-image-mask">
+     <div class="top-image-adjaster">
+      <div id="main-logo">
+        <h2 style="color:white;">タイトル未定</h2>
+      </div>
+      <div id="to-container">
+        <input type="submit" id="prof-search" value="教員を探す">
+        <input type="submit" id="lecture-search" value="授業を探す">
+      </div>
+    </div>
+      <div id="first-container">
+          <div id="search-prof-container" >
+            <div id="index1-title">
+              <h2>教員を検索する</h2>
+            </div>
+              <%= form_tag(professors_path, method: "get") do %>
+                <%= text_field_tag :search, '',class: 'search-box-2',placeholder: "教員名か所属を入力してください。",size:50 %>
+               <div id="search-botton-2-adjuster">
+                <input type="button" class="search-button-2" id="return1" value="戻る">
+                <%= submit_tag '検索',:name => nil ,class: "search-button-2" %>
+              </div>
+              <% end %>
+          </div>
+        </div>
+        <div id="second-container">
+            <div id="search-lecture-container" >
+              <div id="index2-title">
+                <h2>授業を検索する</h2>
+              </div>
+                <%= form_tag(lectures_path, method: "get") do %>
+                  <%= text_field_tag :search, '',class: 'search-box-3',placeholder: "授業名か開講学部を入力してください。",size:50 %>
+                 <div id="search-botton-3-adjuster">
+                  <input type="button" class="search-button-3" id="return2" value="戻る">
+                  <%= submit_tag '検索',:name => nil ,class: "search-button-3" %>
+                </div>
+                <% end %>
+            </div>
+        </div>
+      </div>
+    </div>
+
+</section>
+<script type="text/javascript">
+  $(function() {
+    $("#first-container").css("visibility", "hidden");
+  });
+
+  $("#prof-search").click(function() {
+    $("#first-container").css("visibility", "visible");
+  });
+  $("#return1").click(function() {
+    $("#first-container").css("visibility", "hidden");
+  });
+
+  $(function() {
+    $("#second-container").css("visibility", "hidden");
+  });
+  $("#lecture-search").click(function() {
+    $("#second-container").css("visibility", "visible");
+  });
+  $("#return2").click(function() {
+    $("#second-container").css("visibility", "hidden");
+  });
+  $("#prof-search").click(function(){
+    $("#top-image-mask").css("background-color","rgba(0,0,0,0.4)");
+  });
+  $("#return1").click(function(){
+    $("#top-image-mask").css("background-color","rgba(0,0,0,0.0)");
+  });
+  $("#lecture-search").click(function(){
+    $("#top-image-mask").css("background-color","rgba(0,0,0,0.4)");
+  });
+  $("#return2").click(function(){
+    $("#top-image-mask").css("background-color","rgba(0,0,0,0.0)");
+  });
+
+</script>

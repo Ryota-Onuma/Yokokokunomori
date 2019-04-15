@@ -1,0 +1,98 @@
+@charset "UTF-8";
+/* line 2, /Users/ryota/Desktop/ynureview/app/assets/stylesheets/lectures/lecture_new.css.scss */
+#lecture-post {
+  background-image: url("/授業背景.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  padding-top: 80px;
+}
+
+/* line 12, /Users/ryota/Desktop/ynureview/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.lecture-post-container {
+  background-color: white;
+  border: 4px solid #9acd32;
+  border-radius: 20px;
+  padding: 40px 70px;
+  box-shadow: 0px 4px 10px 2px gray;
+}
+
+/* line 19, /Users/ryota/Desktop/ynureview/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.lecture-post-container h5 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* line 24, /Users/ryota/Desktop/ynureview/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.lecture-name {
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  border: 4px solid #9acd32;
+}
+
+/* line 30, /Users/ryota/Desktop/ynureview/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.lecture-name:focus {
+  outline: 0;
+  box-shadow: none;
+  border: 2px solid #FF9800;
+  background-color: #ffffff;
+}
+
+/* line 37, /Users/ryota/Desktop/ynureview/app/assets/stylesheets/lectures/lecture_new.css.scss */
+#lecture_department {
+  display: block;
+  outline: 0;
+}
+
+/* line 42, /Users/ryota/Desktop/ynureview/app/assets/stylesheets/lectures/lecture_new.css.scss */
+#lecture-submit-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* line 47, /Users/ryota/Desktop/ynureview/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.toLectureIndex {
+  border: 4px solid #9acd32;
+  border-radius: 40px;
+  padding: 10px 40px;
+  margin-top: 20px;
+  font-weight: bold;
+  color: black;
+}
+
+/* line 55, /Users/ryota/Desktop/ynureview/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.toLectureIndex:hover {
+  text-decoration: none;
+  color: white;
+  background-color: #9acd32;
+}
+
+/* line 60, /Users/ryota/Desktop/ynureview/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.lecture-submit {
+  border: 4px solid #9acd32;
+  border-radius: 40px;
+  padding: 10px 40px;
+  margin-top: 20px;
+  margin-right: 40px;
+  font-weight: bold;
+}
+
+/* line 69, /Users/ryota/Desktop/ynureview/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.lecture-submit:focus {
+  outline: 0;
+}
+
+/* line 72, /Users/ryota/Desktop/ynureview/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.lecture-submit:hover {
+  background-color: #9acd32;
+  color: white;
+  transition: .4s;
+}
+
+/* line 77, /Users/ryota/Desktop/ynureview/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.radio-button {
+  margin-left: 20px;
+}

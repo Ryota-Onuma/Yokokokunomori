@@ -1,0 +1,79 @@
+
+#lecture-post{
+  background-image: url("/授業背景.jpg");
+  background-size: cover;
+  width:100%;
+  height:100vh;
+  padding-top: 80px;
+
+}
+
+
+.lecture-post-container{
+  background-color: white;
+  border: 4px solid #9acd32;
+  border-radius: 20px;
+  padding: 40px 70px;
+  box-shadow: 0px 4px 10px 2px gray;
+}
+.lecture-post-container h5{
+  text-align:center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.lecture-name{
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  border: 4px solid #9acd32 ;
+}
+.lecture-name:focus{
+  outline: 0;
+  box-shadow: none;
+  border: 2px solid #FF9800;
+  background-color: #ffffff;
+}
+
+#lecture_department{
+    display: block;
+    outline: 0;
+}
+
+#lecture-submit-container{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+}
+.toLectureIndex{
+  border: 4px solid #9acd32;
+  border-radius: 40px;
+  padding: 10px 40px;
+  margin-top: 20px;
+  font-weight: bold;
+  color: black;
+}
+.toLectureIndex:hover{
+  text-decoration: none;
+  color: white;
+  background-color: #9acd32;
+}
+.lecture-submit{
+  border: 4px solid #9acd32;
+  border-radius: 40px;
+  padding: 10px 40px;
+  margin-top: 20px;
+  margin-right: 40px;
+  font-weight: bold;
+}
+
+.lecture-submit:focus{
+  outline: 0;
+}
+.lecture-submit:hover{
+  background-color: #9acd32;
+  color: white;
+  transition: .4s;
+}
+.radio-button{
+  margin-left: 20px;
+}
