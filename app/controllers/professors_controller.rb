@@ -17,38 +17,55 @@ class ProfessorsController < ApplicationController
 
     #総合満足度の平均の計算
     @total_satisfactions = 0
-     @thisProfRating.each do |f|
+    @totalsatisfactiontotal = Ratedoctor.where(professor_id: @profId).where.not(total_satisfaction: 0)
+     @totalsatisfactiontotal.each do |f|
        @total_satisfactions += f.total_satisfaction
      end
-     @howmanyTotalsatis = @thisProfRating.count
+     @howmanyTotalsatis = @totalsatisfactiontotal.count
     @averageTotalsatis = @total_satisfactions/@howmanyTotalsatis.to_f
     @displaytotalsatis = @averageTotalsatis.round(1)
+    @displaytotalsatis10x = @displaytotalsatis*10
     #ためになる授業度の平均の計算
     @goodlecture = 0
-     @thisProfRating.each do |f|
+    @goodlecturesss = Ratedoctor.where(professor_id: @profId).where.not(interest: 0)
+     @goodlecturesss.each do |f|
        @goodlecture += f.interest
      end
-     @howmanyInterest = @thisProfRating.count
+     @howmanyInterest =@goodlecturesss.count
     @averageInterest = @goodlecture/@howmanyInterest.to_f
     @displayInterest = @averageInterest.round(1)
+    @displayInterest10x = @displayInterest *10
     #楽単度の平均の計算
     @easylecture= 0
-     @thisProfRating.each do |f|
+    @easyeasyeasy= Ratedoctor.where(professor_id: @profId).where.not(difficulty: 0)
+     @easyeasyeasy.each do |f|
        @easylecture += f.difficulty
      end
-     @howmanyEasy = @thisProfRating.count
+
+     @howmanyEasy = @easyeasyeasy.count
     @averageEasy = @easylecture/@howmanyEasy.to_f
     @displayEasy = @averageEasy.round(1)
+    @displayEasy10x = @displayEasy*10
     #退屈度の計算
     @boring = 0
-     @thisProfRating.each do |f|
+    @borings= Ratedoctor.where(professor_id: @profId).where.not(how_boring: 0)
+    @borings.each do |f|
        @boring += f.how_boring
      end
-     @howmanyBoring = @thisProfRating.count
-    @averageBoring = @boring/@howmanyBoring.to_f
-    @displayBoring = @averageBoring.round(1)
+     @howmanyBoring = @borings.count
+     @averageBoring = @boring/@howmanyBoring.to_f
+      @displayBoring = @averageBoring.round(1)
+      @displayBoring10x = @displayBoring*10
     #コメント関連
-     @comments = @thisProfRating.where.not(comments_for_prof: nil)
+     @comments = @thisProfRating.where.not(comments_for_prof: '')
+     #また受けたいか編集
+     @againYes= Ratedoctor.where(professor_id: @profId).where(again: 1)
+     @againNo = Ratedoctor.where(professor_id: @profId).where(again: 0)
+
+     @howmanyYes = @againYes.count
+      @howmanyNo = @againNo.count
+      gon.data = [@howmanyYes,@howmanyNo]
+
    end
 
   def new

@@ -20,27 +20,13 @@
   padding: 0;
   margin: 0;
 }
+html{
+  height: 100%;
+}
 /*headerの装飾の始まり*/
-.links{
-  color:white;
-  line-height: 60px;
-  padding:20px;
-  text-decoration: none;
-}
-.links:hover{
-  color:white;
-  transition: 0.1s;
-  text-decoration: none;
-  background-color:#1CA1F2;
-
-}
-.links:active{
-color: black;
-}
-.header-icon{
-  color: white;
-  font-size: 2.5em;
-  margin-right: 50px;
+body{
+  height: 100%;
+  font-family: 'Avenir','Comic Sans MS','Arial','Yu Gothic UI','ＭＳ ゴシック','Hiragino Maru Gothic ProN','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','ヒラギノ明朝 ProN','Hiragino Mincho ProN',sans-serif;
 }
 
 footer{

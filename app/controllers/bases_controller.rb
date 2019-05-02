@@ -14,6 +14,15 @@ class BasesController < ApplicationController
     end
   end
 
-  def index2
+  def opinions
+
+  end
+
+  def aboutweb
+
+  end
+
+  def howtouse
+
   end
 end

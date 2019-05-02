@@ -1,0 +1,2 @@
+class Ratelesson < ApplicationRecord
+end

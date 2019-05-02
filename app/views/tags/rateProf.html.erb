@@ -1,5 +1,6 @@
 <head>
   <%= stylesheet_link_tag "tags/rateProf", :media => "all" %>
+
 </head>
 
 <section id="reveiwPageProf">
@@ -7,17 +8,17 @@
      <div class="container">
       <div class="row">
         <div class="col-lg-10 offset-1 rateProf-container">
-          <h3 style="text-align:center;">教員の口コミ投稿</h3>
+            <span class="ribbon-review"><i class="fas fa-comments"></i></span>
+          <h2 style="text-align:center; margin-top:20px;margin-bottom:40px;">教員の口コミ投稿</h2>
           <div class="write-aria">
-
            <div class="basic-prof-info">
-            <h3>&emsp;&thinsp;<%= @professor.name %></h3>
-            <h6>&emsp;&emsp;&nbsp;<%= @professor.department %></h6>
+            <h2 style="margin-bottom:20px; font-weight:bold;"><%= @professor.name %></h2>
+            <h6>&ensp;<%= @professor.department %></h6>
           </div>
           <%= form_for(@profRate,url: {:controller => :tags, :action => :rateCreate}) do |f| %>
 
-             <div class="satisfaction">
-              <h6>総合満足度</h6>
+             <div class="satisfaction total-container">
+              <h4>総合満足度</h4>
                 <div class="rating">
                   <%=f.radio_button :total_satisfaction, 10, id:"star10"%>
                   <label for="star10"><span class="text">10</span>★</label>
@@ -42,8 +43,8 @@
                 </div>
             </div>
 
-            <div class="satisfaction">
-              <h6>ためになる授業度</h6>
+            <div class="satisfaction interest-container">
+              <h4>ためになる授業度</h4>
                 <div class="rating">
                   <%=f.radio_button :interest, 10, id:"star20"%>
                   <label for="star20"><span class="text">10</span>★</label>
@@ -69,7 +70,7 @@
             </div>
 
             <div class="satisfaction difficulty-rate">
-              <h6>楽単度</h6>
+              <h4>楽単度</h4>
                 <div class="rating">
                   <%=f.radio_button :difficulty, 10, id:"star30"%>
                   <label for="star30"><span class="text">10</span>★</label>
@@ -94,7 +95,7 @@
                 </div>
               </div>
             <!--ここになんで楽単かのやつ-->
-                <%= f.fields_for :levels do |g| %>
+                <%= f.fields_for :levels, @profRate.levels do |g| %>
                   <div class="satisfaction-a">
                     <div style="display:flex; flex-direction:row; justify-content:space-between;">
                       <p>　 ▶どうしてそのように評価したのですか?</p>
@@ -107,7 +108,7 @@
                       <label>
                         <li>
                           <%= g.check_box :tagname1,{},true, false  %>
-                          <span class="satisparts">出席が厳しいから  </span>
+                          <span class="satisparts">出席が厳しいから　　</span>
                         </li>
                       </label>
                       <label>
@@ -161,7 +162,7 @@
                   <% end %>
 
             <div class="satisfaction how_boring-rate">
-              <h6>退屈度</h6>
+              <h4>退屈度</h4>
                 <div class="rating">
                   <%=f.radio_button :how_boring, 10, id:"star40"%>
                   <label for="star40"><span class="text">10</span>★</label>
@@ -186,7 +187,7 @@
                 </div>
             </div>
             <div class="other">
-            <h6>その他の口コミ</h6>
+            <h4>その他の口コミ</h4>
               <div class='whyeasy'>
 
                <%= f.text_area :comments_for_prof, size: "5x5", class: "form-control",placeholder: "ここにコメントを記入してください。" %>
@@ -229,6 +230,7 @@
       $(".up").click(function(){
           $(".satisfaction-a").slideUp();
       });
+
   });
 
 

@@ -1,194 +1,485 @@
 
 #top{
-  text-align: center;
-}
-.top-image{
-  background-image: url('/ノートブック.jpg');
+  background-image: url('/forest.jpg');
   background-size: cover;
   width:100%;
-  height: 100vh;
+  height: 130vh;
+  position: absolute;
+  z-index: 1;
+  font-family: 'Avenir','Comic Sans MS','Arial','Yu Gothic UI','ＭＳ ゴシック','HanziPen TC','Hiragino Maru Gothic ProN','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','ヒラギノ明朝 ProN','Hiragino Mincho ProN',sans-serif;
 }
-#top-image-mask{
-   height:100%;
+.top-image-mask{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+}
+.header-home{
+  color:white;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.tohome{
+  color: white;
+}
+.header-home-first{
+  height:60px;
+  width: 120px;
+  margin-left: 100px;
 
 }
-.top-image-adjaster{
-  width:50%;
-  height: 100%;
-  padding: 100px;
+.sitetitle{
+  line-height: 70px;
+  color: white;
+  position: relative;
+}
+.toHome:hover{
+  text-decoration: none;
+
+}
+.sitetitle:before{
+  content: url("/mori.png");
   position: absolute;
-  z-index: 3;
+  top:7px;
+  left: -60px;
+}
+.header-home-second{
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+align-items: center;
+height: 70px;
+margin-right: 50px;
+}
+.header-home-second span{
+  height: 60px;
+  position: relative;
+  padding: 0 30px;
+}
+.header-home-second span:after{
+ position: absolute;
+ bottom: -8px;
+ left: 0;
+ content: '';
+ width: 100%;
+ height: 2px;
+ background: white;
+ transform: scale(0, 1);
+ transform-origin: center top;
+ transition: transform .3s;
+}
+.header-home-second span:hover:after{
+ transform: scale(1, 1);
+ cursor: pointer;
+}
+.header-home-second a{
+  color: white;
+  line-height: 70px;
+
+}
+.header-home-second a:hover{
+  text-decoration: none;
+  font-weight: bold;
+}
+.home-main{
+  text-align: center;
+  width: 100%;
+  padding-top: 150px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-　align-content: space-around;
+  align-items: center;
+  color: white;
+  position: relative;
+}
+#howto{
+  top:50px;
+  left:100px;
+  text-align: center;
+  position: absolute;
+  top:5px;
+  left:40px;
+}
+
+.barbar:hover{
+  cursor: pointer;
+  font-weight: bold;
+}
+#howtobar{
+  color:white;
+  margin: 5px 0px;
+  width: 264px;
 
 }
-#first-container{
-  position: absolute;
-  z-index: 3;
-  height: 100vh;
-  width:100%;
+.howtomenu{
+  padding: 5px 10px;
+  border-bottom: 1px solid white;
+}
+#howtoaccordion2:first-child{
+  border-top: 1px solid white;
+}
+.howtomenu:hover{
+  background-color: rgba(255,255,255,0.5)
+}
+
+#howtoaccordion2{
+  display: none;
+}
+#howtoaccordion2 a{
+  color: white;
+}
+#howtoaccordion2 a:hover{
+  text-decoration: none;
+}
+#howtoaccordion li{
+  list-style: none;
+}
+#howtoaccordion{
+text-align: left;
+
+}
+#howtoaccordion:last-child{
+  margin-bottom: -1px;
+}
+.home-intro{
   display: flex;
-  flex-direction:row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 40px;
 }
-#index1-title{
-  text-align: center;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  width: 250px;
-  margin: 0 auto;
-  color: #1CA1F2;
-}
-#index1-title h2{
-  border-bottom: double 6px  #1CA1F2;
-}
-#search-prof-container{
-  border: 2px solid  #1CA1F2;
-  width:700px;
-  background-color: white;
-  border-radius: 20px;
-  padding-bottom: 50px;
-  margin: 0 auto 50px auto;
-}
-#search-botton-2-adjuster{
+
+.totree{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  margin-top: 50px;
-}
-
-.search-box-2{
-  padding: 5px 10px;
-  margin: 0 auto;
-  outline: 0;
-  border: double 6px #1CA1F2 ;
-  border-radius: 20px;
-}
-.search-button-2{
-  border: double 6px #1CA1F2 ;
-  border-radius: 40px;
-  padding: 5px 20px;
-  color: #1CA1F2;
-  }
-.search-button-2:focus{
-  outline: 0;
-}
-.search-button-2:hover{
-  text-decoration: none;
-  color: white;
-  background-color: #1CA1F2;
-  border: double 6px white;
-
-}
-#main-logo{
-  width:400px;
-  margin: 50px auto 150px auto;
-}
-#to-container{
-  width:400px;
-  margin: 0 auto 100px auto;
-
-}
-#prof-search{
-display:block;
-font-size: 25px;
-color:#1CA1F2;
-padding:10px 70px;
-margin:0px 15px 30px 15px;
-border: double 6px #1CA1F2;
-border-radius: 3px;
-transition: .2s;
-}
-#prof-search:hover{
-  font-weight: bold;
-  text-decoration: none;
-  background-color: #1CA1F2;
-  color:white;
-  border: double 6px white;
-}
-#prof-search:focus{
-  outline: 0;
-}
-#lecture-search{
-display:block;
-font-size: 25px;
-margin:20px 15px;
-padding:10px 70px;
-color:#9acd32;
-border: double 6px #9acd32;
-border-radius: 3px;
-transition: .2s;
-}
-#lecture-search:hover{
-  font-weight: bold;
-  text-decoration: none;
-  background-color: #9acd32;
-  color:white;
-  border: double 6px white;
-}
-#lecture-search:focus{
-  outline:0;
-}
-
-#second-container{
-  position: absolute;
-  z-index: 4;
-  height: 100vh;
-  width:100%;
-  display: flex;
-  flex-direction:row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  padding: 20px;
+  margin-top: 150px;
 }
-#search-lecture-container{
-  border: 2px solid  #9acd32;
-  width:700px;
-  padding-bottom: 50px;
-  background-color: white;
-  border-radius: 20px;
-  margin: 0 auto 50px auto;
+#showseachingprof{
+  margin: 0 20px;
+  padding: 20px 40px;
+  align-self:center;
+  background:transparent;
+  color:white;
+  font-size:2rem;
+  letter-spacing:1px;
+  outline:none;
+  border-radius: 255px 22px 225px 22px/22px 225px 22px 255px;
+  border:solid 2px white;
 }
-#index2-title{
-  text-align: center;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  width: 250px;
-  margin: 0 auto;
-  color: #9acd32;
+#showseachingprof:hover{
+text-decoration: none;
+font-weight: bold;
+cursor: pointer;
 }
-#index2-title h2{
-  border-bottom: double 6px  #9acd32;
+#showseachinglec{
+  margin: 0 20px;
+  padding: 20px 40px;
+  align-self:center;
+  background:transparent;
+  color:white;
+  font-size:2rem;
+  letter-spacing:1px;
+  outline:none;
+  border-radius: 255px 22px 225px 22px/22px 225px 22px 255px;
+  border:solid 2px white;
 }
-.search-box-3{
-  padding: 5px 10px;
-  margin: 0 auto;
-  outline: 0;
-  border: double 6px #9acd32 ;
-  border-radius: 20px;
-}
-.search-button-3{
-  border: double 6px #9acd32 ;
-  border-radius: 40px;
-  padding: 5px 20px;
-  color: #9acd32;
-  }
-.search-button-3:focus{
-  outline: 0;
-}
-.search-button-3:hover{
+#showseachinglec:hover{
   text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#for-search-display2{
+  width: 100%;
+  height:130vh;
+  position:absolute;
+  top:0;
+  left: 0;
+  z-index: 200;
+  display: none;
   color: white;
-  background-color: #9acd32;
-  border: double 6px white;
+  font-family: 'Avenir','Comic Sans MS','Arial','Yu Gothic UI','ＭＳ ゴシック','Hiragino Maru Gothic ProN','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','ヒラギノ明朝 ProN','Hiragino Mincho ProN',sans-serif;
+}
+#seach-display2{
+  margin: 10% auto 0 auto;
+  width: 700px;
+  border-radius: 10px;
+  box-shadow: 0 0 40px 40px rgba(0,0,0,0.3);
+  background-image: url('/trunk2.jpg');
+  background-size: cover;
 
 }
-#search-botton-3-adjuster{
+#search-prof2{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  position: relative;
+  z-index: 300;
+}
+#search-prof2 h1{
+  margin-top: 60px;
+}
+.adjustprof2{
+  width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  margin-top: 50px;
+  justify-content: center;
+  margin-top:20px;
+}
+#hiddenprof-search2{
+  display: none;
+}
+.accordion-for-profs2{
+  width: 100%;
+  text-align: left;
+  margin-top: 30px;
+}
+.accordion-for-profs2 h2{
+text-align: center;
+margin-bottom: 30px;
 
+}
+.accordion-prof-container2{
+  display: none;
+  list-style: none;
+}
+#fromkeyword2{
+margin-top: 30px;
+}
+#fromkeyword2:hover{
+  cursor: pointer;
+  color: #FFF566;
+}
+.switchofsearchprof2:hover{
+  cursor: pointer;
+  color: #FFF566;
+}
+.switchofsearchprof-click2{
+  color: #FFF566;
+
+}
+
+.accordion-prof-container2 span{
+  height: 60px;
+  padding: 0 30px;
+}
+
+.accordion-prof-container2 span:hover{
+  cursor:pointer;
+  color:#FFF566;
+}
+.moreprofdepartment2 {
+  display: none;
+  list-style: none;
+  margin-top: 30px;
+}
+.moreprofdepartment2 a{
+  padding:2px 20px 1px 0;
+}
+.moreprofdepartment2 a:hover{
+background-color:  rgba(183,170,0,1);
+border-radius: 10px;
+}
+.major-ul2 a{
+  padding:2px 10px 1px 0;
+  margin-left: 20px;
+}
+.major-ul2 a:hover{
+  background-color: rgba(183,170,0,1);
+}
+.liprof2{
+  position: relative;
+}
+.liprof2:after{
+position: absolute;
+font-family: "Font Awesome 5 Free";
+content: "\f078";
+right: 120px;
+top:0px;
+font-weight: 900;
+color: white;
+}
+.liprof2:after:hover{
+  cursor: pointer;
+}
+.moreprofdepartment2 a:hover{
+text-decoration: none;
+}
+.major-ul2{
+  display: none;
+  list-style: none;
+}
+#closesearch2{
+  position: absolute;
+  z-index: 400;
+  top: 20px;
+  left: 20px;
+  color: whtie;
+  font-size: 1.3em;
+}
+#closesearch2:hover{
+  cursor: pointer;
+  color: #FFF566;
+}
+#search-prof2 a{
+  color: white;
+}
+#search-prof2 a:hover{
+  color: #FFF566;
+  text-decoration: none;
+  cursor: pointer;
+}
+#for-search-display3{
+  width: 100%;
+  height:130vh;
+  position:absolute;
+  top:0;
+  left: 0;
+  z-index: 200;
+  display:none;
+  color: white;
+  font-family: 'Avenir','Comic Sans MS','Arial','Yu Gothic UI','ＭＳ ゴシック','Hiragino Maru Gothic ProN','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','ヒラギノ明朝 ProN','Hiragino Mincho ProN',sans-serif;
+}
+#seach-display3{
+  margin: 10% auto 0 auto;
+  width: 700px;
+  border-radius: 10px;
+  box-shadow: 0 0 40px 40px rgba(0,0,0,0.3);
+  background-image: url('/trunk1.jpg');
+  background-size: cover;
+
+}
+#search-lec{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  position: relative;
+  z-index: 300;
+}
+#search-lec h1{
+  margin-top: 60px;
+}
+#search-lec a{
+  color: white;
+}
+#search-lec a:hover{
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  color: #FFF566;
+}
+.adjustlec{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top:20px;
+}
+#hiddenlec-search{
+  display: none;
+}
+.accordion-for-lecs{
+  width: 100%;
+  text-align: left;
+  margin-top: 30px;
+}
+.accordion-for-lecs h2{
+text-align: center;
+margin-bottom: 30px;
+
+}
+.accordion-lec-container{
+  display: none;
+  list-style: none;
+}
+#fromkeyword3{
+margin-top: 30px;
+}
+#fromkeyword3:hover{
+  cursor: pointer;
+  color: #FFF566;
+}
+.switchofsearchlec:hover{
+  cursor: pointer;
+  color: #FFF566;
+}
+.switchofsearchlec-click3{
+  color: #FFF566;
+
+}
+
+.accordion-lec-container span{
+  height: 60px;
+  padding: 0 30px;
+}
+
+.accordion-lec-container span:hover{
+  cursor:pointer;
+  color:#FFF566;
+}
+.morelecdepartment{
+  display: none;
+  list-style: none;
+  margin-top: 30px;
+}
+.morelecdepartment a{
+  padding:2px 20px 1px 0;
+}
+.morelecdepartment a:hover{
+background-color:  rgba(183,170,0,1);
+border-radius: 10px;
+}
+.major-ul3 a{
+  padding:2px 10px 1px 0;
+  margin-left: 20px;
+}
+.major-ul3 a:hover{
+  background-color: rgba(183,170,0,1);
+}
+.lilec{
+  position: relative;
+}
+.lilec:after{
+position: absolute;
+font-family: "Font Awesome 5 Free";
+content: "\f078";
+right: 120px;
+top:0px;
+font-weight: 900;
+color: white;
+}
+.lilec:after:hover{
+  cursor: pointer;
+}
+.morelecdepartment a:hover{
+text-decoration: none;
+}
+.major-ul3{
+  display: none;
+  list-style: none;
+}
+#closesearch3{
+  position: absolute;
+  z-index: 400;
+  top: 20px;
+  left: 20px;
+  color: whtie;
+  font-size: 1.3em;
+}
+#closesearch3:hover{
+  cursor: pointer;
+  color: #FFF566;
 }

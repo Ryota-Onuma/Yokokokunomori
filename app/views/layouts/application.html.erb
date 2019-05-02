@@ -7,33 +7,17 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+     <%= Gon::Base.render_data %>
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   </head>
 
   <body>
-    <!--ヘッダー始まり-->
-    <nav class="navbar navbar-expand-md" style ="background-color: #075BAC; height:60px; ">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item"><%= link_to "　ホーム　",bases_home_path,class: "links" %></li>
-            <li class="nav-item"><a href = "http://www.ynu.ac.jp/" class= "links">横国公式サイト</a></li>
-            <li class="nav-item"><a href = "https://risyu.jmk.ynu.ac.jp/gakumu/Public/Syllabus/" class= "links">横国公式シラバス</a></li>
-            <li class="nav-item"><a href = "https://lms.ynu.ac.jp/lms/lginLgir/;jsessionid=9B2205073C6F62399D054843FE424116.fjlms12" class= "links">YNU授業支援システム</a></li>
-            <li class="nav-item"><a href = "http://www.ynu.ac.jp/campus/student_only/affairs_system.html" class= "links">横国学務情報システム</a></li>
-          </ul>
-          <ul class="navbar-nav">
-            <li class="nav-item"><a href="https://twitter.com/"><i class="fab fa-twitter header-icon "></i></a></li>
-            <li class="nav-item"><a href="https://ja-jp.facebook.com/"><i class="fab fa-facebook header-icon"></i></a></li>
-          </ul>
-    </nav>
-    <!--ヘッダー終わり-->
 
 
 
     <%= yield %>
 
-    <footer>
-        <a href="#">このサイトについて</a>
-        <a href="#">お問い合わせ</a>
-    </footer>
+    
   </body>
 </html>

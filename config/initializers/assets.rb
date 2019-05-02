@@ -16,8 +16,9 @@ Rails.application.config.assets.precompile += %w( lectures/lecture_index)
 Rails.application.config.assets.precompile += %w( lectures/lecture_show)
 Rails.application.config.assets.precompile += %w( tags/rateProf)
 Rails.application.config.assets.precompile += %w( fontawesome-stars)
-
-
+Rails.application.config.assets.precompile += %w( opinions)
+Rails.application.config.assets.precompile += %w( aboutweb)
+Rails.application.config.assets.precompile += %w( howtouse)
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.

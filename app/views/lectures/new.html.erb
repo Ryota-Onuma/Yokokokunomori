@@ -6,7 +6,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 offset-2 lecture-post-container" >
-        <h5>新規授業登録</h5>
+        <h3 style="text-align:center; margin-bottom:20px;font-weight:bold;">新規授業登録</h3>
         <%= form_for @lecture do |f| %>
         <%= f.text_field :name, size:30, placeholder:"授業名",class:"lecture-name"%>
           <%= f.select :department,[
@@ -31,6 +31,138 @@
             ["理工学部 : 数物・電子情報系学科 : 情報工学ＥＰ","理工学部 : 数物・電子情報系学科 : 情報工学ＥＰ"],
             ["その他","その他"]
             ] ,class:"lecture-department"%>
+            <h4 style="text-align:center;margin-top:30px;">使用言語</h4>
+            <div class="selectlang">
+              <%=f.radio_button :langage, "日本語", id:"japanese"%>
+              <label for="japanese" id="japaneselabel">日本語</label>
+              <%=f.radio_button :langage, "英語", id:"english"%>
+              <span><label for="english" id="englishlabel">&ensp;英語&ensp;</label></span>
+            </div>
+            <h4 style="text-align:center;margin-top:30px;">成績評価の方法</h4>
+            <div class="howtoassess">
+              <div class="attend-section">
+                <h4><span>出席</span></h4>
+                <%= f.select :attendance,[
+                    ["０％",0],
+                    ["５％",5],
+                    ["１０％",10],
+                    ["２０％",20],
+                    ["２５％",25],
+                    ["３０％",30],
+                    ["４０％",40],
+                    ["５０％",50],
+                    ["６０％",60],
+                    ["７０％",70],
+                    ["７５％",75],
+                    ["８０％",80],
+                    ["９０％",90],
+                    ["１００％",100]
+                  ],id:"attendnum"%>
+              </div>
+
+              <div class="lasttest-section">
+                <h4><span>期末テスト</span></h4>
+                <%= f.select :lasttest,[
+                    ["０％",0],
+                    ["５％",5],
+                    ["１０％",10],
+                    ["２０％",20],
+                    ["２５％",25],
+                    ["３０％",30],
+                    ["４０％",40],
+                    ["５０％",50],
+                    ["６０％",60],
+                    ["７０％",70],
+                    ["７５％",75],
+                    ["８０％",80],
+                    ["９０％",90],
+                    ["１００％",100]
+                  ],id:"lasttestnum"%>
+              </div>
+
+              <div class="midtest-section">
+                <h4><span>中間テスト</span></h4>
+                <%= f.select :midtest,[
+                    ["０％",0],
+                    ["５％",5],
+                    ["１０％",10],
+                    ["２０％",20],
+                    ["２５％",25],
+                    ["３０％",30],
+                    ["４０％",40],
+                    ["５０％",50],
+                    ["６０％",60],
+                    ["７０％",70],
+                    ["７５％",75],
+                    ["８０％",80],
+                    ["９０％",90],
+                    ["１００％",100]
+                  ],id:"midtestnum"%>
+              </div>
+
+              <div class="report-section">
+                <h4><span>レポート</span></h4>
+                <%= f.select :report,[
+                    ["０％",0],
+                    ["５％",5],
+                    ["１０％",10],
+                    ["２０％",20],
+                    ["２５％",25],
+                    ["３０％",30],
+                    ["４０％",40],
+                    ["５０％",50],
+                    ["６０％",60],
+                    ["７０％",70],
+                    ["７５％",75],
+                    ["８０％",80],
+                    ["９０％",90],
+                    ["１００％",100]
+                  ],id:"reportnum"%>
+              </div>
+
+              <div class="inlesson-section">
+                <h4><span>授業内課題</span></h4>
+                <%= f.select :inlesson,[
+                    ["０％",0],
+                    ["５％",5],
+                    ["１０％",10],
+                    ["２０％",20],
+                    ["２５％",25],
+                    ["３０％",30],
+                    ["４０％",40],
+                    ["５０％",50],
+                    ["６０％",60],
+                    ["７０％",70],
+                    ["７５％",75],
+                    ["８０％",80],
+                    ["９０％",90],
+                    ["１００％",100]
+                  ],id:"inlessonnum"%>
+              </div>
+
+              <div class="outlesson-section">
+                <h4><span>授業外課題</span></h4>
+                <%= f.select :outlesson,[
+                    ["０％",0],
+                    ["５％",5],
+                    ["１０％",10],
+                    ["２０％",20],
+                    ["２５％",25],
+                    ["３０％",30],
+                    ["４０％",40],
+                    ["５０％",50],
+                    ["６０％",60],
+                    ["７０％",70],
+                    ["７５％",75],
+                    ["８０％",80],
+                    ["９０％",90],
+                    ["１００％",100]
+                  ],id:"outlessonnum"%>
+              </div>
+
+
+
+            </div>
             <div id="lecture-submit-container">
               <%= link_to "授業一覧へ戻る" ,lectures_path, class:"toLectureIndex",method: :get %>
               <%= f.submit "登録する",class:"lecture-submit" %>

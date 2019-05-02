@@ -1,4 +1,4 @@
 class Level < ApplicationRecord
-belongs_to :ratedoctor, optional: true
+belongs_to :ratedoctor
 
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_15_123528) do
+ActiveRecord::Schema.define(version: 2019_05_02_080019) do
 
   create_table "leccomments", force: :cascade do |t|
     t.text "whyeasylec"
@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(version: 2019_04_15_123528) do
     t.datetime "updated_at", null: false
     t.string "department"
     t.string "genre"
+    t.string "langage"
+    t.integer "attendance"
+    t.integer "lasttest"
+    t.integer "midtest"
+    t.integer "report"
+    t.integer "inlesson"
+    t.integer "outlesson"
+    t.text "other"
+    t.string "teacher"
   end
 
   create_table "levels", force: :cascade do |t|
@@ -52,6 +61,10 @@ ActiveRecord::Schema.define(version: 2019_04_15_123528) do
     t.text "info"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "total_satisfaction"
+    t.integer "difficulty"
+    t.integer "interest"
+    t.integer "how_boring"
   end
 
   create_table "ratedoctor_levels", force: :cascade do |t|
@@ -87,6 +100,29 @@ ActiveRecord::Schema.define(version: 2019_04_15_123528) do
     t.integer "attendance_level"
     t.boolean "check_attendance"
     t.boolean "attendance_for_friends"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ratelessons", force: :cascade do |t|
+    t.integer "total_satisfaction"
+    t.string "interest"
+    t.integer "diffficulty"
+    t.integer "how_boring"
+    t.boolean "failaclass"
+    t.string "attendancelevel"
+    t.boolean "daihen"
+    t.integer "testlevel"
+    t.string "prepare"
+    t.boolean "pasttest"
+    t.boolean "again"
+    t.text "commentlec"
+    t.integer "lecture_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tagsearches", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

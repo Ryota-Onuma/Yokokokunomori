@@ -3,14 +3,14 @@
   background-image: url("/授業背景.jpg");
   background-size: cover;
   width:100%;
-  height:100vh;
+
   padding-top: 80px;
 
 }
 
 
 .lecture-post-container{
-  background-color: white;
+  background-color: rgba(255,255,255,0.8);
   border: 4px solid #9acd32;
   border-radius: 20px;
   padding: 40px 70px;
@@ -28,10 +28,7 @@
   border: 4px solid #9acd32 ;
 }
 .lecture-name:focus{
-  outline: 0;
-  box-shadow: none;
-  border: 2px solid #FF9800;
-  background-color: #ffffff;
+  outline:0;
 }
 
 #lecture_department{
@@ -74,6 +71,112 @@
   color: white;
   transition: .4s;
 }
-.radio-button{
-  margin-left: 20px;
+.selectlang{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 30px;
+}
+.selectlang input[type='radio']{
+  display: none;
+}
+#japaneselabel{
+  border: 1px solid black;
+  padding: 10px 15px;
+  position: relative;
+  background-color: white;
+  z-index: 2;
+  font-size: 1.5em;
+  font-weight: bold;
+  color:black;
+}
+#japaneselabel:before{
+  position: absolute;
+  content: '●';
+  color:rgba(254,1,0,0.4);
+  font-size: 5.2em;
+  top:-80px;
+  left: 10px;
+}
+#japaneselabel:hover{
+  cursor: pointer;
+  transform: scale(1.2,1.2);
+  transition: transform 0.1s linear;
+  box-shadow: 0 0 5px 5px rgba(0,0,0,0.1);
+}
+.selectlang input[type='radio']:checked +#japaneselabel{
+
+
+}
+#englishlabel{
+  border: 1px solid black;
+  padding: 10px 15px;
+  background-image: url("/English.png");
+  background-size: auto 55px;
+  color: black;
+  z-index: 2;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+#englishlabel:before{
+
+}
+#englishlabel:hover{
+  cursor: pointer;
+  transform: scale(1.2,1.2);
+  transition: transform 0.1s linear;
+  box-shadow: 0 0 5px 5px rgba(0,0,0,0.1);
+}
+.selectlang input[type='radio']:checked +#englishlabel{
+
+
+}
+
+
+.howtoassess{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  background-color: yellow;
+}
+.attend-section{
+
+  width: 180px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.lasttest-section{
+
+  width: 180px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.midtest-section{
+
+  width: 180px;
+  text-align: center;
+  margin: 20px 0;
+}
+.report-section{
+
+  width: 180px;
+  text-align: center;
+  margin: 20px 0;
+}
+.inlesson-section{
+
+  width: 180px;
+  text-align: center;
+  margin: 20px 0;
+}
+.outlesson-section{
+
+  width: 180px;
+  text-align: center;
+  margin: 20px 0;
 }

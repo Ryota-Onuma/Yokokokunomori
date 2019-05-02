@@ -5,14 +5,20 @@
 
 <section id="post-prof">
   <div id="post-prof-mask">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 offset-2 post-prof-container" >
-      <h5>新規教員登録</h5>
+        <div class="prof-search-parts2">
+          <div class="pankuzu2">
+            <a href = "/" style="margin-left:40px;">横国の森の入り口</a>
+            <a href= "/professors" class="middle-pan2">教員の木</a>
+            <span class="middle-pan2">教員の葉追加</span>
+          </div>
+        </div>
+      <div class="post-prof-container" >
+      <h2 style="margin-bottom:30px; color:black;">新規教員登録</h2>
+      <span class="ribbon-new"><i class="fas fa-plus"></i></span>
       <%= form_for @professor do |f| %>
-        <%= f.text_field :name, size:30, class:"prof-name",placeholder:"教員名" %>
+        <%= f.text_field :name, size:30, class:"prof-name",placeholder:"教員名(必須)" %>
         <%= f.select :department,[
-          ["教員の所属を指定してください","#"],
+          ["教員の所属を指定してください（必須)","#"],
           ["経済学部 : 経済学科","経済学部 : 経済学科"],
           ["経営学部 : 経営学科","経営学部 : 経営学科"],
           ["教育学部 : 学校教育課程","教育学部 ： 学校教育課程"],
@@ -40,6 +46,5 @@
       <% end %>
       </div>
     </div>
-  </div>
- </div>
+
 </section>
