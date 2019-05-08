@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_07_164329) do
+ActiveRecord::Schema.define(version: 2019_05_08_014046) do
 
   create_table "leccomments", force: :cascade do |t|
     t.text "whyeasylec"
@@ -112,7 +112,6 @@ ActiveRecord::Schema.define(version: 2019_05_07_164329) do
 
   create_table "ratelessons", force: :cascade do |t|
     t.integer "total_satisfaction"
-    t.integer "interest"
     t.integer "diffficulty"
     t.integer "how_boring"
     t.boolean "failaclass"
@@ -126,6 +125,7 @@ ActiveRecord::Schema.define(version: 2019_05_07_164329) do
     t.integer "lecture_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "interest"
   end
 
   create_table "tagsearches", force: :cascade do |t|
