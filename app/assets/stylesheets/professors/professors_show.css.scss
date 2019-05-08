@@ -13,19 +13,54 @@
 .details-container{
   background-color: rgba(255,255,255,0.6);
   border-radius: 20px;
-  padding: 40px 20px;
+  padding: 40px 10px;
   box-shadow: 0px 4px 30px 30px rgba(0,0,0,0.3);
-  width:1300px;;
-  margin: 0 auto;
+  margin: 50px auto 0 auto;
+}
+.prof-search-parts3{
+  text-align: center;
+  max-width: 70vh;
 }
 
+.pankuzu3{
+  background-color: rgba(255,255,255,0.9);
+  box-shadow: 0 0 30px 30px rgba(255,255,255,0.9);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 20px;
+  margin-left: 90px;
+  width: 100%;
+}
+.pankuzu3 a{
+  color: black;
+
+}
+.pankuzu3 a:hover{
+  text-decoration: none;
+  color: green;
+}
+.middle-pan3{
+  position:relative;
+  margin-left: 30px;
+}
+.middle-pan3:before{
+  font-family: "Font Awesome 5 Free";
+  content: "\f054";
+  position: absolute;
+  top:0px;
+  left:-20px;
+  font-weight: 900;
+  color: black;
+}
 .basic-info-adjuster{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   border-bottom: 1px solid black;
-  margin-top: 30px;
+  width: 85%;
+  margin: 30px auto 0 auto;
 }
 .professor-show-footer{
   width:100%;
@@ -38,13 +73,13 @@
 .toRateProf {
   position: relative;
   background: #f1f8ff;
-  padding: 0.6em 2em;
+  padding: 1em 2em;
   border-left: solid 2em #1BEA48;
   box-shadow: 0px 0px 1px 1px gray;
   color: black;
   width:280px;
-
-
+  margin-right: 30px;
+  margin-bottom: 20px;
 }
 .toRateProfs:hover{
   text-decoration: none;
@@ -71,38 +106,38 @@
 }
 .hoshiboshi{
   width: 50%;
-  margin-left: 20px;
   display: flex;
   flex-direction: column;
-
   align-items: flex-start;
 
 }
 .no-hoshiboshi{
   width: 50%;
-  height:800px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  position: relative;
 
+}
+.pie-box{
+  width: 100%;
+  position: absolute;
+  top:0px;
+  right: 0;
 }
 .tagadjuster{
   margin: 40px 50px 20px 30px;
   display: none;
   position: absolute;
-  padding: 20px;
-  top:-30px;
-  right:50px;
-  background-color:rgba(27,161,242,1);
-
+  top:-100px;
+  left:50px;
+  background-color:rgba(255,255,255,0.8);
+  border: 2px dashed rgba(124, 163, 206,1);
   border-radius: 20px;
   z-index: 200;
 }
 .standard-of-easy{
   margin-left: 30px;
   padding: 2px 5px;
-
   color: black;
   display: inline-block;
 }
@@ -121,129 +156,30 @@
 .tagtagcontainer{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  position: relative;
-}
-.tagtagcontainer:before{
-  content: "";
-  position: absolute;
-  bottom: -90px;
-  left: -80px;
-  border-top: 70px solid rgba(27,161,242,1);
-  border-right: 20px solid transparent;
-  border-bottom: 70px solid transparent;
-  border-left: 20px solid transparent;
-  transform: rotate(55deg);
-
-  z-index: 1;
+  justify-content: space-around;
 
 }
+
 .tagtag{
-  margin:0px 60px;
+  margin:0px 10px;
   text-align: center;
+}
+.tagtag span{
+  background-color: yellow;
+  border-radius: 15px;
+  padding: 10px;
+;
+}
+.tagtag h4{
+  margin: 30px 20px;
+font-size: 1.4em
+}
+.borders{
+  border: 2px solid black;
 
 }
-.no1{
-  position: relative;
-  width:20px;
-  height: 30px;
-}
-.no1:before{
-  content: url("/gold.png");
-  position: absolute;
-  top:-12px;
-  left: -70px;
-
-
-}
-.no2{
-  position: relative;
-  width:20px;
-  height: 30px;
-}
-.no2:before{
-  content: url("/silver.png");
-  position: absolute;
-  top:-12px;
-  left: -55px;
-}
-.no3{
-  position: relative;
-  width:20px;
-  height: 30px;
-}
-.no3:before{
-  content: url("/bronze.png");
-  position: absolute;
-  top:-13px;
-  left: -65px;
-}
-.good{
-  position: relative;
-   border: solid 1px black;
-   background: #f4f4f4;
-   line-height: 1.4;
-   padding: 0.4em 0.5em;
-   margin: 2em 0 0.5em;
- }
-.good:before {
-  /*タブ*/
-  position: absolute;
-font-family: "Font Awesome 5 Free",'Quicksand','Avenir','Arial',sans-serif;
-content: '\f59b\ GOOD';
-background:#1CA1F2;
-border: solid 1px black;
-color: #fff;
-left: -1.2px;
-bottom: 100%;
-border-radius: 5px 5px 0 0;
-padding: 5px 7px 3px;
-font-size: 0.7em;
-line-height: 1;
-letter-spacing: 0.05em;
-}
-.good:after{
-  position: absolute;
-  font-family: "Font Awesome 5 Free";
-  content: '\f235';
-  top:-2px;
-  right: -50px;
-  font-size: 1.9em;
-  font-weight: 900;
-
-}
-.bad{
-  position: relative;
-   border: solid 1px black;
-   background: #f4f4f4;
-   line-height: 1.4;
-   padding: 0.4em 0.5em;
-   margin: 2em 0 0.5em;
-}
-.bad:before{
-  position: absolute;
-  font-family: "Font Awesome 5 Free",'Quicksand','Avenir','Arial',sans-serif;
-  content: '\f714\ BAD';
-  background:yellow;
-  border: 1px solid black;
-  color: black;
-  left: -1.2px;
-  bottom: 100%;
-  border-radius: 5px 5px 0 0;
-  padding: 5px 7px 3px;
-  font-size: 0.7em;
-  line-height: 1;
-  letter-spacing: 0.05em;
-  font-weight: 900;
-}
-.bad:after{
-  position: absolute;
-  font-family: "Font Awesome 5 Free";
-  content: '\f235';
-  top:-2px;
-  right: -50px;
-  font-size: 1.9em;
-  font-weight: 900;
+.opaopa{
+  opacity: 0.5;
 }
 .label-department{
   margin-bottom: 20px;
@@ -270,7 +206,7 @@ letter-spacing: 0.05em;
   width:570px;
 }
 .prof-comments-container{
-  width:600px;
+  width:90%;
   height:400px;
   margin: 50px auto 30px auto;
   background-color: #7CA3CF;
@@ -287,7 +223,7 @@ letter-spacing: 0.05em;
 .prof-comments-container:before{
   content: '';
   position: absolute;
-  width:600px;
+  width:100%;
   height:40px;
   background-color:#293146;
   top:0px;
@@ -295,8 +231,8 @@ letter-spacing: 0.05em;
 .prof-comments-container:after{
   content: "みんなの声";
   position: absolute;
-  top: 6px;
-  left: 250px;
+  top: 8px;
+  left: 45%;
   color: white;
   z-index: 1;
 
@@ -315,6 +251,7 @@ letter-spacing: 0.05em;
   background-color: #1BEA48;
   z-index: 2;
   font-size: 16px;
+  font-size: 2.0em;
 
 }
 .each-prof-container:after{
@@ -330,15 +267,7 @@ letter-spacing: 0.05em;
   z-index: 1;
 
 }
-.linklink h6{
-  display: inline-block;
-}
-.linklink{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 400px;
-}
+
 .toProfIndex{
   text-decoration: none;
   padding: 0.6em;

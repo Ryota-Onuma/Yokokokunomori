@@ -66,6 +66,27 @@ class ProfessorsController < ApplicationController
       @howmanyNo = @againNo.count
       gon.data = [@howmanyYes,@howmanyNo]
 
+     @tag1= Ratedoctor.where(professor_id: @profId).where(tagname1: 1)
+     @tag2= Ratedoctor.where(professor_id: @profId).where(tagname2: 1)
+     @tag3= Ratedoctor.where(professor_id: @profId).where(tagname3: 1)
+     @tag4= Ratedoctor.where(professor_id: @profId).where(tagname4: 1)
+     @tag5= Ratedoctor.where(professor_id: @profId).where(tagname5: 1)
+     @tag6= Ratedoctor.where(professor_id: @profId).where(tagname6: 1)
+     @tag7= Ratedoctor.where(professor_id: @profId).where(tagname7: 1)
+     @tag8= Ratedoctor.where(professor_id: @profId).where(tagname8: 1)
+     @tag1nv = @tag1.count
+     @tag2nv = @tag2.count
+     @tag3nv = @tag3.count
+     @tag4nv = @tag4.count
+     @tag5nv = @tag5.count
+     @tag6nv = @tag6.count
+     @tag7nv = @tag7.count
+     @tag8nv = @tag8.count
+     @tagtags = [@tag1nv,@tag2nv,@tag3nv,@tag4nv,@tag5nv,@tag6nv,@tag7nv,@tag8nv]
+     @tagmax = @tagtags.max
+     @tagmin = @tagtags.min
+
+
    end
 
   def new

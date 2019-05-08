@@ -9,6 +9,9 @@ Rails.application.routes.draw do
  get 'ratedoctor/:id' => "tags#rateProf",as: 'ratedoctor'
  post 'ratedoctor/:id' => "tags#rateCreate"
 
+ get 'ratelesson/:id' => "tags#rateLec",as: 'ratelesson'
+ post 'ratelesson/:id' => "tags#rateCreate2"
+
  get 'bases/opinions' => "bases#opinions"
  get 'bases/aboutweb' => "bases#aboutweb"
  get 'bases/howtouse' => "bases#howtouse"

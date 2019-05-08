@@ -2,38 +2,221 @@
 <%= stylesheet_link_tag "lectures/lecture_index", :media => "all" %>
   </head>
   <section id="index-lecture">
-    <div id="index-lecture-mask">
-    <div >
-      <h2 id="lecturetitle">授業一覧</h2>
-    </div>
-    <div class="addlectures">
-      <div class="addlecture-container">
-        <%= link_to new_lecture_path, class:"addlecture",method: :get do %>
-          <i class="fas fa-user-plus" id="addlecture-span"></i>&ensp;授業を追加する
-        <% end %>
+    <div id="index-lec-container">
+      <div class="lec-search-parts">
+        <div class="pankuzu">
+          <a href = "/" style="margin-left:40px;">横国の森の入り口</a>
+          <a href= "#" class="middle-pan">授業の木</a>
+        </div>
       </div>
-      <div class="search-lecture">
-        <%= form_tag('/lectures', method: :get) do %>
-         <%= text_field_tag :search, '',class: 'search-box',placeholder: "授業名か開講学科を入力してください。",size:50 %>
-         <%= submit_tag '検索',:name => nil ,class: "search-button" %>
-        <% end %>
-      </div>
-    </div>
 
-      <div class="lecture-index-container">
+        <div >
+          <h1 id="lectitle">授業一覧</h1>
+        </div>
+        <div class="addlecs">
+          <div class="addlec-container">
+            <button id="search-search"><i class="fas fa-search"></i>&ensp;　授業を探す　&ensp;</button>
+            <%= link_to new_lecture_path, class:"addlec",method: :get do %>
+            <button><i class="fas fa-user-plus"></i>&emsp;授業を追加する</button>
+            <% end %>
+          </div>
+
+        </div>
+
+
+        <div class="lec-card-container">
         <% @search.each do |t| %>
-          <div class="card border border-warning lecture-card" style="width: 35rem;">
-            <div class="card-header">
-              <%= t.department %>
-            </div>
-            <div class="card-body">
-              <h4><%= t.name %></h4>
-              <p class="card-text"></p>
-            </div>
-            <div class="prof-card-footer">
-              <%= link_to "詳細をみる", lecture_path(t.id),class:"lecture-info" %>
-            </div>
+         <%= link_to lecture_path(t.id), method: :get do %>
+          <div class="lec-card">
+           <span class ="<% if t.langage == "日本語"%>jpn-mark <% elsif t.langage == "英語"%> eng-mark <% else %> no-mark<% end %>"><span class="<% if t.langage == "日本語"%>jpn-mark-inner <% else %> eng-mark-inner <% end %>"><%= t.langage %></span></span>
+           <h6 class="
+             <% if t.department == '一般教養科目'%>
+                ribbonlec1 head-color1
+             <% elsif t.department == '経済学部' %>
+                ribbonlec2 head-color2
+             <% elsif t.department == '経営学部' %>
+                ribbonlec3 head-color3
+             <% elsif t.department == "理工学部 : 機械・材料・海洋系学科 : 機械工学ＥＰ" %>
+                ribbonlec4 head-color4
+             <% elsif t.department == "理工学部 : 機械・材料・海洋系学科 : 材料工学ＥＰ" %>
+                ribbonlec4 head-color4
+             <% elsif t.department == "理工学部 : 機械・材料・海洋系学科 : 海洋空間のシステムデザインＥＰ" %>
+                ribbonlec4 head-color4
+             <% elsif t.department == "理工学部 : 化学・生命系学科 : 化学ＥＰ" %>
+                ribbonlec4 head-color4
+             <% elsif t.department == "理工学部 :化学・生命系学科 : 化学応用ＥＰ" %>
+                ribbonlec4 head-color4
+             <% elsif t.department == "理工学部 :化学・生命系学科 : バイオＥＰ" %>
+                ribbonlec4 head-color4
+             <% elsif t.department == "理工学部 : 数物・電子情報系学科 : 数理科学ＥＰ" %>
+                ribbonlec4 head-color4
+             <% elsif t.department == "理工学部 : 数物・電子情報系学科 : 物理工学ＥＰ" %>
+                ribbonlec4 head-color4
+             <% elsif t.department == "理工学部 : 数物・電子情報系学科 : 電子情報システムＥＰ" %>
+                ribbonlec4 head-color4
+             <% elsif t.department == "理工学部 : 数物・電子情報系学科 : 情報工学ＥＰ" %>
+                ribbonlec4 head-color4
+             <% elsif t.department == "教育学部 ： 学校教育課程" %>
+                ribbonlec5 head-color5
+             <% elsif t.department == "都市科学部 : 都市社会共生学科" %>
+                ribbonlec6 head-color6
+             <% elsif t.department == "都市科学部 ： 建築学科" %>
+                ribbonlec6 head-color6
+             <% elsif t.department == "都市科学部 ： 都市基盤学科" %>
+                ribbonlec6 head-color6
+             <% elsif t.department == "都市科学部 : 環境リスク共生学科" %>
+                ribbonlec6 head-color6
+             <% else %>
+                ribbonlec7 head-color7
+             <% end %>
+             ">
+            <%= t.department %></h6>
+           <h2 style="padding:0 40px 5px 0; margin-top:20px;">&nbsp;&nbsp;<%= t.name %></h2>
+           <h6 style="border-bottom:1px solid skyblue; padding-bottom:15px;">&ensp;&ensp;&thinsp;担当教員&nbsp;:&nbsp;<span style="font-weight:bold;font-size:1.1em;"><%= t.teacher %></span></h6>
+           <h6 style="margin-top:20px;">&ensp;&ensp;&thinsp;成績評価の方法</h6>
+           <div class="assess-container">
+             <span style = "<% if t.attendance == 0 || t.attendance == nil%> display:none; <% else %> display:inline-block;<% end %>">
+               <span class="under-bar">出席&nbsp;<%= t.attendance %>％</span>
+             </span>
+             <span style = "<% if t.lasttest == 0 || t.lasttest == nil %> display:none; <% else %> display:inline-block;<% end %>">
+               <span class="under-bar">期末テスト&nbsp;<%= t.lasttest %>％</span>
+             </span>
+             <span style = "<% if t.midtest == 0 || t.midtest == nil %> display:none; <% else %> display:inline-block;<% end %>">
+               <span class="under-bar">中間テスト&nbsp;<%= t.midtest %>％</span>
+             </span>
+             <span style = "<% if t.report == 0 || t.report == nil %> display:none; <% else %> display:inline-block;<% end %>">
+               <span class="under-bar">レポート&nbsp;<%= t.report %>％</span>
+             </span>
+             <span style = "<% if t.inlesson == 0 || t.inlesson == nil %> display:none; <% else %> display:inline-block;<% end %>">
+               <span class="under-bar">授業内課題&nbsp;<%= t.inlesson %>％</span>
+             </span>
+             <span style = "<% if t.outlesson == 0 || t.outlesson == nil %> display:none; <% else %> display:inline-block;<% end %>">
+               <span class="under-bar">授業外課題&nbsp;<%= t.outlesson %>％</span>
+             </span>
+           </div>
           </div>
         <% end %>
-      </div>
+          <% end %>
+        </div>
+
+
+    </div>
   </section>
+  <section id="for-search-display">
+    <div id="seach-display">
+      <div id="search-lec">
+        <h2><i class="fas fa-times fa-2x" id="closesearch"></i></h2>
+        <h1> <span style="border-bottom:2px double rgba(183,170,0,1); padding-bottom:5px;">授業を探す</span></h1>
+        <h2 style="margin-top:40px;"><a href="/lectures"><i class="fas fa-address-book"></i>&ensp;全授業一覧を見る</a></h2>
+          <div id="searchs-hidden">
+              <h2 id="fromkeyword"><i class="far fa-hand-point-right"></i>&ensp;キーワードから探す</h2>
+          </div>
+          <ul id="hiddenlec-search">
+            <div class="adjustlec">
+               <%= form_tag('/lectures', method: :get) do %>
+                 <%= text_field_tag :search, '',class: 'search-box',placeholder: "授業名や所属などを入力してください。",size:40 %>
+                 <%= submit_tag '検索',:name => nil ,class: "search-button" %>
+               <% end %>
+            </div>
+          </ul>
+          <div class="accordion-for-lecs">
+            <h2 class="switchofsearchlec"><i class="far fa-hand-point-right"></i>&ensp;学部学科で探す</h2>
+            <ul class="accordion-lec-container">
+              <div style="width:100%;display:flex; flex-direction:row; justify-content:space-around;">
+                <div>
+              <li><h3 class="searchfrom"><span>経済学部</span></h3></li>
+                <ul class="morelecdepartment">
+                  <li><h5><a href="/lectures?utf8=✓&search=経済学科"style="color:white;">&ensp;▶経済学科</a></h5></li>
+                </ul>
+                </div>
+                <div>
+              <li><h3 class="searchfrom"><span>経営学部</span></h3></li>
+                <ul class="morelecdepartment">
+                  <li><h5><a href="/lectures?utf8=✓&search=経営学科"style="color:white;">&ensp;▶経営学科</a></h5></li>
+                </ul>
+                </div>
+                  <div>
+              <li><h3 class="searchfrom"><span>教育学部</span></h3></li>
+              <ul class="morelecdepartment">
+                <li><h5><a href="/lectures?utf8=✓&search=教育学科"style="color:white;">&ensp;▶教育学科</a></h5></li>
+              </ul>
+                </div>
+              </div>
+              <div style="width:100%;display:flex; flex-direction:row; justify-content:flex-start;">
+                <div style="width:40%; margin: 20px 0 0 30px;">
+              <li><h3 class="searchfrom"><span>都市科学部</span></h3></li>
+              <ul class="morelecdepartment">
+                <li><h5><a href="/lectures?utf8=✓&search=都市社会共生学科"style="color:white">&ensp;▶都市社会共生学科</a></h5></li>
+                <li><h5><a href="/lectures?utf8=✓&search=建築学科"style="color:white">&ensp;▶建築学科</a></h5></li>
+                <li><h5><a href="/lectures?utf8=✓&search=都市基盤学科"style="color:white">&ensp;▶都市基盤学科</a></h5></li>
+                <li><h5><a href="/lectures?utf8=✓&search=環境リスク共生学科"style="color:white">&ensp;▶環境リスク共生学科</a></h5></li>
+              </ul>
+                  </div>
+              <div style="width:60%;margin:20px 0 0 -45px;"">
+              <li><h3 class="searchfrom"><span>理工学部</span></h3></li>
+              <ul class="morelecdepartment">
+                <li class="lilec"><h5><a href="/lectures?utf8=✓&search=機械・材料・海洋系学科"style="color:white">&ensp;▶機械・材料・海洋系学科</a></h5></li>
+                   <ul class="major-ul">
+                     <li><h6><a href="/lectures?utf8=✓&search=機械工学"style="color:white">&ensp;▶機械工学EP</a></h6></li>
+                     <li><h6><a href="/lectures?utf8=✓&search=材料工学"style="color:white">&ensp;▶材料工学EP</a></h6></li>
+                     <li><h6><a href="/lectures?utf8=✓&search=海洋空間のシステムデザイン"style="color:white">&ensp;▶海洋空間のシステムデザインEP</a></h6></li>
+                   </ul>
+                <li class="lilec"><h5><a href="/lectures?utf8=✓&search=化学・生命系学科"style="color:white">&ensp;▶化学・生命系学科</a></h5></li>
+                   <ul class="major-ul">
+                     <li><h6><a href="/lectures?utf8=✓&search=化学"style="color:white">&ensp;▶化学EP</a></h6></li>
+                     <li><h6><a href="/lectures?utf8=✓&search=化学応用"style="color:white">&ensp;▶化学応用EP</a></h6></li>
+                     <li><h6><a href="/lectures?utf8=✓&search=バイオ"style="color:white">&ensp;▶バイオEP</a></h6></li>
+                   </ul>
+                <li class="lilec" style="margin-top:7px;"><h5><a href="/lectures?utf8=✓&search=数物・電子情報系学科"style="color:white">&ensp;▶数物・電子情報系学科</a></h5></li>
+                   <ul class="major-ul">
+                     <li><h6><a href="/lectures?utf8=✓&search=数理科学"style="color:white">&ensp;▶数理科学EP</a></h6></li>
+                     <li><h6><a href="/lectures?utf8=✓&search=物理工学"style="color:white">&ensp;▶物理工学EP</a></h6></li>
+                     <li><h6><a href="/lectures?utf8=✓&search=電子情報システム工学"style="color:white">&ensp;▶電子情報システム工学EP</a></h6></li>
+                     <li><h6><a href="/lectures?utf8=✓&search=情報工学"style="color:white">&ensp;▶情報工学EP</a></h6></li>
+                   </ul>
+              </ul>
+                </div>
+              </div>
+            </ul>
+          </div>
+      </div>
+     </div>
+
+  </section>
+
+  <script type="text/javascript">
+    $(function(){
+        $("#search-search").click(function(){
+          $("#for-search-display").slideToggle(600);
+        });
+    });
+    $(function(){
+        $(".switchofsearchlec").click(function(){
+          $(this).toggleClass("switchofsearchlec-click");
+          $(".accordion-lec-container").slideToggle();
+        });
+    });
+
+    $(function(){
+      $(".accordion-lec-container li").click(function() {
+        $(this).toggleClass("switchofsearchlec-click");
+        $(this).next('ul').slideToggle();
+    });
+      });
+  $(function(){
+        $("#morelecdepartment li span").click(function() {
+          $(this).next('ul').slideToggle();
+      });
+        });
+  $(function(){
+        $("#closesearch").click(function(){
+          $("#for-search-display").slideUp(600);
+      });
+        });
+  $(function(){
+        $("#fromkeyword").click(function(){
+          $(this).toggleClass("switchofsearchlec-click");
+          $("#hiddenlec-search").slideToggle(400);
+      });
+        });
+  </script>

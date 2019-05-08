@@ -11,13 +11,13 @@ window.draw_graph = ->
                 label: '',
                 data:  gon.data,
                 backgroundColor: [
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 99, 132, 1)',
+                    '#FFFF01',
+                    'rgba(255, 255, 255, 0.5)',
 
                 ],
                 borderColor: [
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255,99,132,1)',
+                    '#FFFF01',
+                    'rgba(255, 255, 255, 0.5)',
 
 
                 ],
@@ -29,7 +29,7 @@ window.draw_graph = ->
           legend: {
             labels: {
                   fontColor: 'black',
-                  fontSize: 20
+                  fontSize: 18
 
             }
         }

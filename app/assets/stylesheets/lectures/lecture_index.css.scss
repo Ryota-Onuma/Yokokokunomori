@@ -1,18 +1,61 @@
 #index-lecture{
-  background-image: url('/授業背景.jpg');
+  background-image: url("/tree9-min.jpg");
   background-size: cover;
   width:100%;
+  min-height: 150vh;
+  position: relative;
+  z-index: 100;
 }
 
-#lecturetitle{
+#index-lec-container{
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+.lec-search-parts{
+  width:40vh;
+}
+
+.pankuzu{
+  background-color: rgba(255,255,255,0.9);
+  box-shadow: 0 0 30px 30px rgba(255,255,255,0.9);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  margin-top: 40px;
+  margin-left: 90px;
+}
+.pankuzu a{
+  color: black;
+
+}
+.pankuzu a:hover{
+  text-decoration: none;
+  color: green;
+}
+.middle-pan{
+  position:relative;
+  margin-left: 30px;
+}
+.middle-pan:before{
+  font-family: "Font Awesome 5 Free";
+  content: "\f054";
+  position: absolute;
+  top:0px;
+  left:-20px;
+  font-weight: 900;
+  color: black;
+}
+#lectitle{
  margin: 0 auto;
  padding-top: 40px;
- width: 140px;
+ padding-bottom: 10px;
+ width: 240px;
  color: white;
- border-bottom: double 6px #9acd32;
+ border-bottom: double 6px rgba(183,170,0,1);
  text-align: center;
 }
-.addlectures{
+.addlecs{
   width:100%;
   margin: 0 auto;
   padding: 40px 0 20px 0;
@@ -22,52 +65,140 @@
   align-items: center;
 
 }
-.search-prof{
+button{
+  background-color: transparent;
+  border: none;
+}
+.search-lec{
   margin-left: 30px;
+}
+#search-search {
+  color:rgba(183,170,0,1);
+  background:white;
+  border-width:2px;
+  border-style: solid;
+  border-color:rgba(183,170,0,1);
+  position:relative;
+  margin:1em;
+  display:inline-block;
+  padding: 10px 20px;
+  transition:all 0.3s ease-in-out;
+  text-align:center;
+
+font-weight:bold
+}
+#search-search:before, #search-search:after {
+  content:'';
+  display:block;
+  position:absolute;
+  border-color:rgba(183,170,0,1);
+  box-sizing:border-box;
+  border-style:solid;
+  width:1em;
+  height:1em;
+  transition:all 0.3s ease-in-out
+}
+#search-search:before {
+  top:-6px;
+  left:-6px;
+  border-width:2px 0 0 2px;
+  z-index:5;}
+#search-search:after {
+  bottom:-6px;
+  right:-6px;
+  border-width:0 2px 2px 0;
+}
+#search-search:hover:before, #search-search:hover:after {
+  width:calc(100% + 12px);
+  height:calc(100% + 12px);
+  border-color:rgba(183,170,0,1)}
+#search-search:hover {
+  color:white;
+  background-color:rgba(183,170,0,1);
+  border-color:rgba(183,170,0,1);
+  cursor: pointer;
+}
+#search-search:focus{
+  outline: 0;
 }
 .search-box{
   padding: 5px 10px;
   outline: 0;
-  border: double 6px #9acd32 ;
+  border: double 6px black;
   border-radius: 20px;
+  background-color: rgba(255,255,255,0.8);
 }
 .search-button{
-  border: double 6px #9acd32 ;
+  border: double 6px black; ;
   border-radius: 40px;
   padding: 5px 20px;
-  color: #9acd32;
-  }
+  color: black;
+}
 .search-button:focus{
   outline: 0;
 }
 .search-button:hover{
   text-decoration: none;
   color: white;
-  background-color: #9acd32;
+  background-color: black;
   border: double 6px white;
 
 }
-.addlecture-container{
+
+.addlec-container{
 margin-bottom: 30px;
-
 }
 
-.addlecture{
-color: #9acd32;
-padding: 5px 20px;
-background-color: white;
-border: 6px double #9acd32;
-border-radius: 20px;
-}
-.addlecture:hover{
-  text-decoration: none;
-  color: white;
-  background-color: #9acd32;
-  border: double 6px white ;
+.addlec {
+  color:#A5D4AD;
+  background:white;
+  border-width:2px;
+  border-style: solid;
+  border-color:#A5D4AD;
+  position:relative;
+  margin:1em;
+  display:inline-block;
+  padding: 10px 20px;
+  transition:all 0.3s ease-in-out;
+  text-align:center;
 
+font-weight:bold
+}
+.addlec:before, .addlec:after {
+  content:'';
+  display:block;
+  position:absolute;
+  border-color:#A5D4AD;
+  box-sizing:border-box;
+  border-style:solid;
+  width:1em;
+  height:1em;
+  transition:all 0.3s ease-in-out;
+}
+.addlec:before {
+  top:-6px;
+  left:-6px;
+  border-width:2px 0 0 2px;
+  z-index:5;
+}
+.addlec:after {
+  bottom:-6px;
+  right:-6px;
+  border-width:0 2px 2px 0;
+}
+.addlec:hover:before, .addlec:hover:after {
+  width:calc(100% + 12px);
+  height:calc(100% + 12px);
+  border-color:#A5D4AD
+}
+.addlec:hover {
+  color:white;
+  background-color:#A5D4AD;
+  border-color:#A5D4AD;
+  cursor: pointer;
 }
 
-.lecture-index-container{
+.index-lec-container{
   margin:0 auto;
   padding:10px 20px;
   width: 95%;
@@ -76,29 +207,395 @@ border-radius: 20px;
   flex-wrap: wrap;
   justify-content: space-around;
 }
-.lecture-card{
-  margin:10px 0;
+.lec-card{
+  padding:40px 10px 40px 10px;
+  font-family: 'Avenir','Comic Sans MS','Arial','Yu Gothic UI','ＭＳ ゴシック','Hiragino Maru Gothic ProN','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','ヒラギノ明朝 ProN','Hiragino Mincho ProN',sans-serif;
+  background-color: rgba(255,255,255,0.9);
+  box-shadow: 0 0 20px 20px rgba(0,0,0,0.4);
+  border: 1px solid rgba(0,0,0,0.4);
+  min-width: 460px;
+  max-width: 680px;
+  margin: 20px;
+  border-radius: 20px;
+  transition: 0.3s;
+  position: relative;
+  color: black;
 }
-
-.card-body h4{
-  border-bottom: 1px solid black;
-  line-height: 150%;
-}
-.card-body p{
-  padding: 5px 0;
-}
-
-.lecture-info{
-text-decoration: none;
-color: #9acd32;
-margin-right: 10px;
-margin-bottom: 10px;
-padding: 5px 10px;
-border: 2px solid #9acd32;
-border-radius: 40px;
-}
-.lecture-info:hover{
+.lec-card:hover{
+  background-color: rgba(255,255,255,0.8);
+  transform: scale(1.02,1.02);
+  cursor: pointer;
+  letter-spacing: 1px;
   text-decoration: none;
-  background-color: #9acd32;
-  color:white;
+  color: black;
+  font-weight: bold;
+}
+
+.lec-card-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+
+
+}
+.lec-card-container a:hover{
+  text-decoration: none;
+}
+
+.star-rating-js{
+  position: relative;
+  display:inline-block;
+  font-size: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid black;
+}
+.star-rating-js .rating-front{
+  position:absolute;
+  overflow: hidden;
+  color: orange;
+}
+.star-rating-js .rating-back{
+  color: gray;
+}
+#for-search-display{
+  width: 100%;
+  height:150vh;
+  position:absolute;
+  top:0;
+  left: 0;
+  z-index: 200;
+  display: none;
+  color: white;
+  font-family: 'Avenir','Comic Sans MS','Arial','Yu Gothic UI','ＭＳ ゴシック','Hiragino Maru Gothic ProN','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','ヒラギノ明朝 ProN','Hiragino Mincho ProN',sans-serif;
+}
+#seach-display{
+  margin: 10% auto;
+  width: 700px;
+  border-radius: 10px;
+  box-shadow: 0 0 40px 40px rgba(0,0,0,0.3);
+  background-image: url('/mokume.jpg');
+  background-size: cover;
+
+}
+#search-lec{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  position: relative;
+  z-index: 300;
+}
+#search-lec h1{
+  margin-top: 60px;
+}
+#search-lec a{
+  color: white;
+}
+#search-lec a:hover{
+  cursor: pointer;
+  color: rgba(183,170,0,1);
+  text-decoration: none;
+}
+.adjustlec{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top:20px;
+}
+#hiddenlec-search{
+  display: none;
+}
+.accordion-for-lecs{
+  width: 100%;
+  text-align: left;
+  margin-top: 30px;
+}
+.accordion-for-lecs h2{
+text-align: center;
+margin-bottom: 30px;
+
+}
+.accordion-lec-container{
+  display: none;
+  list-style: none;
+}
+#fromkeyword{
+margin-top: 30px;
+}
+#fromkeyword:hover{
+  cursor: pointer;
+  color: rgba(183,170,0,1);
+}
+.switchofsearchlec:hover{
+  cursor: pointer;
+  color: rgba(183,170,0,1);
+}
+.switchofsearchlec-click{
+  color: rgba(183,170,0,1);
+}
+
+.accordion-lec-container span{
+  height: 60px;
+  padding: 0 30px;
+}
+
+.accordion-lec-container span:hover{
+  cursor:pointer;
+  color: rgba(183,170,0,1);
+}
+.morelecdepartment {
+  display: none;
+  list-style: none;
+  margin-top: 30px;
+}
+.morelecdepartment a{
+  padding:2px 20px 1px 0;
+}
+.morelecdepartment a:hover{
+background-color: rgba(183,170,0,1);
+border-radius: 10px;
+}
+.major-ul a{
+  padding:2px 10px 1px 0;
+  margin-left: 20px;
+}
+.major-ul a:hover{
+  background-color:rgba(183,170,0,1);
+}
+.lilec{
+  position: relative;
+}
+.lilec:after{
+position: absolute;
+font-family: "Font Awesome 5 Free";
+content: "\f078";
+right: 120px;
+top:0px;
+font-weight: 900;
+color: white;
+}
+.lilec:after:hover{
+  cursor: pointer;
+}
+.morelecdepartment a:hover{
+text-decoration: none;
+}
+
+.major-ul{
+  display: none;
+  list-style: none;
+}
+#closesearch{
+  position: absolute;
+  z-index: 400;
+  top: 20px;
+  left: 20px;
+  color: whtie;
+  font-size: 1.3em;
+}
+#closesearch:hover{
+  cursor: pointer;
+  color:rgba(183,170,0,1);
+}
+
+.ribbonlec1 {
+  display: inline-block;
+  padding: 17px 33px 13px 20px;
+  color:black;/*フォントカラー*/
+  line-height: 15px;
+  position: absolute;
+  top:-1px;
+  left:-1px;
+  z-index: 5;
+  width: 100.3%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.head-color1{
+  background-color: #0EA37E;
+}
+.ribbonlec2 {
+  display: inline-block;
+  padding: 17px 33px 13px 20px;
+  color:black;/*フォントカラー*/
+  line-height: 15px;
+  position: absolute;
+  background-color: #B42A63;/*リボンの色*/
+  top:-1px;
+  left:-1px;
+  z-index: 5;
+  width: 100.3%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.head-color2{
+  background-color: #B42A63;
+}
+.ribbonlec3 {
+  display: inline-block;
+  padding: 17px 33px 13px 20px;
+  color:black;/*フォントカラー*/
+  line-height: 15px;
+  position: absolute;
+  background-color:#C89A04;/*リボンの色*/
+  top:-1px;
+  left:-1px;
+  z-index: 5;
+  width: 100.3%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.head-color3{
+  background-color: #B42A63;
+}
+.ribbonlec4 {
+  display: inline-block;
+  padding: 17px 33px 13px 20px;
+  color:black;/*フォントカラー*/
+  line-height: 15px;
+  position: absolute;
+  background-color:#4FC1C8;/*リボンの色*/
+  top:-1px;
+  left:-1px;
+  width: 100.3%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  font-size: 0.95em;
+}
+.head-color4{
+  background-color: #4FC1C8;
+}
+.ribbonlec5 {
+  display: inline-block;
+  padding: 17px 33px 13px 20px;
+  color:black;/*フォントカラー*/
+  line-height: 15px;
+  position: absolute;
+  background-color:#649C27;/*リボンの色*/
+  top:-1px;
+  left:-1px;
+  z-index: 5;
+  width: 100.3%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.head-color5{
+  background-color: #649C27;
+}
+.ribbonlec6 {
+  display: inline-block;
+  padding: 17px 33px 13px 20px;
+  color:black;/*フォントカラー*/
+  line-height: 15px;
+  position: absolute;
+  background-color:#B989FF;/*リボンの色*/
+  top:-1px;
+  left:-1px;
+  z-index: 5;
+  width: 100.3%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.head-color6{
+  background-color:#B989FF;
+}
+.ribbonlec7 {
+  display: inline-block;
+  padding: 17px 33px 13px 20px;
+  color:white;/*フォントカラー*/
+  line-height: 15px;
+  position: absolute;
+  background-color:#0E5FA7;/*リボンの色*/
+  top:-1px;
+  left:-1px;
+  z-index: 5;
+  width: 100.3%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.head-color7{
+  background-color:#0E5FA7;
+}
+.assess-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+
+}
+.assess-container span{
+  font-size:1.2em;
+  padding: 15px;
+  /*margin: 20px 20px 0 20px;*/
+}
+.jpn-mark{
+  position: absolute;
+  top:0px;
+  right: 0px;
+  background-color:white;
+  z-index: 10;
+  padding: 10px 20px 9px 20px;
+  border-top-right-radius: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.9);
+}
+.jpn-mark-inner{
+  position: relative;
+}
+.jpn-mark-inner:before{
+  position: absolute;
+  content: '●';
+  font-size:5.2em;
+  top:-61px;
+  left:-4px;
+  color: rgba(254,1,0,0.3);
+}
+.eng-mark{
+  position: absolute;
+  top:0px;
+  right: 0px;
+  background-image: url("/English.png");
+  background-size: auto 45px;
+  z-index: 10;
+  padding: 10px 28px 9px 27px;
+  border-top-right-radius: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.9);
+}
+.eng-mark-inner{
+  background-color: rgba(255,255,255,0.6);
+  box-shadow: 0 0 5px 5px rgba(255,255,255,0.6);
+}
+.under-bar{
+  position: relative;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  border-bottom: 2px solid rgba(14,163,126,0.5);
+}
+.under-bar:before{
+  position: absolute;
+  content: '';
+  top:45px;
+  right: 20px;
+  border-top: 25px solid rgba(14,163,126,0.5);
+  border-right: 2px solid transparent;
+  border-left: 2px solid transparent;
+  border-bottom: 25px solid  transparent;
+  transform: rotate(45deg);
+
+}
+.under-bar:after{
+  position: absolute;
+  content: '';
+  top:45px;
+  right: 12px;
+  border-top: 25px solid rgba(14,163,126,0.5);
+  border-right: 2px solid transparent;
+  border-left: 2px solid transparent;
+  border-bottom: 25px solid  transparent;
+  transform: rotate(45deg);
 }

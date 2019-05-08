@@ -1,0 +1,313 @@
+<head>
+<%= stylesheet_link_tag "tags/rateLec", :media => "all" %>
+</head>
+<section id="reveiwPagelec">
+    <div id="reviewPagelec-mask">
+      <div class="lec-search-parts4">
+        <span class="pankuzu4">
+          <a href = "/" style="margin-left:40px;">横国の森の入り口</a>
+          <a href= "/lectures" class="middle-pan4">授業の木</a>
+          <a href= "/lectures/<%= @lecture.id%>" class="middle-pan4"><%= @lecture.name %>の葉</a>
+          <a href= "#" class="middle-pan4"><%= @lecture.name %>の葉を作る</a>
+        </span>
+      </div>
+        <div class=" ratelec-container">
+            <span class="ribbon-posi"><span class="ribbon-review2"><i class="fas fa-comments"></i></span></span>
+          <h2 style="text-align:center; margin-top:20px;margin-bottom:40px;">授業の口コミ投稿</h2>
+            <div class="basic-lec-info">
+             <div style="width:70%;margin-left:30px;">
+               <h6 style="margin-bottom:10px;"><%= @lecture.department %></h6>
+               <h2 style="font-weight:bold;"><%= @lecture.name %></h2>
+             </div>
+            <div class="assess-container2" style="width:350px; height:110px;">
+              <div class="assess-mini-container">
+              <span style = "<% if @lecture.attendance == 0 || @lecture.attendance == nil%> opacity:0.3; <% else %> display:inline-block; <% end %>">
+                <span >出席　　　&nbsp;<span style="font-weight:bold;"><%= @lecture.attendance %>％</span></span>
+              </span>
+              <span style = "<% if @lecture.lasttest == 0 || @lecture.lasttest == nil %> opacity:0.3; <% else %> display:inline-block;<% end %>">
+                <span >期末テスト&nbsp;<span style="font-weight:bold;"><%= @lecture.lasttest %>％</span></span>
+              </span>
+              <span style = "<% if @lecture.midtest == 0 || @lecture.midtest == nil %> opacity:0.3; <% else %> display:inline-block;<% end %>">
+                <span >中間テスト&nbsp;<span style="font-weight:bold;"><%= @lecture.midtest %>％</span></span>
+              </span>
+              </div>
+                <div class="assess-mini-container">
+              <span style = "<% if @lecture.report == 0 || @lecture.report == nil %> opacity:0.3; <% else %> display:inline-block;<% end %>">
+                <span >レポート　&nbsp;<span style="font-weight:bold;"><%= @lecture.report %>％</span></span>
+              </span>
+              <span style = "<% if @lecture.inlesson == 0 || @lecture.inlesson == nil %> opacity:0.3; <% else %> display:inline-block;<% end %>">
+                <span >授業内課題&nbsp;<span style="font-weight:bold;"><%= @lecture.inlesson %>％</span></span>
+              </span>
+              <span style = "<% if @lecture.outlesson == 0 || @lecture.outlesson == nil %> opacity:0.3; <% else %> display:inline-block;<% end %>">
+                <span >授業外課題&nbsp;<span style="font-weight:bold;"><%= @lecture.outlesson %>％</span></span>
+              </span>
+              </div>
+            </div>
+          </div>
+
+          <%= form_for(@lecRate,url: {:controller => :tags, :action => :rateCreate2}) do |f| %>
+             <div class="satisfaction2">
+              <h4>総合満足度</h4>
+                <div class="rating">
+                  <%=f.radio_button :total_satisfaction, 10, id:"star-star10"%>
+                  <label for="star-star10"><span class="text ten5">10</span>★</label>
+                  <%=f.radio_button :total_satisfaction, 9, id:"star-star9"%>
+                  <label for="star-star9"><span class="text">9</span>★</label>
+                  <%=f.radio_button :total_satisfaction, 8, id:"star-star8"%>
+                  <label for="star-star8"><span class="text">8</span>★</label>
+                  <%=f.radio_button :total_satisfaction, 7, id:"star-star7"%>
+                  <label for="star-star7"><span class="text">7</span>★</label>
+                  <%=f.radio_button :total_satisfaction, 6, id:"star-star6"%>
+                  <label for="star-star6"><span class="text">6</span>★</label>
+                  <%=f.radio_button :total_satisfaction, 5, id:"star-star5"%>
+                  <label for="star-star5"><span class="text">5</span>★</label>
+                  <%=f.radio_button :total_satisfaction, 4, id:"star-star4"%>
+                  <label for="star-star4"><span class="text">4</span>★</label>
+                  <%=f.radio_button :total_satisfaction, 3, id:"star-star3"%>
+                  <label for="star-star3"><span class="text">3</span>★</label>
+                  <%=f.radio_button :total_satisfaction, 2, id:"star-star2"%>
+                  <label for="star-star2"><span class="text">2</span>★</label>
+                  <%=f.radio_button :total_satisfaction, 1, id:"star-star1"%>
+                  <label for="star-star1"><span class="text one5">1</span>★</label>
+                </div>
+            </div>
+
+            <div class="satisfaction2">
+              <h4>ためになる授業度</h4>
+                <div class="rating">
+                  <%=f.radio_button :interest, 10, id:"star-star20"%>
+                  <label for="star-star20"><span class="text ten6">10</span>★</label>
+                  <%=f.radio_button :interest, 9, id:"star-star19"%>
+                  <label for="star-star19"><span class="text">9</span>★</label>
+                  <%=f.radio_button :interest, 8, id:"star-star18"%>
+                  <label for="star-star18"><span class="text">8</span>★</label>
+                  <%=f.radio_button :interest, 7, id:"star-star17"%>
+                  <label for="star-star17"><span class="text">7</span>★</label>
+                  <%=f.radio_button :interest, 6, id:"star-star16"%>
+                  <label for="star-star16"><span class="text">6</span>★</label>
+                  <%=f.radio_button :interest, 5, id:"star-star15"%>
+                  <label for="star-star15"><span class="text">5</span>★</label>
+                  <%=f.radio_button :interest, 4, id:"star-star14"%>
+                  <label for="star-star14"><span class="text">4</span>★</label>
+                  <%=f.radio_button :interest, 3, id:"star-star13"%>
+                  <label for="star-star13"><span class="text">3</span>★</label>
+                  <%=f.radio_button :interest, 2, id:"star-star12"%>
+                  <label for="star-star12"><span class="text">2</span>★</label>
+                  <%=f.radio_button :interest, 1, id:"star-star11"%>
+                  <label for="star-star11"><span class="text one6">1</span>★</label>
+                </div>
+            </div>
+
+            <div class="satisfaction2">
+              <h4>楽単度</h4>
+                <div class="rating">
+                  <%=f.radio_button :diffficulty, 10, id:"star-star30"%>
+                  <label for="star-star30"><span class="text ten7">10</span>★</label>
+                  <%=f.radio_button :diffficulty, 9, id:"star-star29"%>
+                  <label for="star-star29"><span class="text">9</span>★</label>
+                  <%=f.radio_button :diffficulty, 8, id:"star-star28"%>
+                  <label for="star-star28"><span class="text">8</span>★</label>
+                  <%=f.radio_button :diffficulty, 7, id:"star-star27"%>
+                  <label for="star-star27"><span class="text">7</span>★</label>
+                  <%=f.radio_button :diffficulty, 6, id:"star-star26"%>
+                  <label for="star-star26"><span class="text">6</span>★</label>
+                  <%=f.radio_button :diffficulty, 5, id:"star-star25"%>
+                  <label for="star-star25"><span class="text">5</span>★</label>
+                  <%=f.radio_button :diffficulty, 4, id:"star-star24"%>
+                  <label for="star-star24"><span class="text">4</span>★</label>
+                  <%=f.radio_button :diffficulty, 3, id:"star-star23"%>
+                  <label for="star-star23"><span class="text">3</span>★</label>
+                  <%=f.radio_button :diffficulty, 2, id:"star-star22"%>
+                  <label for="star-star22"><span class="text">2</span>★</label>
+                  <%=f.radio_button :diffficulty, 1, id:"star-star21"%>
+                  <label for="star-star21"><span class="text one7">1</span>★</label>
+                </div>
+              </div>
+            <!--ここになんで楽単かのやつ-->
+
+
+            <div class="satisfaction2">
+              <h4>退屈度</h4>
+                <div class="rating">
+                  <%=f.radio_button :how_boring, 10, id:"star-star40"%>
+                  <label for="star-star40"><span class="text ten8">10</span>★</label>
+                  <%=f.radio_button :how_boring, 9, id:"star-star39"%>
+                  <label for="star-star39"><span class="text">9</span>★</label>
+                  <%=f.radio_button :how_boring, 8, id:"star-star38"%>
+                  <label for="star-star38"><span class="text">8</span>★</label>
+                  <%=f.radio_button :how_boring, 7, id:"star-star37"%>
+                  <label for="star-star37"><span class="text">7</span>★</label>
+                  <%=f.radio_button :how_boring, 6, id:"star-star36"%>
+                  <label for="star-star36"><span class="text">6</span>★</label>
+                  <%=f.radio_button :how_boring, 5, id:"star-star35"%>
+                  <label for="star-star35"><span class="text">5</span>★</label>
+                  <%=f.radio_button :how_boring, 4, id:"star-star34"%>
+                  <label for="star-star34"><span class="text">4</span>★</label>
+                  <%=f.radio_button :how_boring, 3, id:"star-star33"%>
+                  <label for="star-star33"><span class="text">3</span>★</label>
+                  <%=f.radio_button :how_boring, 2, id:"star-star32"%>
+                  <label for="star-star32"><span class="text">2</span>★</label>
+                  <%=f.radio_button :how_boring, 1, id:"star-star31"%>
+                  <label for="star-star31"><span class="text one8">1</span>★</label>
+                </div>
+            </div>
+            <div class="assess-adjuster">
+            <div class="attendance-assess" style="<% if @lecture.attendance == 0 || @lecture.attendance == nil %> display:none;<% end %>">
+              <h4 style="margin-top:50px;"><span style=" font-weight:bold; border-bottom:1px dashed rgba(0,0,0,0.3);padding-bottom:10px;">出席に関する口コミ</span></h4>
+              <h5 style="margin-top:30px;">&ensp;&ensp;&ensp;出席をとるタイミングは？？</h5>
+              <p>（１つ選んでください）</p>
+              <div style="display:flex;flex-direction:row;justify-content:center;">
+                <div style="inline-block">
+                <ul class="accordion-attendance">
+                <li><%=f.radio_button :attendancelevel, '授業開始前には教室にいるべし',id:"at-1"%>
+                <label for="at-1">①&ensp;授業開始前には教室にいるべし&ensp;</label></li>
+                <li><%=f.radio_button :attendancelevel, '授業の最初もしくは前半に出席を取る',id:"at-2"%>
+                <label for="at-2">②&ensp;授業の最初もしくは前半に出席を取る&ensp;</label></li>
+                </ul>
+                </div>
+                <div style="inline-block">
+                <ul class="accordion-attendance">
+                <li><%=f.radio_button :attendancelevel, '出席を取る時間が不定期',id:"at-3"%>
+                <label for="at-3">③&ensp;出席を取る時間が不定期&ensp;</label></li>
+                <li><%=f.radio_button :attendancelevel, '授業の後半もしくは最後に出席をとる',id:"at-4"%>
+                <label for="at-4">④&ensp;授業の後半もしくは最後に出席をとる&ensp;</label></li>
+                </ul>
+                </div>
+              </div>
+              <div class="daihen-container">
+                <h5>代返はできますか？</h5>
+                <div style="display:flex;flex-direction:row;justify-content:center;margin-top:20px;">
+                <div style="margin-right:15px;">
+                  <%=f.radio_button :daihen,true,id:"daihen1" %>
+                  <label for="daihen1">&ensp;代返できる！&ensp;</label>
+                </div>
+                <div style="margin-left:15px;">
+                  <%=f.radio_button :daihen,false,id:"daihen2" %>
+                  <label for="daihen2">&ensp;代返できない…&ensp;</label>
+                </div>
+              </div>
+                </div>
+            </div>
+            <div class="test-assess" style="<% if (@lecture.lasttest == 0 || @lecture.lasttest == nil) && (@lecture.midtest == 0 || @lecture.midtest == nil) %> display:none; <% end %>">
+              <h4 style="margin-top:50px;"><span style=" font-weight:bold;border-bottom:1px dashed rgba(0,0,0,0.3); padding-bottom:10px;"">テストに関する口コミ</span></h4>
+              <h5 style="margin-top:30px;">テストの難しさ</h5>
+              <div class="rating">
+                <%=f.radio_button :testlevel, 10, id:"star-star50"%>
+                <label for="star-star50"><span class="text ten9">10</span>★</label>
+                <%=f.radio_button :testlevel, 9, id:"star-star49"%>
+                <label for="star-star49"><span class="text">9</span>★</label>
+                <%=f.radio_button :testlevel, 8, id:"star-star48"%>
+                <label for="star-star48"><span class="text">8</span>★</label>
+                <%=f.radio_button :testlevel, 7, id:"star-star47"%>
+                <label for="star-star47"><span class="text">7</span>★</label>
+                <%=f.radio_button :testlevel, 6, id:"star-star46"%>
+                <label for="star-star46"><span class="text">6</span>★</label>
+                <%=f.radio_button :testlevel, 5, id:"star-star45"%>
+                <label for="star-star45"><span class="text">5</span>★</label>
+                <%=f.radio_button :testlevel, 4, id:"star-star44"%>
+                <label for="star-star44"><span class="text">4</span>★</label>
+                <%=f.radio_button :testlevel, 3, id:"star-star43"%>
+                <label for="star-star43"><span class="text">3</span>★</label>
+                <%=f.radio_button :testlevel, 2, id:"star-star42"%>
+                <label for="star-star42"><span class="text">2</span>★</label>
+                <%=f.radio_button :testlevel, 1, id:"star-star41"%>
+                <label for="star-star41"><span class="text one9">1</span>★</label>
+              </div>
+              <h5 style="margin-top:20px;">テスト期間中の影響</h5>
+              <p>（１つ選んでください）</p>
+              <div style="display:flex;flex-direction:row;justify-content:center;">
+
+                  <div class="accordion-test">
+                    <div>
+                    <%=f.radio_button :prepare, 'この授業のテスト勉強だけで精一杯',id:"test-1"%>
+                    <label for="test-1">①&ensp;この授業のテスト勉強だけで精一杯&ensp;</label>
+                    </div>
+                    <div>
+                    <%=f.radio_button :prepare, 'かなり時間を取られる',id:"test-2"%>
+                    <label for="test-2">②&ensp;かなり時間を取られる&ensp;</label>
+                    </div>
+                    <div>
+                      <%=f.radio_button :prepare, '他授業優先でも、計画的にやれば大丈夫',id:"test-3"%>
+                      <label for="test-3">③&ensp;他授業優先でも、計画的にやれば大丈夫&ensp;</label>
+                    </div>
+                  </div>
+
+                  <div class="accordion-test">
+                    <div>
+                      <%=f.radio_button :prepare, '一夜漬けで大丈夫',id:"test-4"%>
+                      <label for="test-4">④&ensp;一夜漬けで大丈夫&ensp;</label>
+                    </div>
+                    <div>
+                      <%=f.radio_button :prepare, 'ノー勉でも余裕',id:"test-5"%>
+                      <label for="test-5">⑤&ensp;ノー勉でも余裕&ensp;</label>
+                    </div>
+                  </div>
+
+                </div>
+
+              <div class="kakomon-container">
+                <h5>テスト問題は回収されますか？</h5>
+                <div style="display:flex;flex-direction:row;justify-content:center;margin-top:20px;">
+                <div style="margin-right:15px;">
+                  <%=f.radio_button :pasttest,true,id:"kakomon1" %>
+                  <label for="kakomon1">&ensp;持ち帰れる！&ensp;</label>
+                </div>
+                <div style="margin-left:15px;">
+                  <%=f.radio_button :pasttest,false,id:"kakomon2" %>
+                  <label for="kakomon2">&ensp;回収される…&ensp;</label>
+                </div>
+              </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="booleanadjuster">
+              <div class="failaclass">
+                <h5>この授業の単位を取得しましたか？</h5>
+                <div class="failfailaclass">
+                  <div>
+                    <%=f.radio_button :failaclass,true, id:"lecYes1" %>
+                    <label for="lecYes1">単位来た！</label>
+                  </div>
+                  <div>
+                    <%=f.radio_button :failaclass,false, id:"lecNo1" %>
+                    <label for="lecNo1">落とした…</label>
+                  </div>
+                </div>
+              </div>
+               <div class="againagain2">
+                 <h5>この授業を他の人に勧められますか？</h5>
+                 <div class="againagainagain2">
+                   <div style="margin-right:30px;">
+                     <%=f.radio_button :again,true, id:"lecYes2" %>
+                     <label for="lecYes2">　　オススメ！　　</label>
+                     </div>
+                   <div style="margin-left:30px;">
+                     <%=f.radio_button :again,false, id:"lecNo2" %>
+                     <label for="lecNo2">受けないでほしい…</label>
+                   </div>
+                 </div>
+               </div>
+
+
+                </div>
+            <div class="other2">
+            <h4>&ensp;その他の口コミ</h4>
+              <div class='commentlec'>
+               <%= f.text_area :commentlec, size: "5x5", class: "form-control",maxlength:300 ,placeholder: "ここにコメントを記入してください（３００字以内）。" %>
+              </div>
+            </div>
+
+            <div class="ratelecsubmit-container">
+              <%= f.submit "投稿する", class:"ratelecsubmit"%>
+            </div>
+            <% end %>
+          </div>
+
+
+
+</section>
+<script type="text/javascript">
+
+
+  </script>

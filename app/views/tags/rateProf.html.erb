@@ -5,6 +5,14 @@
 
 <section id="reveiwPageProf">
     <div id="reviewPageProf-mask">
+      <div class="prof-search-parts4">
+        <span class="pankuzu4">
+          <a href = "/" style="margin-left:40px;">横国の森の入り口</a>
+          <a href= "/professors" class="middle-pan4">教員の木</a>
+          <a href= "/professors/<%=@professor.id %>" class="middle-pan4"><%= @professor.name %>の葉</a>
+          <a href= "#"class="middle-pan4"><%= @professor.name %>の葉を作る</a>
+        </span>
+      </div>
      <div class="container">
       <div class="row">
         <div class="col-lg-10 offset-1 rateProf-container">
@@ -21,7 +29,7 @@
               <h4>総合満足度</h4>
                 <div class="rating">
                   <%=f.radio_button :total_satisfaction, 10, id:"star10"%>
-                  <label for="star10"><span class="text">10</span>★</label>
+                  <label for="star10"><span class="text ten1">10</span>★</label>
                   <%=f.radio_button :total_satisfaction, 9, id:"star9"%>
                   <label for="star9"><span class="text">9</span>★</label>
                   <%=f.radio_button :total_satisfaction, 8, id:"star8"%>
@@ -39,7 +47,7 @@
                   <%=f.radio_button :total_satisfaction, 2, id:"star2"%>
                   <label for="star2"><span class="text">2</span>★</label>
                   <%=f.radio_button :total_satisfaction, 1, id:"star1"%>
-                  <label for="star1"><span class="text">1</span>★</label>
+                  <label for="star1"><span class="text one1">1</span>★</label>
                 </div>
             </div>
 
@@ -47,7 +55,7 @@
               <h4>ためになる授業度</h4>
                 <div class="rating">
                   <%=f.radio_button :interest, 10, id:"star20"%>
-                  <label for="star20"><span class="text">10</span>★</label>
+                  <label for="star20"><span class="text ten2">10</span>★</label>
                   <%=f.radio_button :interest, 9, id:"star19"%>
                   <label for="star19"><span class="text">9</span>★</label>
                   <%=f.radio_button :interest, 8, id:"star18"%>
@@ -65,7 +73,7 @@
                   <%=f.radio_button :interest, 2, id:"star12"%>
                   <label for="star12"><span class="text">2</span>★</label>
                   <%=f.radio_button :interest, 1, id:"star11"%>
-                  <label for="star11"><span class="text">1</span>★</label>
+                  <label for="star11"><span class="text one2">1</span>★</label>
                 </div>
             </div>
 
@@ -73,7 +81,7 @@
               <h4>楽単度</h4>
                 <div class="rating">
                   <%=f.radio_button :difficulty, 10, id:"star30"%>
-                  <label for="star30"><span class="text">10</span>★</label>
+                  <label for="star30"><span class="text ten3">10</span>★</label>
                   <%=f.radio_button :difficulty, 9, id:"star29"%>
                   <label for="star29"><span class="text">9</span>★</label>
                   <%=f.radio_button :difficulty, 8, id:"star28"%>
@@ -91,11 +99,11 @@
                   <%=f.radio_button :difficulty, 2, id:"star22"%>
                   <label for="star22"><span class="text">2</span>★</label>
                   <%=f.radio_button :difficulty, 1, id:"star21"%>
-                  <label for="star21"><span class="text">1</span>★</label>
+                  <label for="star21"><span class="text one3">1</span>★</label>
                 </div>
               </div>
             <!--ここになんで楽単かのやつ-->
-                <%= f.fields_for :levels, @profRate.levels do |g| %>
+
                   <div class="satisfaction-a">
                     <div style="display:flex; flex-direction:row; justify-content:space-between;">
                       <p>　 ▶どうしてそのように評価したのですか?</p>
@@ -107,25 +115,25 @@
                       <div class="satisfaction-c">
                       <label>
                         <li>
-                          <%= g.check_box :tagname1,{},true, false  %>
+                          <%= f.check_box :tagname1,{},true, false  %>
                           <span class="satisparts">出席が厳しいから　　</span>
                         </li>
                       </label>
                       <label>
                         <li>
-                          <%= g.check_box :tagname2,{},true, false %>
+                          <%= f.check_box :tagname2,{},true, false %>
                           <span class="satisparts-easy">出席しなくていいから</span>
                         </li>
                       </label>
                       <label>
                         <li>
-                          <%= g.check_box :tagname3,{},true, false %>
+                          <%= f.check_box :tagname3,{},true, false %>
                           <span class="satisparts">テストが難しいから　</span>
                         </li>
                       </label>
                       <label>
                         <li>
-                          <%= g.check_box :tagname4,{},true, false %>
+                          <%= f.check_box :tagname4,{},true, false %>
                           <span class="satisparts-easy">テストが簡単だから　</span>
                         </li>
                       </label>
@@ -133,25 +141,25 @@
                       <div class="satisfaction-c">
                       <label>
                         <li>
-                          <%= g.check_box :tagname5,{},true, false %>
+                          <%= f.check_box :tagname5,{},true, false %>
                           <span class="satisparts">良や可が来やすいから</span>
                         </li>
                       </label>
                       <label>
                         <li>
-                          <%= g.check_box :tagname6,{},true, false %>
+                          <%= f.check_box :tagname6,{},true, false %>
                           <span class="satisparts-easy">秀や優が来やすいから</span>
                         </li>
                       </label>
                       <label>
                         <li>
-                          <%= g.check_box :tagname7,{},true, false %>
+                          <%= f.check_box :tagname7,{},true, false %>
                           <span class="satisparts">課題がキツイから　　</span>
                         </li>
                       </label>
                       <label>
                         <li>
-                          <%= g.check_box :tagname8,{},true, false %>
+                          <%= f.check_box :tagname8,{},true, false %>
                           <span class="satisparts-easy">課題が楽だから　　　</span>
                         </li>
                       </label>
@@ -159,13 +167,13 @@
                     </div>
                     </ul>
                   </div>
-                  <% end %>
+
 
             <div class="satisfaction how_boring-rate">
               <h4>退屈度</h4>
                 <div class="rating">
                   <%=f.radio_button :how_boring, 10, id:"star40"%>
-                  <label for="star40"><span class="text">10</span>★</label>
+                  <label for="star40"><span class="text ten4">10</span>★</label>
                   <%=f.radio_button :how_boring, 9, id:"star39"%>
                   <label for="star39"><span class="text">9</span>★</label>
                   <%=f.radio_button :how_boring, 8, id:"star38"%>
@@ -183,14 +191,14 @@
                   <%=f.radio_button :how_boring, 2, id:"star32"%>
                   <label for="star32"><span class="text">2</span>★</label>
                   <%=f.radio_button :how_boring, 1, id:"star31"%>
-                  <label for="star31"><span class="text">1</span>★</label>
+                  <label for="star31"><span class="text one4">1</span>★</label>
                 </div>
             </div>
             <div class="other">
             <h4>その他の口コミ</h4>
               <div class='whyeasy'>
 
-               <%= f.text_area :comments_for_prof, size: "5x5", class: "form-control",placeholder: "ここにコメントを記入してください。" %>
+               <%= f.text_area :comments_for_prof, size: "5x5", class: "form-control",maxlength:300 ,placeholder: "ここにコメントを記入してください（３００字以内）。" %>
 
               </div>
             </div>

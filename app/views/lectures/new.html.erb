@@ -5,10 +5,15 @@
 <section id="lecture-post">
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 offset-2 lecture-post-container" >
-        <h3 style="text-align:center; margin-bottom:20px;font-weight:bold;">新規授業登録</h3>
+      <div class="col-lg-10 offset-1 lecture-post-container">
+        <span class="ribbon-newlec"><i class="fas fa-plus"></i></span>
+        <h2 style="text-align:center; margin-bottom:20px;font-weight:bold;">新規授業登録</h2>
         <%= form_for @lecture do |f| %>
-        <%= f.text_field :name, size:30, placeholder:"授業名",class:"lecture-name"%>
+        <div class="names">
+        <%= f.text_field :name, size:30, placeholder:"授業名",maxlength:30,class:"lecture-name"%>
+        <%= f.text_field :teacher, size:30, placeholder:"教員名",maxlength:20,class:"lecture-name"%>
+          </div>
+          <div style="margin:0 auto; width:60%;">
           <%= f.select :department,[
             ["開講学部を選んでください。","#"],
             ["一般教養科目","一般教養科目"],
@@ -31,15 +36,17 @@
             ["理工学部 : 数物・電子情報系学科 : 情報工学ＥＰ","理工学部 : 数物・電子情報系学科 : 情報工学ＥＰ"],
             ["その他","その他"]
             ] ,class:"lecture-department"%>
+                        </div>
             <h4 style="text-align:center;margin-top:30px;">使用言語</h4>
             <div class="selectlang">
               <%=f.radio_button :langage, "日本語", id:"japanese"%>
               <label for="japanese" id="japaneselabel">日本語</label>
               <%=f.radio_button :langage, "英語", id:"english"%>
-              <span><label for="english" id="englishlabel">&ensp;英語&ensp;</label></span>
+              <label for="english" id="englishlabel">&ensp;英語&ensp;</label>
             </div>
-            <h4 style="text-align:center;margin-top:30px;">成績評価の方法</h4>
+            <h4 style="text-align:center;margin-top:20px;">成績評価の方法</h4>
             <div class="howtoassess">
+              <div>
               <div class="attend-section">
                 <h4><span>出席</span></h4>
                 <%= f.select :attendance,[
@@ -99,7 +106,8 @@
                     ["１００％",100]
                   ],id:"midtestnum"%>
               </div>
-
+                </div>
+                <div>
               <div class="report-section">
                 <h4><span>レポート</span></h4>
                 <%= f.select :report,[
@@ -159,7 +167,7 @@
                     ["１００％",100]
                   ],id:"outlessonnum"%>
               </div>
-
+              </div>
 
 
             </div>

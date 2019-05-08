@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_02_080019) do
+ActiveRecord::Schema.define(version: 2019_05_07_164329) do
 
   create_table "leccomments", force: :cascade do |t|
     t.text "whyeasylec"
@@ -82,12 +82,18 @@ ActiveRecord::Schema.define(version: 2019_05_02_080019) do
     t.integer "difficulty", default: 0
     t.integer "how_boring", default: 0
     t.boolean "again"
-    t.text "whyeasyprofc"
-    t.string "whyeasyprof_tag"
     t.text "comments_for_prof"
     t.integer "professor_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "tagname1"
+    t.boolean "tagname2"
+    t.boolean "tagname3"
+    t.boolean "tagname4"
+    t.boolean "tagname5"
+    t.boolean "tagname6"
+    t.boolean "tagname7"
+    t.boolean "tagname8"
   end
 
   create_table "ratelecs", force: :cascade do |t|
@@ -106,7 +112,7 @@ ActiveRecord::Schema.define(version: 2019_05_02_080019) do
 
   create_table "ratelessons", force: :cascade do |t|
     t.integer "total_satisfaction"
-    t.string "interest"
+    t.integer "interest"
     t.integer "diffficulty"
     t.integer "how_boring"
     t.boolean "failaclass"

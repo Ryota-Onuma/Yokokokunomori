@@ -3,35 +3,36 @@
 </head>
 
 <section id="detail-prof-info">
-   <div id="detail-prof-info-contaier">
-     <div class="details-container" > <!--showの用紙-->
-
+  <div id="detail-prof-info-contaier">
+    <div class="prof-search-parts3">
+      <span class="pankuzu3">
+        <a href = "/" style="margin-left:40px;">横国の森の入り口</a>
+        <a href= "/professors" class="middle-pan3">教員の木</a>
+        <a href= "#" class="middle-pan3"><%= @professor.name %>の葉</a>
+      </span>
+    </div>
+      <div class="col-lg-11 details-container" > <!--showの用紙-->
      <div class="basic-info-adjuster">
-      <div style="margin-left:50px;">
-        <h6 class="label-department">&thinsp;<strong><%= @professor.department %></strong></h6>
-        <h1 style="margin: 0 20px 20px 0; font-size:3em;"><%= @professor.name %></h1>
+      <div style="margin-left:30px;">
+          <h6 class="label-department">&thinsp;<strong><%= @professor.department %></strong></h6>
+        <h1 style="margin: 0 20px 10px 0; font-size:3em;"><%= @professor.name %></h1>
       </div>
       <div class="linklink">
-        <%= link_to professors_path, method: :get do %>
-          <h6 class="toProfIndex"><i class="fas fa-undo"></i></h6>
-        <% end %>
         <%= link_to ratedoctor_path(@professor.id),class:"toRateProfs",method: :get do %>
           <h6 class="toRateProf">この先生をレビューする</h6>
         <% end %>
       </div>
     </div>
-
-
         <div class="main-rating-prof">
-
-
+            <div style="width:100%;">
             <div style="margin:40px  0 30px 0px; ">
-              <h1 style="margin-left:60px; margin-bottom:10px;">総合満足度</h1>
-              <h1 style="margin-left:50px;"><span class="star-rating-js" data-rating-value= "<%= @displaytotalsatis10x %>" data-rating-max="10"></span> <%=@displaytotalsatis %><span style="font-size:0.5em;"> (<%= @howmanyTotalsatis %>)</span></h1>
+              <h2 style="margin-left:120px;">総合満足度</h2>
+              <h2 style="margin-left:115px;"><span class="star-rating-js" data-rating-value= "<%= @displaytotalsatis10x %>" data-rating-max="10"></span> <span style="font-size:1.3em;"> <%=@displaytotalsatis %></span><span style="font-size:0.6em;"> (<%= @howmanyTotalsatis %>)</span></h2>
             </div>
+              </div>
             <div class="main-rating-prof-container">
             <div class="hoshiboshi">
-              <div style="margin-left:30px;">
+              <div style="margin-left:80px;">
                <div class="about-interest">
                <h3 style="margin-left:40px; margin-bottom:10px;">ためになる授業度</h3>
                <h1 style="margin-left:30px; margin-bottom:20px;"><span class="star-rating-js" data-rating-value= "<%= @displayInterest10x %>" data-rating-max="10"></span> <%= @displayInterest %><span style="font-size:0.5em; ">  (<%= @howmanyInterest %>)</span></h1>
@@ -42,18 +43,19 @@
                   <h1 style="margin-left:30px; margin-bottom:20px;"><span class="star-rating-js" data-rating-value= "<%= @displayEasy10x %>" data-rating-max="10"></span> <%= @displayEasy %><span style="font-size:0.5em;">&ensp;(<%= @howmanyEasy %>)</span></h1>
 
                 <div class= "tagadjuster">
+                   <h4 style="text-align:center; margin:20px 0 10px 0;"><span style="border-bottom:1px dashed rgba(0,0,0,0.3);">楽単の理由</span></h4>
                    <div class="tagtagcontainer">
                       <div class="tagtag">
-                        <h6 class="bad"><span class="no1">出席が厳しい</span></h6>
-                        <h6 class="good"><span class="no2">出席しなくていい</span></h6>
-                        <h6 class="bad"><span class="no3">テストが難しい</span></h6>
-                        <h6 class="good">テストが簡単</h6>
+                        <h4><span class="<% if @tag1nv == @tagmax %>borders <% elsif @tag1nv == @tagmin %>opaopa <% else %> nonenone<% end %>">　&thinsp;出席が厳しい　　<i class="fas fa-child"></i>&nbsp;×&nbsp;<%=@tag1nv %></span></h4>
+                        <h4><span class="<% if @tag2nv == @tagmax %>borders <% elsif @tag2nv == @tagmin %>opaopa <% else %> nonenone<% end %>">&thinsp;出席しなくていい　<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @tag2nv %></span></h4>
+                        <h4><span class="<% if @tag3nv == @tagmax %>borders <% elsif @tag3nv == @tagmin %>opaopa <% else %> nonenone<% end %>">　テストが難しい　<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @tag3nv %></span></h4>
+                        <h4><span class="<% if @tag4nv == @tagmax %>borders <% elsif @tag4nv == @tagmin %>opaopa <% else %> nonenone<% end %>">　テストが簡単　<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @tag4nv %></span></h4>
                       </div>
                       <div class="tagtag">
-                        <h6 class="bad">良や可が来やすい</h6>
-                        <h6 class="good">秀や優が来やすい</<<h></h>6></h6>
-                        <h6 class="bad">課題がキツイ</h6>
-                        <h6 class="good">課題が楽</h6>
+                        <h4><span class="<% if @tag5nv == @tagmax %>borders <% elsif @tag5nv == @tagmin %>opaopa <% else %> nonenone<% end %>">　良や可が来やすい　<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @tag5nv %></span></h4>
+                        <h4><span class="<% if @tag6nv == @tagmax %>borders <% elsif @tag6nv == @tagmin %>opaopa <% else %> nonenone<% end %>">　秀や優が来やすい　<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @tag6nv %></span></h4>
+                        <h4><span class="<% if @tag7nv == @tagmax %>borders <% elsif @tag7nv == @tagmin %>opaopa <% else %> nonenone<% end %>">　課題がキツイ　　&thinsp;&thinsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @tag7nv %></span></h4>
+                        <h4><span class="<% if @tag8nv == @tagmax %>borders <% elsif @tag8nv == @tagmin %>opaopa <% else %> nonenone<% end %>">　課題が楽　　　　&thinsp;&thinsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @tag8nv %></span></h4>
                       </div>
                    </div>
                 </div>
@@ -66,31 +68,31 @@
             </div>
 
             <div class="no-hoshiboshi">
-            <div style="width:100%;">
-              <div style="margin:40px auto 0 auto; width:350px;">
-              <h3 style="text-align:left;">この先生の授業は<br>他の人におすすめできる？</h3>
-                </div>
+            <div class="pie-box">
+              <div style="margin:40px auto 0 auto;">
+              <h4 style="text-align:center;">この先生の授業はおすすめできる？</h3>
+              </div>
               <div class="pie-contaier">
                 <canvas id="myChart"></canvas>
                 <script>draw_graph();</script>
               </div>
             </div>
-            <div style="width:100%;">
-            <div class="prof-comments-container">
-              <% @comments.each do |t| %>
-              <div class="each-prof-container">
-              <%= t.comments_for_prof %>
-              </div>
-              <% end %>
-            </div>
-            </div>
+
           </div>
+
         </div>
       </div>
-
-
+      <div style="width:100%;">
+      <div class="prof-comments-container">
+        <% @comments.each do |t| %>
+        <div class="each-prof-container">
+        <%= t.comments_for_prof %>
+        </div>
+        <% end %>
+      </div>
+      </div>
     </div>
-  </div>
+
   </section>
 <script type="text/javascript">
   $('.standard-of-easy').hover(

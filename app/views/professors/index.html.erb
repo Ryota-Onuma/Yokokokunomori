@@ -26,11 +26,51 @@
 
 
       <div class="prof-card-container">
+
       <% @search.each do |t| %>
        <%= link_to professor_path(t.id), method: :get do %>
         <div class="prof-card">
-         <h2 style="border-bottom:1px solid rgba(183,170,0,1); padding-bottom: 5px;"><%= t.name %></h2>
-         <%= t.department %>
+          <h6 class="
+            <% if t.department == '経済学部 : 経済学科' %>
+               ribbonlec2 head-color2
+            <% elsif t.department == '経営学部 : 経営学科' %>
+               ribbonlec3 head-color3
+            <% elsif t.department == "理工学部 : 機械・材料・海洋系学科 : 機械工学ＥＰ" %>
+               ribbonlec4 head-color4
+            <% elsif t.department == "理工学部 : 機械・材料・海洋系学科 : 材料工学ＥＰ" %>
+               ribbonlec4 head-color4
+            <% elsif t.department == "理工学部 : 機械・材料・海洋系学科 : 海洋空間のシステムデザインＥＰ" %>
+               ribbonlec4 head-color4
+            <% elsif t.department == "理工学部 : 化学・生命系学科 : 化学ＥＰ" %>
+               ribbonlec4 head-color4
+            <% elsif t.department == "理工学部 :化学・生命系学科 : 化学応用ＥＰ" %>
+               ribbonlec4 head-color4
+            <% elsif t.department == "理工学部 :化学・生命系学科 : バイオＥＰ" %>
+               ribbonlec4 head-color4
+            <% elsif t.department == "理工学部 : 数物・電子情報系学科 : 数理科学ＥＰ" %>
+               ribbonlec4 head-color4
+            <% elsif t.department == "理工学部 : 数物・電子情報系学科 : 物理工学ＥＰ" %>
+               ribbonlec4 head-color4
+            <% elsif t.department == "理工学部 : 数物・電子情報系学科 : 電子情報システムＥＰ" %>
+               ribbonlec4 head-color4
+            <% elsif t.department == "理工学部 : 数物・電子情報系学科 : 情報工学ＥＰ" %>
+               ribbonlec4 head-color4
+            <% elsif t.department == "教育学部 ： 学校教育課程" %>
+               ribbonlec5 head-color5
+            <% elsif t.department == "都市科学部 : 都市社会共生学科" %>
+               ribbonlec6 head-color6
+            <% elsif t.department == "都市科学部 ： 建築学科" %>
+               ribbonlec6 head-color6
+            <% elsif t.department == "都市科学部 ： 都市基盤学科" %>
+               ribbonlec6 head-color6
+            <% elsif t.department == "都市科学部 : 環境リスク共生学科" %>
+               ribbonlec6 head-color6
+            <% else %>
+               ribbonlec7 head-color7
+            <% end %>
+            "><%= t.department %></h6>
+         <h2 style="border-bottom:1px solid rgba(183,170,0,1); padding:25px 0 5px 0;"><%= t.name %></h2>
+
          <p class="card-text"><%= t.info %></p>
         </div>
         <% end %>
