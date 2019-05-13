@@ -4,7 +4,7 @@
     background-image: url('/forest.jpg');
     background-size: cover;
     width:100%;
-    min-height: 100vh;
+    min-height: 110vh;
     position: absolute;
     z-index: 1;
     font-family: 'Avenir','Comic Sans MS','Arial','Yu Gothic UI','ＭＳ ゴシック','HanziPen TC','Hiragino Maru Gothic ProN','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','ヒラギノ明朝 ProN','Hiragino Mincho ProN',sans-serif;
@@ -12,19 +12,15 @@
 
   .top-image-mask{
     width: 100%;
-    height: 100%;
+    height: 110vh;
     background-color: rgba(0,0,0,0.3);
   }
   .header-home{
     display: none;
   }
   #header-smartphone{
-    text-align: center;
-    position: fixed;
-    z-index: 4;
-    top:0;
-    left: 0;
-    padding-top: 20px;
+    text-align: left;
+
     width:100%;
 
   }
@@ -96,7 +92,7 @@
   }
   #for-search-display0{
     width: 100%;
-    height: 100vh;
+    height: 110vh;
     position: absolute;
     z-index: 2;
     display: none;
@@ -107,7 +103,7 @@
     text-align: left;
     width: 100%;
     z-index: 5;
-    min-height:100vh;
+    min-height:110vh;
   }
   .howtobar-smartphone-close{
     font-size: 1.3em;
@@ -243,8 +239,8 @@ margin: 0 auto;
 }
 #seach-display2{
   width: 100%;
-  min-height:100vh;
-  background-image: url('/trunk2.jpg');
+  min-height:110vh;
+  background-image: url('/hometree2.jpg');
   background-size: cover;
 }
 .adjustprof2-smartphone{
@@ -253,7 +249,7 @@ margin: 0 auto;
 #search-prof2{
   width: 100%;
   background-color: rgba(0,0,0,0.3);
-  min-height:100vh;
+  min-height:110vh;
   display: flex;
   flex-direction: column;
   align-items:center;
@@ -405,14 +401,14 @@ text-decoration: none;
 }
 #seach-display3{
   width: 100%;
-  min-height:100vh;
+  min-height:110vh;
   background-image: url('/trunk1.jpg');
   background-size: cover;
 
 }
 #search-lec{
   width: 100%;
-  min-height:100vh;
+  min-height:110vh;
   background-color: rgba(0,0,0,0.3);
   display: flex;
   flex-direction: column;
@@ -530,6 +526,11 @@ text-decoration: none;
   position: absolute;
   z-index: 1;
   font-family: 'Avenir','Comic Sans MS','Arial','Yu Gothic UI','ＭＳ ゴシック','HanziPen TC','Hiragino Maru Gothic ProN','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','ヒラギノ明朝 ProN','Hiragino Mincho ProN',sans-serif;
+}
+.top-image-mask{
+  width: 100%;
+  height: 130vh;
+  background-color: rgba(0,0,0,0.3);
 }
 #for-search-display0{
   display: none;
@@ -743,7 +744,7 @@ cursor: pointer;
   width: 700px;
   border-radius: 10px;
   box-shadow: 0 0 40px 40px rgba(0,0,0,0.3);
-  background-image: url('/trunk2.jpg');
+  background-image: url('/hometree.jpg');
   background-size: cover;
 
 }
