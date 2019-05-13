@@ -1,3 +1,44 @@
 // Place all the styles related to the lectures controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.lec-search-parts{
+  text-align: center;
+  width: 100%;
+}
+.pankuzu{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 20px;
+    margin-left: 90px;
+    margin-bottom: 50px;
+    min-width: 550px;
+    max-width: 80%;
+
+  }
+.pankuzu span{
+    background-color: rgba(255,255,255,0.9);
+    padding: 5px;
+    box-shadow: 0 0 30px 30px rgba(255,255,255,0.9);
+    border-radius: 5px;
+  }
+.pankuzu a{
+    color: black;
+  }
+.pankuzu a:hover{
+    text-decoration: none;
+    color: green;
+  }
+  .middle-pan{
+    position:relative;
+    margin-left: 30px;
+  }
+  .middle-pan:before{
+    font-family: "Font Awesome 5 Free";
+    content: "\f054";
+    position: absolute;
+    top:0px;
+    left:-20px;
+    font-weight: 900;
+    color: black;
+  }

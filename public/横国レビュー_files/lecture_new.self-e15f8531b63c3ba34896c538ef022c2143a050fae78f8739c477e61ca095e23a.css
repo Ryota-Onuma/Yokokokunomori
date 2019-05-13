@@ -1,0 +1,325 @@
+@charset "UTF-8";
+/* line 2, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+#lecture-post {
+  background-image: url("/leaf7.jpg");
+  background-size: cover;
+  width: 100%;
+  padding-top: 80px;
+}
+
+/* line 11, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.lecture-post-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 50px auto;
+  border-radius: 20px;
+  padding: 40px 70px;
+  box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* line 18, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.lec-search-parts8 {
+  width: 50vh;
+  margin: 0 0 0 100px;
+}
+
+/* line 22, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.pankuzu8 {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 30px 30px rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+/* line 30, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.pankuzu8 a {
+  color: black;
+}
+
+/* line 33, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.pankuzu8 a:hover {
+  text-decoration: none;
+  color: green;
+}
+
+/* line 37, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.middle-pan8 {
+  position: relative;
+  margin-left: 30px;
+}
+
+/* line 41, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.middle-pan8:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f054";
+  position: absolute;
+  top: 0px;
+  left: -20px;
+  font-weight: 900;
+  color: black;
+}
+
+/* line 50, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.lecture-post-container h5 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* line 55, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.lecture-name {
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  border: 4px solid #9acd32;
+}
+
+/* line 61, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.lecture-name:focus {
+  outline: 0;
+}
+
+/* line 64, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.ribbon-newlec {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 50px;
+  margin: 0;
+  padding: 30px 10px;
+  z-index: 2;
+  width: 40px;
+  text-align: center;
+  font-size: 17px;
+  color: white;
+  background: #9acd32;
+}
+
+/* line 79, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.ribbon-newlec:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 100%;
+  height: 0;
+  width: 0;
+  border-left: 20px solid #9acd32;
+  border-right: 20px solid #9acd32;
+  border-bottom: 10px solid transparent;
+}
+
+/* line 90, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.names {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60%;
+  margin: 40px auto 0 auto;
+}
+
+/* line 97, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+#lecture_department {
+  display: block;
+  outline: 0;
+}
+
+/* line 102, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+#lecture-submit-container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+/* line 107, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.toLectureIndex {
+  border: 4px solid #9acd32;
+  border-radius: 40px;
+  padding: 10px 40px;
+  margin-top: 20px;
+  font-weight: bold;
+  color: black;
+}
+
+/* line 115, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.toLectureIndex:hover {
+  text-decoration: none;
+  color: white;
+  background-color: #9acd32;
+}
+
+/* line 120, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.lecture-submit {
+  border: 4px solid #9acd32;
+  border-radius: 40px;
+  padding: 10px 40px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+/* line 129, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.lecture-submit:focus {
+  outline: 0;
+}
+
+/* line 132, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.lecture-submit:hover {
+  background-color: #9acd32;
+  color: white;
+  transition: .4s;
+}
+
+/* line 137, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.selectlang {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* line 144, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.selectlang input[type='radio'] {
+  display: none;
+}
+
+/* line 147, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+#japaneselabel {
+  border: 1px solid black;
+  padding: 10px 15px;
+  position: relative;
+  background-color: white;
+  z-index: 2;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: black;
+}
+
+/* line 157, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+#japaneselabel:before {
+  position: absolute;
+  content: '●';
+  color: rgba(254, 1, 0, 0.4);
+  font-size: 5.2em;
+  top: -80px;
+  left: 10px;
+}
+
+/* line 165, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+#japaneselabel:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.2, 1.2);
+          transform: scale(1.2, 1.2);
+  transition: -webkit-transform 0.1s linear;
+  transition: transform 0.1s linear;
+  transition: transform 0.1s linear, -webkit-transform 0.1s linear;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* line 171, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.selectlang input[type='radio']:checked + #japaneselabel {
+  box-shadow: 0 0 3px 3px #fe0100;
+}
+
+/* line 174, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+#englishlabel {
+  border: 1px solid black;
+  padding: 10px 15px;
+  background-image: url("/English.png");
+  background-size: auto 55px;
+  color: black;
+  z-index: 2;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/* line 187, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+#englishlabel:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.2, 1.2);
+          transform: scale(1.2, 1.2);
+  transition: -webkit-transform 0.1s linear;
+  transition: transform 0.1s linear;
+  transition: transform 0.1s linear, -webkit-transform 0.1s linear;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* line 193, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.selectlang input[type='radio']:checked + #englishlabel {
+  box-shadow: 0 0 3px 3px #fe0100;
+}
+
+/* line 198, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.howtoassess {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* line 206, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.attend-section {
+  display: inline-block;
+  width: 180px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* line 213, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.lasttest-section {
+  display: inline-block;
+  width: 180px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* line 220, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.midtest-section {
+  display: inline-block;
+  width: 180px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* line 226, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.report-section {
+  display: inline-block;
+  width: 180px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* line 232, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.inlesson-section {
+  display: inline-block;
+  width: 180px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* line 238, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.outlesson-section {
+  display: inline-block;
+  width: 180px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* line 244, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.other-section {
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* line 248, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.other-lec-grade {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #9acd32;
+}
+
+/* line 254, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/lectures/lecture_new.css.scss */
+.other-lec-grade:focus {
+  outline: 0;
+}

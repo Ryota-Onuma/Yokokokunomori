@@ -11,41 +11,7 @@
   padding-top: 60px;
   padding-bottom: 80px;
 }
-.prof-search-parts{
-width: 40vh;
-}
 
-.pankuzu{
-  background-color: rgba(255,255,255,0.9);
-  box-shadow: 0 0 30px 30px rgba(255,255,255,0.9);
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  margin-top: 40px;
-  margin-left: 90px;
-width: 100%;
-}
-.pankuzu a{
-  color: black;
-
-}
-.pankuzu a:hover{
-  text-decoration: none;
-  color: green;
-}
-.middle-pan{
-  position:relative;
-  margin-left: 30px;
-}
-.middle-pan:before{
-  font-family: "Font Awesome 5 Free";
-  content: "\f054";
-  position: absolute;
-  top:0px;
-  left:-20px;
-  font-weight: 900;
-  color: black;
-}
 .ribbonlec1 {
   display: inline-block;
   padding: 17px 33px 13px 20px;

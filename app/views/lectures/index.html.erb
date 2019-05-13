@@ -3,14 +3,13 @@
   </head>
   <section id="index-lecture">
     <div id="index-lec-container">
-      <div class="lec-search-parts">
-        <div class="pankuzu">
-          <a href = "/" style="margin-left:40px;">横国の森の入り口</a>
-          <a href= "#" class="middle-pan">授業の木</a>
-        </div>
+      <div class="lec-search-parts"style="position:absolute;top:100px;left:20px;">
+        <span class="pankuzu">
+          <a href = "/" style="margin-left:40px;"><span class="pan-cloud">横国の森の入り口</span></a>
+          <a href= "/lectures" class="middle-pan"><span class="pan-cloud">授業の木</span></a>
+        </span>
       </div>
-
-        <div >
+        <div>
           <h1 id="lectitle">授業一覧</h1>
         </div>
         <div class="addlecs">
@@ -70,11 +69,13 @@
                 ribbonlec7 head-color7
              <% end %>
              ">
-            <%= t.department %></h6>
+            <span class="dapsize"><%= t.department %></span></h6>
            <h2 style="padding:0 40px 5px 0; margin-top:20px;">&nbsp;&nbsp;<%= t.name %></h2>
+
            <h6 style="border-bottom:1px solid skyblue; padding-bottom:15px;">&ensp;&ensp;&thinsp;担当教員&nbsp;:&nbsp;<span style="font-weight:bold;font-size:1.1em;"><%= t.teacher %></span></h6>
            <h6 style="margin-top:20px;">&ensp;&ensp;&thinsp;成績評価の方法</h6>
-           <div class="assess-container">
+
+           <div class="assess-container" style="<% if t.other != nil %>display:none; <% else %><% end %>">
              <span style = "<% if t.attendance == 0 || t.attendance == nil%> display:none; <% else %> display:inline-block;<% end %>">
                <span class="under-bar">出席&nbsp;<%= t.attendance %>％</span>
              </span>
@@ -94,7 +95,10 @@
                <span class="under-bar">授業外課題&nbsp;<%= t.outlesson %>％</span>
              </span>
            </div>
+           <div style="<% if t.other != nil %>display:block;width:80%;margin:0 auto;<% else %>display:none; <% end %>">
+             <%= t.other %>
           </div>
+            </div>
         <% end %>
           <% end %>
         </div>
@@ -114,7 +118,7 @@
           <ul id="hiddenlec-search">
             <div class="adjustlec">
                <%= form_tag('/lectures', method: :get) do %>
-                 <%= text_field_tag :search, '',class: 'search-box',placeholder: "授業名や所属などを入力してください。",size:40 %>
+                 <%= text_field_tag :search, '',class: 'search-box',placeholder: "授業名や開講学部、言語などを入力。",size:40 %>
                  <%= submit_tag '検索',:name => nil ,class: "search-button" %>
                <% end %>
             </div>

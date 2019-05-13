@@ -1,0 +1,546 @@
+@charset "UTF-8";
+/* line 1, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+#reveiwPageProf {
+  background-image: url("/leaf4.jpg");
+  background-size: cover;
+  width: 100%;
+}
+
+/* line 7, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+#reviewPageProf-mask {
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 100%;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+/* line 13, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.rateProf-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  padding: 40px 70px;
+  box-shadow: 0px 0px 50px 50px rgba(0, 0, 0, 0.3);
+  margin: 20px auto 50px auto;
+}
+
+/* line 20, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.prof-search-parts4 {
+  text-align: center;
+  max-width: 90vh;
+  margin-bottom: 50px;
+}
+
+/* line 26, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.pankuzu4 {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 30px 30px rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-bottom: 50px;
+  margin-left: 90px;
+  width: 100%;
+}
+
+/* line 36, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.pankuzu4 a {
+  color: black;
+}
+
+/* line 40, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.pankuzu4 a:hover {
+  text-decoration: none;
+  color: green;
+}
+
+/* line 44, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.middle-pan4 {
+  position: relative;
+  margin-left: 30px;
+}
+
+/* line 48, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.middle-pan4:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f054";
+  position: absolute;
+  top: 0px;
+  left: -20px;
+  font-weight: 900;
+  color: black;
+}
+
+/* line 57, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.basic-prof-info {
+  border-bottom: 2px solid black;
+  margin: 20px 0 10px 40px;
+}
+
+/* line 62, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+/* line 69, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.rating input[type='radio'] {
+  display: none;
+}
+
+/* line 73, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.rating label {
+  position: relative;
+  padding: 9px 8px 8px 8px;
+  color: gray;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* line 81, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.rating label .text {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  text-align: center;
+  font-size: 8px;
+  color: gray;
+}
+
+/* line 91, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.rating label:hover,
+.rating label:hover ~ label,
+.rating input[type='radio']:checked ~ label {
+  color: #ffcc00;
+}
+
+/* line 97, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.satisfaction {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  padding: 20px 0 10px 0;
+  margin: 0  auto;
+  border-bottom: 1px dashed black;
+}
+
+/* line 107, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.ten1 {
+  position: relative;
+}
+
+/* line 110, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.ten1:before {
+  position: absolute;
+  content: '非常に満足';
+  top: 40px;
+  right: -10px;
+  width: 5em;
+  font-size: 0.4em;
+  color: gray;
+}
+
+/* line 119, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.ten2 {
+  position: relative;
+}
+
+/* line 122, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.ten2:before {
+  position: absolute;
+  content: '深く学べる';
+  top: 40px;
+  right: -10px;
+  width: 5em;
+  font-size: 0.4em;
+  color: gray;
+}
+
+/* line 131, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.ten3 {
+  position: relative;
+}
+
+/* line 134, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.ten3:before {
+  position: absolute;
+  content: '超楽単';
+  top: 40px;
+  right: -10px;
+  width: 5em;
+  font-size: 0.4em;
+  color: gray;
+}
+
+/* line 143, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.ten4 {
+  position: relative;
+}
+
+/* line 146, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.ten4:before {
+  position: absolute;
+  content: '超退屈';
+  top: 40px;
+  right: -9px;
+  width: 5em;
+  font-size: 0.4em;
+  color: gray;
+}
+
+/* line 155, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.one1 {
+  position: relative;
+}
+
+/* line 158, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.one1:before {
+  position: absolute;
+  content: '非常に不満';
+  top: 40px;
+  right: -10px;
+  width: 5em;
+  font-size: 0.4em;
+  color: gray;
+}
+
+/* line 167, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.one2 {
+  position: relative;
+}
+
+/* line 170, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.one2:before {
+  position: absolute;
+  content: '全く学べない';
+  top: 40px;
+  right: -15px;
+  width: 6em;
+  font-size: 0.4em;
+  color: gray;
+}
+
+/* line 179, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.one3 {
+  position: relative;
+}
+
+/* line 182, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.one3:before {
+  position: absolute;
+  content: '超キツイ';
+  top: 40px;
+  right: -9px;
+  width: 5em;
+  font-size: 0.4em;
+  color: gray;
+}
+
+/* line 191, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.one4 {
+  position: relative;
+}
+
+/* line 194, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.one4:before {
+  position: absolute;
+  content: '忙しい';
+  top: 40px;
+  right: -10px;
+  width: 5em;
+  font-size: 0.4em;
+  color: gray;
+}
+
+/* line 203, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.againagain {
+  margin: 30px auto 20px auto;
+  text-align: center;
+}
+
+/* line 207, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.againagainagain {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+/* line 215, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.againagainagain input[type='radio'] {
+  display: none;
+}
+
+/* line 218, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.againagainagain label {
+  border: 2px dashed #b7aa00;
+  padding: 5px 10px;
+}
+
+/* line 222, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.againagainagain label:hover {
+  background-color: #b7aa00;
+  color: white;
+  border: 2px double white;
+  cursor: pointer;
+}
+
+/* line 229, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.againagainagain label:active {
+  background-color: #b7aa00;
+  color: white;
+  border: 2px double black;
+  box-shadow: none;
+  -webkit-transform: translate3d(0, 1px, 0);
+          transform: translate3d(0, 1px, 0);
+}
+
+/* line 236, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.againagainagain input[type='radio']:checked ~ label {
+  background-color: #b7aa00;
+  color: white;
+  font-weight: bold;
+  border: 2px double black;
+}
+
+/* line 242, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.rateProfsubmit-container {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+/* line 246, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.rateProfsubmit {
+  border-style: none;
+  padding: 10px 20px;
+  border: 2px double  black;
+  border-radius: 10px;
+}
+
+/* line 252, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.rateProfsubmit:focus {
+  outline: 0;
+}
+
+/* line 255, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.rateProfsubmit:hover {
+  background-color: #b7aa00;
+  color: white;
+  cursor: pointer;
+}
+
+/* line 261, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.satisfaction-a {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 20px auto 0 auto;
+  border-bottom: 1px dashed black;
+}
+
+/* line 269, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.satisfaction-b {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+}
+
+/* line 275, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.satisfaction-c {
+  margin: 0 40px;
+}
+
+/* line 278, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.satisfaction-c input[type='checkbox'] {
+  display: none;
+}
+
+/* line 281, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.satisfaction-c input[type='checkbox']:checked + .satisparts {
+  background: #ff555e;
+  color: #fff;
+  border: 1px solid #ff555e;
+}
+
+/* line 286, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.satisfaction-c input[type='checkbox']:checked + .satisparts-easy {
+  background: #1CA1F2;
+  color: #fff;
+  border: 1px solid #1CA1F2;
+}
+
+/* line 291, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.satisparts {
+  position: relative;
+  padding: 15px 20px 15px 53px;
+  transition: .3s;
+  color: #444;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* line 302, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.satisparts-easy {
+  position: relative;
+  padding: 15px 20px 15px 53px;
+  transition: .3s;
+  color: #444;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* line 314, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.satisfaction-c input[type='checkbox']:checked + .satisparts::before {
+  border: 1px solid #ff555e;
+}
+
+/* line 317, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.satisfaction-c input[type='checkbox']:checked + .satisparts-easy::before {
+  border: 1px solid #1CA1F2;
+}
+
+/* line 320, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.satisparts::before {
+  content: "";
+  display: block;
+  left: 9px;
+  top: 14px;
+  width: 35px;
+  height: 20px;
+  border-radius: 15px;
+  border: 1px solid #aaa;
+  background: #fff;
+  position: absolute;
+}
+
+/* line 332, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.satisparts-easy::before {
+  content: "";
+  display: block;
+  left: 9px;
+  top: 14px;
+  width: 35px;
+  height: 20px;
+  border-radius: 15px;
+  border: 1px solid #aaa;
+  background: #fff;
+  position: absolute;
+}
+
+/* line 344, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.satisfaction-c input[type='checkbox']:checked + .satisparts::after {
+  left: 26px;
+  background: #ff555e;
+}
+
+/* line 348, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.satisfaction-c input[type='checkbox']:checked + .satisparts-easy::after {
+  left: 26px;
+  background: #1CA1F2;
+}
+
+/* line 352, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.satisparts::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 16px;
+  left: 12px;
+  width: 16px;
+  height: 16px;
+  background: #aaa;
+  border-radius: 50%;
+  transition: .2s;
+  display: block;
+}
+
+/* line 365, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.satisparts-easy::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 16px;
+  left: 12px;
+  width: 16px;
+  height: 16px;
+  background: #aaa;
+  border-radius: 50%;
+  transition: .2s;
+  display: block;
+}
+
+/* line 378, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.inner {
+  list-style-type: none;
+}
+
+/* line 381, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.up {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+/* line 385, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.whyeasy {
+  width: 100%;
+}
+
+/* line 389, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.other {
+  width: 90%;
+  margin: 30px auto 0 auto;
+  border-bottom: 1px dashed black;
+}
+
+/* line 394, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.form-control {
+  margin: 40px 0;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* line 398, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.form-control:focus {
+  outline: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* line 403, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.ribbon-review {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 80px;
+  margin: 0;
+  padding: 30px 10px;
+  z-index: 2;
+  width: 40px;
+  text-align: center;
+  font-size: 17px;
+  color: white;
+  background: #b7aa00;
+}
+
+/* line 418, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/tags/rateProf.css.scss */
+.ribbon-review:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 100%;
+  height: 0;
+  width: 0;
+  border-left: 20px solid #b7aa00;
+  border-right: 20px solid #b7aa00;
+  border-bottom: 10px solid transparent;
+}

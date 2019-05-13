@@ -6,7 +6,7 @@ class LecturesController < ApplicationController
         @search = Lecture.all
       else
         #部分検索
-        @search = Lecture.where("name LIKE ? ",'%' + params[:search] + '%').or(Lecture.where("department LIKE ? ", "%" + params[:search] + "%"))
+        @search = Lecture.where("name LIKE ? ",'%' + params[:search] + '%').or(Lecture.where("department LIKE ? ", "%" + params[:search] + "%")).or(Lecture.where("langage LIKE ? ", "%" + params[:search] + "%"))
     end
   end
 
@@ -235,7 +235,7 @@ end
 
   private
   def lecture_params
-    params.require(:lecture).permit(:name,:lecture_id,:department,:teacher,:langage,:attendance,:lasttest, :midtest, :report, :inlesson, :outlesson)
+    params.require(:lecture).permit(:name,:lecture_id,:department,:teacher,:langage,:attendance,:lasttest, :midtest, :report, :inlesson, :outlesson,:other)
   end
 
 end

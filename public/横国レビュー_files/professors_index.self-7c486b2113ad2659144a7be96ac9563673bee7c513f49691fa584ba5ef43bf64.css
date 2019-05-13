@@ -1,0 +1,686 @@
+@charset "UTF-8";
+/* line 1, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+#index-prof {
+  background-image: url("/tree6.jpg");
+  background-size: cover;
+  width: 100%;
+  min-height: 150vh;
+  position: relative;
+  z-index: 100;
+}
+
+/* line 10, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+#index-prof-container {
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+
+/* line 14, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.prof-search-parts {
+  width: 40vh;
+}
+
+/* line 18, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.pankuzu {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 30px 30px rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 40px;
+  margin-left: 90px;
+  width: 100%;
+}
+
+/* line 28, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.pankuzu a {
+  color: black;
+}
+
+/* line 32, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.pankuzu a:hover {
+  text-decoration: none;
+  color: green;
+}
+
+/* line 36, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.middle-pan {
+  position: relative;
+  margin-left: 30px;
+}
+
+/* line 40, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.middle-pan:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f054";
+  position: absolute;
+  top: 0px;
+  left: -20px;
+  font-weight: 900;
+  color: black;
+}
+
+/* line 49, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.ribbonlec1 {
+  display: inline-block;
+  padding: 17px 33px 13px 20px;
+  color: black;
+  /*フォントカラー*/
+  line-height: 15px;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  z-index: 5;
+  width: 100.3%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+/* line 62, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.head-color1 {
+  background-color: #0EA37E;
+}
+
+/* line 65, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.ribbonlec2 {
+  display: inline-block;
+  padding: 17px 33px 13px 20px;
+  color: black;
+  /*フォントカラー*/
+  line-height: 15px;
+  position: absolute;
+  background-color: #B42A63;
+  /*リボンの色*/
+  top: -1px;
+  left: -1px;
+  z-index: 5;
+  width: 100.3%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+/* line 79, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.head-color2 {
+  background-color: #B42A63;
+}
+
+/* line 82, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.ribbonlec3 {
+  display: inline-block;
+  padding: 17px 33px 13px 20px;
+  color: black;
+  /*フォントカラー*/
+  line-height: 15px;
+  position: absolute;
+  background-color: #C89A04;
+  /*リボンの色*/
+  top: -1px;
+  left: -1px;
+  z-index: 5;
+  width: 100.3%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+/* line 96, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.head-color3 {
+  background-color: #C89A04;
+}
+
+/* line 99, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.ribbonlec4 {
+  display: inline-block;
+  padding: 17px 33px 13px 20px;
+  color: black;
+  /*フォントカラー*/
+  line-height: 15px;
+  position: absolute;
+  background-color: #4FC1C8;
+  /*リボンの色*/
+  top: -1px;
+  left: -1px;
+  width: 100.3%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  font-size: 0.95em;
+}
+
+/* line 113, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.head-color4 {
+  background-color: #4FC1C8;
+}
+
+/* line 116, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.ribbonlec5 {
+  display: inline-block;
+  padding: 17px 33px 13px 20px;
+  color: black;
+  /*フォントカラー*/
+  line-height: 15px;
+  position: absolute;
+  background-color: #649C27;
+  /*リボンの色*/
+  top: -1px;
+  left: -1px;
+  z-index: 5;
+  width: 100.3%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+/* line 130, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.head-color5 {
+  background-color: #649C27;
+}
+
+/* line 133, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.ribbonlec6 {
+  display: inline-block;
+  padding: 17px 33px 13px 20px;
+  color: black;
+  /*フォントカラー*/
+  line-height: 15px;
+  position: absolute;
+  background-color: #B989FF;
+  /*リボンの色*/
+  top: -1px;
+  left: -1px;
+  z-index: 5;
+  width: 100.3%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+/* line 147, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.head-color6 {
+  background-color: #B989FF;
+}
+
+/* line 150, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.ribbonlec7 {
+  display: inline-block;
+  padding: 17px 33px 13px 20px;
+  color: white;
+  /*フォントカラー*/
+  line-height: 15px;
+  position: absolute;
+  background-color: #0E5FA7;
+  /*リボンの色*/
+  top: -1px;
+  left: -1px;
+  z-index: 5;
+  width: 100.3%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+/* line 164, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.head-color7 {
+  background-color: #0E5FA7;
+}
+
+/* line 167, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+#proftitle {
+  margin: 0 auto;
+  padding-top: 40px;
+  padding-bottom: 10px;
+  width: 240px;
+  color: white;
+  border-bottom: double 6px #b7aa00;
+  text-align: center;
+}
+
+/* line 176, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.addprofs {
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 186, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+button {
+  background-color: transparent;
+  border: none;
+}
+
+/* line 190, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.search-prof {
+  margin-left: 30px;
+}
+
+/* line 193, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+#search-search {
+  color: #b7aa00;
+  background: white;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #b7aa00;
+  position: relative;
+  margin: 1em;
+  display: inline-block;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* line 208, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+#search-search:before, #search-search:after {
+  content: '';
+  display: block;
+  position: absolute;
+  border-color: #b7aa00;
+  box-sizing: border-box;
+  border-style: solid;
+  width: 1em;
+  height: 1em;
+  transition: all 0.3s ease-in-out;
+}
+
+/* line 219, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+#search-search:before {
+  top: -6px;
+  left: -6px;
+  border-width: 2px 0 0 2px;
+  z-index: 5;
+}
+
+/* line 224, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+#search-search:after {
+  bottom: -6px;
+  right: -6px;
+  border-width: 0 2px 2px 0;
+}
+
+/* line 229, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+#search-search:hover:before, #search-search:hover:after {
+  width: calc(100% + 12px);
+  height: calc(100% + 12px);
+  border-color: #b7aa00;
+}
+
+/* line 233, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+#search-search:hover {
+  color: white;
+  background-color: #b7aa00;
+  border-color: #b7aa00;
+  cursor: pointer;
+}
+
+/* line 239, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+#search-search:focus {
+  outline: 0;
+}
+
+/* line 242, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.search-box {
+  padding: 5px 10px;
+  outline: 0;
+  border: double 6px black;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* line 249, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.search-button {
+  border: double 6px black;
+  border-radius: 40px;
+  padding: 5px 20px;
+  color: black;
+}
+
+/* line 255, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.search-button:focus {
+  outline: 0;
+}
+
+/* line 258, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.search-button:hover {
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  border: double 6px white;
+}
+
+/* line 266, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.addprof-container {
+  margin-bottom: 30px;
+}
+
+/* line 270, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.addprof {
+  color: #A5D4AD;
+  background: white;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #A5D4AD;
+  position: relative;
+  margin: 1em;
+  display: inline-block;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* line 285, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.addprof:before, .addprof:after {
+  content: '';
+  display: block;
+  position: absolute;
+  border-color: #A5D4AD;
+  box-sizing: border-box;
+  border-style: solid;
+  width: 1em;
+  height: 1em;
+  transition: all 0.3s ease-in-out;
+}
+
+/* line 296, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.addprof:before {
+  top: -6px;
+  left: -6px;
+  border-width: 2px 0 0 2px;
+  z-index: 5;
+}
+
+/* line 302, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.addprof:after {
+  bottom: -6px;
+  right: -6px;
+  border-width: 0 2px 2px 0;
+}
+
+/* line 307, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.addprof:hover:before, .addprof:hover:after {
+  width: calc(100% + 12px);
+  height: calc(100% + 12px);
+  border-color: #A5D4AD;
+}
+
+/* line 312, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.addprof:hover {
+  color: white;
+  background-color: #A5D4AD;
+  border-color: #A5D4AD;
+  cursor: pointer;
+}
+
+/* line 319, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.index-prof-container {
+  margin: 0 auto;
+  padding: 10px 20px;
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+/* line 328, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.prof-card {
+  padding: 30px;
+  font-family: 'Avenir','Comic Sans MS','Arial','Yu Gothic UI','ＭＳ ゴシック','Hiragino Maru Gothic ProN','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','ヒラギノ明朝 ProN','Hiragino Mincho ProN',sans-serif;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  min-width: 400px;
+  margin: 20px;
+  border-radius: 40px;
+  transition: 0.3s;
+  color: black;
+  position: relative;
+}
+
+/* line 341, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.prof-card:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  -webkit-transform: scale(1.02, 1.02);
+          transform: scale(1.02, 1.02);
+  cursor: pointer;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+/* line 351, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.prof-card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 95%;
+  margin: 0 auto;
+}
+
+/* line 360, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.prof-card-container a:hover {
+  text-decoration: none;
+}
+
+/* line 363, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.card-text {
+  padding: 10px;
+}
+
+/* line 366, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.star-rating-js {
+  position: relative;
+  display: inline-block;
+  font-size: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid black;
+}
+
+/* line 373, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.star-rating-js .rating-front {
+  position: absolute;
+  overflow: hidden;
+  color: orange;
+}
+
+/* line 378, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.star-rating-js .rating-back {
+  color: gray;
+}
+
+/* line 381, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+#for-search-display {
+  width: 100%;
+  height: 150vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  display: none;
+  color: white;
+  font-family: 'Avenir','Comic Sans MS','Arial','Yu Gothic UI','ＭＳ ゴシック','Hiragino Maru Gothic ProN','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','ヒラギノ明朝 ProN','Hiragino Mincho ProN',sans-serif;
+}
+
+/* line 392, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+#seach-display {
+  margin: 10% auto;
+  width: 700px;
+  border-radius: 10px;
+  box-shadow: 0 0 40px 40px rgba(0, 0, 0, 0.3);
+  background-image: url("/mokume.jpg");
+  background-size: cover;
+}
+
+/* line 401, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+#search-prof {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 300;
+}
+
+/* line 411, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+#search-prof h1 {
+  margin-top: 60px;
+}
+
+/* line 414, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+#search-prof a {
+  color: white;
+}
+
+/* line 417, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+#search-prof a:hover {
+  cursor: pointer;
+  color: #b7aa00;
+  text-decoration: none;
+}
+
+/* line 422, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.adjustprof {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* line 429, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+#hiddenprof-search {
+  display: none;
+}
+
+/* line 432, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.accordion-for-profs {
+  width: 100%;
+  text-align: left;
+  margin-top: 30px;
+}
+
+/* line 437, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.accordion-for-profs h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* line 442, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.accordion-prof-container {
+  display: none;
+  list-style: none;
+}
+
+/* line 446, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+#fromkeyword {
+  margin-top: 30px;
+}
+
+/* line 449, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+#fromkeyword:hover {
+  cursor: pointer;
+  color: #b7aa00;
+}
+
+/* line 453, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.switchofsearchprof:hover {
+  cursor: pointer;
+  color: #b7aa00;
+}
+
+/* line 457, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.switchofsearchprof-click {
+  color: #b7aa00;
+}
+
+/* line 461, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.accordion-prof-container span {
+  height: 60px;
+  padding: 0 30px;
+}
+
+/* line 466, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.accordion-prof-container span:hover {
+  cursor: pointer;
+  color: #b7aa00;
+}
+
+/* line 470, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.moreprofdepartment {
+  display: none;
+  list-style: none;
+  margin-top: 30px;
+}
+
+/* line 475, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.moreprofdepartment a {
+  padding: 2px 20px 1px 0;
+}
+
+/* line 478, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.moreprofdepartment a:hover {
+  background-color: #b7aa00;
+  border-radius: 10px;
+}
+
+/* line 482, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.major-ul a {
+  padding: 2px 10px 1px 0;
+  margin-left: 20px;
+}
+
+/* line 486, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.major-ul a:hover {
+  background-color: #b7aa00;
+}
+
+/* line 489, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.liprof {
+  position: relative;
+}
+
+/* line 492, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.liprof:after {
+  position: absolute;
+  font-family: "Font Awesome 5 Free";
+  content: "\f078";
+  right: 120px;
+  top: 0px;
+  font-weight: 900;
+  color: white;
+}
+
+/* line 501, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.liprof:after:hover {
+  cursor: pointer;
+}
+
+/* line 504, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.moreprofdepartment a:hover {
+  text-decoration: none;
+}
+
+/* line 508, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+.major-ul {
+  display: none;
+  list-style: none;
+}
+
+/* line 512, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+#closesearch {
+  position: absolute;
+  z-index: 400;
+  top: 20px;
+  left: 20px;
+  color: whtie;
+  font-size: 1.3em;
+}
+
+/* line 520, /Users/ryota/Desktop/ynutree2/app/assets/stylesheets/professors/professors_index.css.scss */
+#closesearch:hover {
+  cursor: pointer;
+  color: #b7aa00;
+}

@@ -3,18 +3,18 @@
 </head>
 <section id="detail-lec-info">
   <div id="lecture-show">
-    <div class="lec-search-parts3">
-      <span class="pankuzu3">
-        <a href = "/" style="margin-left:40px;">横国の森の入り口</a>
-        <a href= "/lectures" class="middle-pan3">授業の木</a>
-        <a href= "#" class="middle-pan3"><%= @lecture.name %>の葉</a>
+    <div class="lec-search-parts">
+      <span class="pankuzu">
+        <a href = "/" style="margin-left:40px;"><span class="pan-cloud">横国の森の入り口</span></a>
+        <a href= "/lectures" class="middle-pan"><span class="pan-cloud">授業の木</span></a>
+        <a href= "/lectures/<%= @lecture.id%>" class="middle-pan"><span class="pan-cloud"><%= @lecture.name %>の葉</span></a>
       </span>
     </div>
       <div class="col-lg-11 details-container" > <!--showの用紙-->
      <div class="basic-info-adjuster">
       <div style="margin-left:30px;">
           <h6 class="label-department">&thinsp;<strong><%= @lecture.department %></strong></h6>
-        <h1 style="margin: 0 20px 10px 0; font-size:3em;"><%= @lecture.name %></h1>
+        <h1 style="margin:20px 0;font-weight:bold; <% if @lecture.name.length > 14 %>font-size:2.2em; <% else %>font-size:2.5em; <% end %>"><%= @lecture.name %></h1>
         <span style = "<% if @lecture.attendance == 0 || @lecture.attendance == nil%> opacity:0.3; <% else %> display:inline-block; <% end %>">
           <span >出席&nbsp;<span style="font-weight:bold;"><%= @lecture.attendance %>％</span></span>
         </span>&ensp;
@@ -44,7 +44,7 @@
             <div style="width:100%;">
             <div style="margin:40px  0 30px 0px; ">
               <h2 style="margin-left:120px;font-weight:bold;">総合満足度<span style="font-size:0.5em;">（数字が大きいほど高評価）</span></h2>
-              <h2 style="margin-left:115px;"><span class="star-rating-js" data-rating-value= "<%= @displaytotalsatis10x %>" data-rating-max="10"></span> <span style="font-size:1.3em;"> <%=@displaytotalsatis %></span><span style="font-size:0.6em;"> (<%= @howmanyTotalsatis %>)</span></h2>
+              <h2 style="margin-left:115px;"><span class="star-rating-js" data-rating-value= "<%= @displaytotalsatis10x %>" data-rating-max="10"></span> <span style="font-size:1.3em;"><%=@displaytotalsatis %></span><span style="font-size:0.6em;"> (<%= @howmanyTotalsatis %>)</span></h2>
             </div>
               </div>
             <div class="main-rating-lec-container">
@@ -59,7 +59,7 @@
 
                   <h1 style="margin-left:30px; margin-bottom:20px;"><span class="star-rating-js" data-rating-value= "<%= @displayEasy10x %>" data-rating-max="10"></span> <%= @displayEasy %><span style="font-size:0.5em;">&ensp;(<%= @howmanyEasy %>)</span></h1>
 
-                
+
                </div>
               <div style=" width:570px;">
                 <h3 style="margin-left:40px; margin-bottom:10px;">退屈度<span style="font-size:0.5em;">（数字が大きいほど&thinsp;暇）</span></h3>

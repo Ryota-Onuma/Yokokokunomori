@@ -4,11 +4,12 @@
 
 <section id="lecture-post">
   <div id="lecture-prof-container">
-    <div class="lec-search-parts8">
-      <div class="pankuzu8">
-        <a href = "/" style="margin-left:40px;">横国の森の入り口</a>
-        <a href= "/lectures" class="middle-pan8">授業の木</a>
-      </div>
+    <div class="lec-search-parts">
+      <span class="pankuzu">
+        <a href = "/" style="margin-left:40px;"><span class="pan-cloud">横国の森の入り口</span></a>
+        <a href= "/lectures" class="middle-pan"><span class="pan-cloud">授業の木　</span></a>
+
+      </span>
     </div>
   <div class="container">
     <div class="row">
@@ -175,11 +176,12 @@
                   ],id:"outlessonnum"%>
               </div>
               </div>
-
-
+            <div class="other-section">
+              <%= f.text_area :other,size:"5x5",placeholder:"シラバス記載の成績評価方法を直接書く場合はこちら",maxlength:1000,class:"other-lec-grade"%>
+            </div>
             </div>
             <div id="lecture-submit-container">
-              
+
               <%= f.submit "登録する",class:"lecture-submit" %>
             </div>
         <% end %>
