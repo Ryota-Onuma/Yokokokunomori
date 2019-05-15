@@ -5,7 +5,7 @@
     <div id="reviewPagelec-mask">
       <div class="lec-search-parts">
         <span class="pankuzu">
-          <a href = "/" style="margin-left:40px;"><span class="pan-cloud">横国の森の入り口</span></a>
+          <a href = "/" ><span class="pan-cloud">横国の森の入り口</span></a>
           <a href= "/lectures" class="middle-pan"><span class="pan-cloud">授業の木</span></a>
           <a href= "/lectures/<%= @lecture.id%>" class="middle-pan"><span class="pan-cloud"><%= @lecture.name %>の葉</span></a>
           <a href= "#" class="middle-pan"><span class="pan-cloud"><%= @lecture.name %>の葉を作る</span></a>
@@ -17,7 +17,7 @@
             <div class="basic-lec-info">
              <div style="width:70%;margin-left:30px;">
                <h6 style="margin-bottom:10px;"><%= @lecture.department %></h6>
-               <h2 style="font-weight:bold;"><%= @lecture.name %></h2>
+               <h2 style="font-weight:bold;<% if @lecture.name.length > 14 %>font-size:1.8em; <% else %>font-size:2.1em; <% end %>"><%= @lecture.name %></h2>
              </div>
             <div class="assess-container2" style="width:350px; height:110px;">
               <div class="assess-mini-container">
