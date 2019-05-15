@@ -90,9 +90,9 @@ class LecturesController < ApplicationController
      @displayHowmuchNo1 = @middleHowmuchNo2*100
      @displayHowmuchNo =  @displayHowmuchNo1.round(2)
      #代返
-     @daihen1 = Ratelesson.where(lecture_id: @lecId).where(pasttest: 1)
+     @daihen1 = Ratelesson.where(lecture_id: @lecId).where(daihen: 1)
      @daihen = @daihen1.count
-     @daihen2 = Ratelesson.where(lecture_id: @lecId).where(pasttest: 0)
+     @daihen2 = Ratelesson.where(lecture_id: @lecId).where(daihen: 0)
      @nodaihen = @daihen2.count
      #問題回収
      @return1 = Ratelesson.where(lecture_id: @lecId).where(pasttest: 1)

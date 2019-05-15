@@ -14,7 +14,7 @@
      <div class="basic-info-adjuster">
       <div style="margin-left:30px;">
           <h6 class="label-department">&thinsp;<strong><%= @lecture.department %></strong></h6>
-        <h1 style="margin:20px 0;font-weight:bold; <% if @lecture.name.length > 14 %>font-size:2.2em; <% else %>font-size:2.5em; <% end %>"><%= @lecture.name %></h1>
+        <h1 style="margin:20px 0;font-weight:bold; <% if @lecture.name.length > 14 %>font-size:1.9em; <% else %>font-size:2.1em; <% end %>"><%= @lecture.name %></h1>
         <span style = "<% if @lecture.attendance == 0 || @lecture.attendance == nil%> opacity:0.3; <% else %> display:inline-block; <% end %>">
           <span >出席&nbsp;<span style="font-weight:bold;"><%= @lecture.attendance %>％</span></span>
         </span>&ensp;
