@@ -1,9 +1,10 @@
 <head>
 <%= stylesheet_link_tag "lectures/lecture_index", :media => "all" %>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
   </head>
   <section id="index-lecture">
     <div id="index-lec-container">
-      <div class="lec-search-parts"style="position:absolute;top:100px;left:20px;">
+      <div class="lec-search-parts"id="lec-index-cloud"style="position:absolute;top:100px;left:20px;">
         <span class="pankuzu">
           <a href = "/" style="margin-left:40px;"><span class="pan-cloud">横国の森の入り口</span></a>
           <a href= "/lectures" class="middle-pan"><span class="pan-cloud">授業の木</span></a>
@@ -16,12 +17,12 @@
           <div class="addlec-container">
             <button id="search-search"><i class="fas fa-search"></i>&ensp;　授業を探す　&ensp;</button>
             <%= link_to new_lecture_path, class:"addlec",method: :get do %>
-            <button><i class="fas fa-user-plus"></i>&emsp;授業を追加する</button>
+            <button id="add-add"><i class="fas fa-user-plus"></i>&emsp;授業を追加する</button>
             <% end %>
           </div>
 
         </div>
-
+      <a id="toTop" href="#index-lecture">↑</a>
 
         <div class="lec-card-container">
         <% @search.each do |t| %>
@@ -70,32 +71,33 @@
              <% end %>
              ">
             <span class="dapsize"><%= t.department %></span></h6>
-           <h2 style="padding:0 40px 5px 0; margin-top:20px;">&nbsp;&nbsp;<%= t.name %></h2>
+           <h2 id="lecture-title"style="padding:0 40px 5px 0; margin-top:20px;<% if t.name.length > 15 %>font-size:1.2em;<% end %>">&nbsp;&nbsp;<%= t.name %></h2>
 
-           <h6 style="border-bottom:1px solid skyblue; padding-bottom:15px;">&ensp;&ensp;&thinsp;担当教員&nbsp;:&nbsp;<span style="font-weight:bold;font-size:1.1em;"><%= t.teacher %></span></h6>
-           <h6 style="margin-top:20px;">&ensp;&ensp;&thinsp;成績評価の方法</h6>
-
-           <div class="assess-container" style="<% if t.other != nil %>display:none; <% else %><% end %>">
-             <span style = "<% if t.attendance == 0 || t.attendance == nil%> display:none; <% else %> display:inline-block;<% end %>">
+           <h6 style="padding-bottom:5px;"><span id="sensei">&ensp;&ensp;&thinsp;担当教員&nbsp;:&nbsp;<%= t.teacher %></span></h6>
+             <h6 id="howtorate">&ensp;&ensp;&thinsp;成績評価の方法</h6>
+           <div class="assess-container" style="<% if t.other != nil %>opacity:0.5;<% else %>border-bottom:1px solid skyblue; <% end %>">
+              <div class="assess-box">
+             <span style = "<% if t.attendance == 0 || t.attendance == nil%> opacity:0.5; <% else %> display:inline-block;<% end %>">
                <span class="under-bar">出席&nbsp;<%= t.attendance %>％</span>
              </span>
-             <span style = "<% if t.lasttest == 0 || t.lasttest == nil %> display:none; <% else %> display:inline-block;<% end %>">
+             <span style = "<% if t.lasttest == 0 || t.lasttest == nil %> opacity:0.5; <% else %> display:inline-block;<% end %>">
                <span class="under-bar">期末テスト&nbsp;<%= t.lasttest %>％</span>
              </span>
-             <span style = "<% if t.midtest == 0 || t.midtest == nil %> display:none; <% else %> display:inline-block;<% end %>">
+             <span style = "<% if t.midtest == 0 || t.midtest == nil %> opacity:0.5; <% else %> display:inline-block;<% end %>">
                <span class="under-bar">中間テスト&nbsp;<%= t.midtest %>％</span>
              </span>
-             <span style = "<% if t.report == 0 || t.report == nil %> display:none; <% else %> display:inline-block;<% end %>">
+             <span style = "<% if t.report == 0 || t.report == nil %> opacity:0.5; <% else %> display:inline-block;<% end %>">
                <span class="under-bar">レポート&nbsp;<%= t.report %>％</span>
              </span>
-             <span style = "<% if t.inlesson == 0 || t.inlesson == nil %> display:none; <% else %> display:inline-block;<% end %>">
+             <span style = "<% if t.inlesson == 0 || t.inlesson == nil %> opacity:0.5; <% else %> display:inline-block;<% end %>">
                <span class="under-bar">授業内課題&nbsp;<%= t.inlesson %>％</span>
              </span>
-             <span style = "<% if t.outlesson == 0 || t.outlesson == nil %> display:none; <% else %> display:inline-block;<% end %>">
+             <span style = "<% if t.outlesson == 0 || t.outlesson == nil %> opacity:0.5; <% else %> display:inline-block;<% end %>">
                <span class="under-bar">授業外課題&nbsp;<%= t.outlesson %>％</span>
              </span>
+            </div>
            </div>
-           <div style="<% if t.other != nil %>display:block;width:80%;margin:0 auto;<% else %>display:none; <% end %>">
+           <div style="<% if t.other != nil %>display:block;width:80%;margin:20px auto 10px auto;padding10px 0;<% else %>opacity:0.5;width:80%;height:auto;<% end %>">
              <%= t.other %>
           </div>
             </div>
@@ -184,6 +186,7 @@
             </ul>
           </div>
       </div>
+
      </div>
 
   </section>

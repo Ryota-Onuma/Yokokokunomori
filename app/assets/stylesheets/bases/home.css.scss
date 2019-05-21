@@ -630,7 +630,9 @@ margin-right: 50px;
   top:5px;
   left:40px;
 }
-
+.adjustprof2-smartphone{
+  display: none;
+}
 .barbar:hover{
   cursor: pointer;
   font-weight: bold;
@@ -704,6 +706,9 @@ display: none;
   outline:none;
   border-radius: 255px 22px 225px 22px/22px 225px 22px 255px;
   border:solid 2px white;
+}
+#search-box-smartphone{
+  display: none;
 }
 #showseachingprof:hover{
 text-decoration: none;
