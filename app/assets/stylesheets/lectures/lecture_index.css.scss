@@ -17,11 +17,16 @@
   font-size: 3em;
   font-weight: bold;
   border: none;
-  background-color: blue;
-  color: white;
+  color: black;
   border-radius: 50%;
-  padding: 10px 20px;
   z-index: 500;
+
+}
+#top-arrow{
+  font-size: 1.4em;
+  background-color: white;
+  border-radius: 50%;
+  color:rgba(183,170,0,0.8);
 }
 #lectitle{
  margin: 0 auto;
@@ -245,7 +250,6 @@ align-items: center;
 }
 #for-search-display{
   width: 100%;
-  height:150vh;
   position:absolute;
   top:0;
   left: 0;
@@ -255,17 +259,12 @@ align-items: center;
   font-family: 'Avenir','Comic Sans MS','Arial','Yu Gothic UI','ＭＳ ゴシック','Hiragino Maru Gothic ProN','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','ヒラギノ明朝 ProN','Hiragino Mincho ProN',sans-serif;
 }
 #seach-display{
-  margin: 10% auto;
-  width: 700px;
-  border-radius: 10px;
-  box-shadow: 0 0 40px 40px rgba(0,0,0,0.3);
+  width: 100%;
   background-image: url('/mokume.jpg');
   background-size: cover;
-
 }
 #search-lec{
   width: 100%;
-  height: 100%;
   background-color: rgba(0,0,0,0.3);
   display: flex;
   flex-direction: column;
@@ -274,7 +273,7 @@ align-items: center;
   z-index: 300;
 }
 #search-lec h1{
-  margin-top: 60px;
+
 }
 #search-lec a{
   color: white;
