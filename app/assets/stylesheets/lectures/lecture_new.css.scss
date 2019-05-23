@@ -1,18 +1,21 @@
+@media screen and (max-width:680px){
 
-#lecture-post{
+  #lecture-post{
   background-image: url("/leaf7.jpg");
   background-size: cover;
   width:100%;
-  padding-top: 80px;
-
+  padding-bottom:-60px;
+  overflow: hidden;
 }
-
+.lec-search-parts{
+  display: none;
+}
 .lecture-post-container{
   background-color: rgba(255,255,255,0.8);
-  margin: 50px auto;
-  border-radius: 20px;
-  padding: 40px 70px;
+  margin: 0px auto;
+  padding: 40px 20px 40px 20px;
   box-shadow: 0px 4px 10px 2px rgba(0,0,0,0.2);
+  width: 100%;
 }
 
 .lecture-post-container h5{
@@ -20,17 +23,28 @@
   margin-bottom: 20px;
   font-weight: bold;
 }
+.new-lec-title{
+  text-align:center;
+  margin-bottom:20px;
+  font-size: 1.5em;
+}
 .lecture-name{
-  padding: 10px;
+  padding: 5px 10px;
   margin-bottom: 20px;
   border-radius: 20px;
   border: 4px solid #9acd32 ;
+  width: 100%;
+}
+.department-choose input{
+  width:80%;
+  margin: 0 auto;
+
 }
 .lecture-name:focus{
   outline:0;
 }
 .ribbon-newlec{
-  display: inline-block;
+  display: none;
   position: absolute;
   top: 0;
   right: 50px;
@@ -59,8 +73,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 60%;
+  width: 100%;
   margin: 40px auto 0 auto;
+
 }
 #lecture_department{
     display: block;
@@ -118,17 +133,18 @@
   position: relative;
   background-color: white;
   z-index: 2;
-  font-size: 1.5em;
+  font-size: 1.1em;
   font-weight: bold;
   color:black;
+
 }
 #japaneselabel:before{
   position: absolute;
   content: '●';
   color:rgba(254,1,0,0.4);
   font-size: 5.2em;
-  top:-80px;
-  left: 10px;
+  top:-57px;
+  left: 12px;
 }
 #japaneselabel:hover{
   cursor: pointer;
@@ -146,7 +162,7 @@
   background-size: auto 55px;
   color: black;
   z-index: 2;
-  font-size: 1.5em;
+  font-size: 1.1em;
   font-weight: bold;
 }
 #englishlabel:before{
@@ -162,7 +178,18 @@
   box-shadow: 0 0 3px 3px rgba(254,1,0,1);
 }
 
-
+.three{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  text-align: center;
+}
+.three h4{
+  font-size: 1.2em;
+  font-weight: bold;
+    text-align: center;
+}
 .howtoassess{
   display: flex;
   flex-direction: column;
@@ -174,39 +201,42 @@
 .attend-section{
   display: inline-block;
   width: 180px;
-  text-align: center;
-  margin: 20px 0;
+  text-align: right;
+  margin: 20px -10px 20px 0 ;
 }
-
+.attend-section h4{
+  text-align: center;
+  margin-right:15px;
+}
 .lasttest-section{
 display: inline-block;
   width: 180px;
-  text-align: center;
+  text-align: right;
   margin: 20px 0;
 }
 
 .midtest-section{
 display: inline-block;
   width: 180px;
-  text-align: center;
+text-align: right;
   margin: 20px 0;
 }
 .report-section{
 display: inline-block;
   width: 180px;
-  text-align: center;
-  margin: 20px 0;
+  text-align: right;
+margin: 20px -10px 20px 0 ;
 }
 .inlesson-section{
 display: inline-block;
   width: 180px;
-  text-align: center;
+  text-align: right;
   margin: 20px 0;
 }
 .outlesson-section{
 display: inline-block;
   width: 180px;
-  text-align: center;
+  text-align: right;
   margin: 20px 0;
 }
 .other-section{
@@ -222,4 +252,249 @@ display: inline-block;
 .other-lec-grade:focus{
   outline: 0;
 
+}
+}
+
+/*-----------------------------------------------PC------------------------------------------------------*/
+
+@media screen and (min-width:680px){
+  #lecture-post{
+  background-image: url("/leaf7.jpg");
+  background-size: cover;
+  width:100%;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  }
+  .lec-search-parts{
+  display: block;
+  }
+  .lecture-post-container{
+  background-color: rgba(255,255,255,0.8);
+  margin: 30px auto 50px auto;
+  border-radius: 20px;
+  padding: 40px 70px;
+  box-shadow: 0px 4px 10px 2px rgba(0,0,0,0.2);
+  width: 80%;
+  position: relative;
+  }
+  .new-lec-title{
+  font-weight:bold;
+  text-align:center;
+  margin-bottom:20px;
+
+  }
+  .lecture-post-container h5{
+  text-align:center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  }
+  .lecture-name{
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  border: 4px solid #9acd32 ;
+  }
+  .lecture-name:focus{
+  outline:0;
+  }
+  .ribbon-newlec{
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 50px;
+  margin: 0;
+  padding: 30px 10px;
+  z-index: 2;
+  width: 40px;
+  text-align: center;
+  font-size: 17px;
+  color: white;
+  background: #9acd32;
+  }
+
+  .ribbon-newlec:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 100%;
+  height: 0;
+  width: 0;
+  border-left: 20px solid #9acd32;
+  border-right: 20px solid #9acd32;
+  border-bottom: 10px solid transparent;
+  }
+  .names{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60%;
+  margin: 40px auto 0 auto;
+  }
+  .department-choose {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+  }
+  #lecture_department{
+    display: block;
+    outline: 0;
+  }
+
+  #lecture-submit-container{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content:space-between;
+  }
+  .toLectureIndex{
+  border: 4px solid #9acd32;
+  border-radius: 40px;
+  padding: 10px 40px;
+  margin-top: 20px;
+  font-weight: bold;
+  color: black;
+  }
+  .toLectureIndex:hover{
+  text-decoration: none;
+  color: white;
+  background-color: #9acd32;
+  }
+  .lecture-submit{
+  border: 4px solid #9acd32;
+  border-radius: 40px;
+  padding: 10px 40px;
+  margin-top: 20px;
+
+  font-weight: bold;
+  }
+
+  .lecture-submit:focus{
+  outline: 0;
+  }
+  .lecture-submit:hover{
+  background-color: #9acd32;
+  color: white;
+  transition: .4s;
+  }
+  .selectlang{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 20px;
+  }
+  .selectlang input[type='radio']{
+  display: none;
+  }
+  #japaneselabel{
+  border: 1px solid black;
+  padding: 10px 15px;
+  position: relative;
+  background-color: white;
+  z-index: 2;
+  font-size: 1.5em;
+  font-weight: bold;
+  color:black;
+  }
+  #japaneselabel:before{
+  position: absolute;
+  content: '●';
+  color:rgba(254,1,0,0.4);
+  font-size: 5.2em;
+  top:-80px;
+  left: 10px;
+  }
+  #japaneselabel:hover{
+  cursor: pointer;
+  transform: scale(1.2,1.2);
+  transition: transform 0.1s linear;
+  box-shadow: 0 0 5px 5px rgba(0,0,0,0.1);
+  }
+  .selectlang input[type='radio']:checked +#japaneselabel{
+  box-shadow: 0 0 3px 3px rgba(254,1,0,1);
+  }
+  #englishlabel{
+  border: 1px solid black;
+  padding: 10px 15px;
+  background-image: url("/English.png");
+  background-size: auto 55px;
+  color: black;
+  z-index: 2;
+  font-size: 1.5em;
+  font-weight: bold;
+  }
+  #englishlabel:before{
+
+  }
+  #englishlabel:hover{
+  cursor: pointer;
+  transform: scale(1.2,1.2);
+  transition: transform 0.1s linear;
+  box-shadow: 0 0 5px 5px rgba(0,0,0,0.1);
+  }
+  .selectlang input[type='radio']:checked +#englishlabel{
+  box-shadow: 0 0 3px 3px rgba(254,1,0,1);
+  }
+
+
+  .howtoassess{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  }
+  .attend-section{
+  display: inline-block;
+  width: 180px;
+  text-align: center;
+  margin: 20px 0;
+  }
+
+  .lasttest-section{
+  display: inline-block;
+  width: 180px;
+  text-align: center;
+  margin: 20px 0;
+  }
+
+  .midtest-section{
+  display: inline-block;
+  width: 180px;
+  text-align: center;
+  margin: 20px 0;
+  }
+  .report-section{
+  display: inline-block;
+  width: 180px;
+  text-align: center;
+  margin: 20px 0;
+  }
+  .inlesson-section{
+  display: inline-block;
+  width: 180px;
+  text-align: center;
+  margin: 20px 0;
+  }
+  .outlesson-section{
+  display: inline-block;
+  width: 180px;
+  text-align: center;
+  margin: 20px 0;
+  }
+  .other-section{
+  width: 100%;
+  margin-top: 20px;
+  }
+  .other-lec-grade{
+  width:100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #9acd32;
+  }
+  .other-lec-grade:focus{
+  outline: 0;
+
+  }
 }
