@@ -265,6 +265,7 @@ align-items: center;
   background-image: url('/mokume.jpg');
   background-size: cover;
   margin-top: -10px;
+
 }
 #search-lec{
   width: 100%;
@@ -275,6 +276,7 @@ align-items: center;
   flex-direction: column;
   align-items:center;
   position: relative;
+  padding-bottom: 80px;
   z-index: 300;
 }
 .adjustlec-smartphone{
@@ -556,8 +558,8 @@ text-decoration: none;
   position: absolute;
   content: '●';
   font-size:3.5em;
-  top:-30px;
-  left:3px;
+  top:-32px;
+  left:5px;
   color: rgba(254,1,0,0.3);
 }
 .eng-mark{
