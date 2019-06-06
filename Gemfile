@@ -69,4 +69,6 @@ gem 'gon', '~> 6.2.0'
 gem 'nested_form'
 group :production do
   gem 'pg'
+gem 'execjs'
+gem 'therubyracer', platforms: :ruby
 end

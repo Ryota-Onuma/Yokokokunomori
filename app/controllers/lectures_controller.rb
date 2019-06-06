@@ -74,6 +74,15 @@ class LecturesController < ApplicationController
 
      @howmanyYes = @againYes.count
      @howmanyNo = @againNo.count
+     @howmanytotal = @howmanyYes + @howmanyNo
+     @middleHowmanyYes = @howmanyYes/@howmanytotal.to_f
+     @middleHowmanyNo = @howmanyNo/@howmanytotal.to_f
+     @middleHowmanyYes2 =@middleHowmanyYes.round(2)
+     @middleHowmanyNo2 =@middleHowmanyNo.round(2)
+     @displayHowmanyYes1 = @middleHowmanyYes2*100
+     @displayHowmanyYes =  @displayHowmanyYes1.round(2)
+     @displayHowmanyNo1 = @middleHowmanyNo2*100
+     @displayHowmanyNo =  @displayHowmanyNo1.round(2)
       gon.data = [@howmanyYes,@howmanyNo]
      #落としたか
      @pass = Ratelesson.where(lecture_id: @lecId).where(failaclass: 1)

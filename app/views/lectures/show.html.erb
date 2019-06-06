@@ -1,5 +1,5 @@
 <head>
-<%= stylesheet_link_tag "lectures/lecture_show", :media => "all" %>
+<%= stylesheet_link_tag "lectures/lecture_show", :media => "all" %> 
 </head>
 <section id="detail-lec-info">
   <div id="lecture-show">
@@ -10,10 +10,295 @@
         <a href= "/lectures/<%= @lecture.id%>" class="middle-pan"><span class="pan-cloud"><%= @lecture.name %>の葉</span></a>
       </span>
     </div>
+
+    <!-----スマートフォン用----------->
+    <div class="details-container-smartphone">
+      <div class="linklink">
+        <h6 class="label-department">&thinsp;<strong><%= @lecture.department %></strong></h6>
+        <%= link_to ratelesson_path(@lecture.id),class:"toRatelecs",method: :get do %>
+          <h6><span class="toRatelec">この授業をレビュー</span></h6>
+        <% end %>
+      </div>
+      <h1 style="font-weight:bold;text-align:center; <% if @lecture.name.length > 12 %>font-size:1.1em; <% else %>font-size:1.8em; <% end %>"><%= @lecture.name %></h1>
+        <div class="assess-smartphone-container1">
+          <span style = "<% if @lecture.attendance == 0 || @lecture.attendance == nil %> opacity:0.3; <% else %> display:block;<% end %>">
+            <span >出席&nbsp;<span style="font-weight:bold;text-align:center;"><%= @lecture.attendance %>％</span></span>
+          </span>&ensp;
+          <span style = "margin-left:30px;<% if @lecture.lasttest == 0 || @lecture.lasttest == nil %> opacity:0.3; <% else %> display:block;<% end %>">
+            <span >期末テスト&nbsp;<span style="font-weight:bold;text-align:center;"><%= @lecture.lasttest %>％</span></span>
+          </span>&ensp;
+          <span style = "<% if @lecture.midtest == 0 || @lecture.midtest == nil %> opacity:0.3; <% else %> display:block;<% end %>">
+            <span >中間テスト&nbsp;<span style="font-weight:bold;text-align:center;"><%= @lecture.midtest %>％</span></span>
+          </span>
+        </div>
+        <div class="assess-smartphone-container2">
+          <span style = "<% if @lecture.report == 0 || @lecture.report == nil %> opacity:0.3; <% else %> display:block;<% end %>">
+            <span >レポート&nbsp;<span style="font-weight:bold;text-align:center;"><%= @lecture.report %>％</span></span>
+          </span>&ensp;
+          <span style = "<% if @lecture.inlesson == 0 || @lecture.inlesson == nil %> opacity:0.3; <% else %> display:block;<% end %>">
+            <span >授業内課題&nbsp;<span style="font-weight:bold;text-align:center;"><%= @lecture.inlesson %>％</span></span>
+          </span>&ensp;
+          <span style = "<% if @lecture.outlesson == 0 || @lecture.outlesson == nil %> opacity:0.3; <% else %> display:block;<% end %>">
+            <span >授業外課題&nbsp;<span style="font-weight:bold;text-align:center;"><%= @lecture.outlesson %>％</span></span>
+          </span>
+        </div>
+
+        <div style="width:90%;margin:40px auto 30px auto;">
+          <h4 style="font-weight:bold;">総合満足度<span style="font-size:0.5em;">（数字が大きいほど高評価）</span></h4>
+          <h4><span class="star-rating-js" data-rating-value= "<%= @displaytotalsatis10x %>" data-rating-max="10"></span> <span style="font-size:1.5em;"><%=@displaytotalsatis %></span><span style="font-size:0.8em;"> (<%= @howmanyTotalsatis %>)</span></h4>
+        </div>
+        <div class="about-interest">
+          <h5>ためになる授業度<span style="font-size:0.5em;">（数字が大きいほど深く学べる）</span></h5>
+          <h5><span class="star-rating-js" data-rating-value= "<%= @displayInterest10x %>" data-rating-max="10"></span>  <span style="font-size:1.2em;">&nbsp;&thinsp;<%= @displayInterest %></span><span style="font-size:0.6em; ">  (<%= @howmanyInterest %>)</span></h5>
+        </div>
+        <div class="about-easy">
+          <h5>楽単度<span style="font-size:0.5em;">&ensp;(数字が大きいほど楽単）</span><span style="font-size:0.6em;"></span></h5>
+          <h5><span class="star-rating-js" data-rating-value= "<%= @displayEasy10x %>" data-rating-max="10"></span><span style="font-size:1.2em;">&ensp;&thinsp;<%= @displayEasy %></span><span style="font-size:0.6em;">&ensp;(<%= @howmanyEasy %>)</span></h5>
+        </div>
+        <div style=" width:90%; margin:20px auto 20px auto;">
+          <h5>退屈度<span style="font-size:0.5em;">（数字が大きいほど&thinsp;暇）</span></h5>
+          <h5><span class="star-rating-js" data-rating-value= "<%= @displayBoring10x %>" data-rating-max="10"></span><span style="font-size:1.2em;">&ensp;&thinsp;<%= @displayBoring %></span><span style="font-size:0.6em;">  (<%= @howmanyBoring %>)</span></h5>
+        </div>
+          <h5><span class="doyougetgrade">この授業の単位はとれた？&nbsp;<span style="font-size:0.7em;">(<%= @howmuchTotal%>人中)</span></span></h5>
+          <h6 style="text-align:center;"><span class="tag-doyougetgrade"><span style="background-color:yellow">　　　</span>&thinsp;単位とれた　　　<span style="background-color:rgba(255, 255, 255, 0.5);">　　　</span>&thinsp;単位落とした…</span></h6>
+          <div class="bar-graph">
+            <span class="passbar" style="width: <%= @displayHowmuchYes%>%;"> <%= @displayHowmuchYes%>%</span>
+            <span class="failbar" style="width: <%= @displayHowmuchNo%>%;"> <%= @displayHowmuchNo%>%</span>
+          </div>
+          <h5 style="text-align:center;">この授業はおすすめできる？</h5>
+            <h6 style="text-align:center;"><span class="tag-doyougetgrade"><span style="background-color:yellow">　　　</span>&thinsp;オススメ　<span style="background-color:rgba(255, 255, 255, 0.5);">　　　</span>&thinsp;受けないほうがよい</span></h6>
+          <div class="bar-graph">
+            <span class="passbar" style="width: <%= @displayHowmanyYes%>%;"> <%= @displayHowmanyYes%>%</span>
+            <span class="failbar" style="width: <%= @displayHowmanyNo%>%;"> <%= @displayHowmanyNo%>%</span>
+          </div>
+          <div class="attendance-show-container" style="<% if  @lecture.attendance == 0 || @lecture.attendance == nil %>display:none;<% else %>display:block;<% end %>">
+            <h2 style="width:70%;padding-bottom:10px;border-bottom:2px dashed black;margin:20px auto 30px auto;"><span>出席について</span></h2>
+            <!--出席の厳しさについて-->
+            <div style="width:90%;margin:0 auto;">
+            <h5 style="margin:30px 0;text-align:center;"><span>　出席をとるタイミングは…　</span></h5>
+            <div style="<% if
+            @attendance1b != @attendance2b &&
+            @attendance1b != @attendance3b &&
+            @attendance1b != @attendance4b &&
+            @attendance2b != @attendance3b &&
+            @attendance2b != @attendance4b &&
+            @attendance3b != @attendance4b
+            %>display:block; <% else %>display:none;<% end %>
+            ">
+              <% if @nv1 == @attendance1b %>
+             <h4><span class="infoattendance" style="border:2px solid black">授業開始前には教室にいるべし　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @attendance1b %></span></h4>
+              <% elsif @nv1 == @attendance2b %>
+             <h4><span class="infoattendance"style="border:2px solid black">授業の最初もしくは前半に出席を取る　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @attendance2b %></span></h4>
+              <% elsif @nv1 == @attendance3b %>
+             <h4><span class="infoattendance"style="border:2px solid black">出席を取る時間が不定期　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @attendance3b %></span></h4>
+              <% elsif @nv1 == @attendance4b %>
+             <h4><span class="infoattendance"style="border:2px solid black">授業の後半もしくは最後に出席をとる　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @attendance4b %></span></h4>
+              <% else %>
+             <h4>わかりません</h4>
+             <% end %>
+
+             <% if @nv2 == @attendance1b %>
+            <h5><span class="infoattendance"style="opacity:0.9;">授業開始前には教室にいるべし　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @attendance1b %></span></h5>
+             <% elsif @nv2 == @attendance2b %>
+            <h5><span class="infoattendance"style="opacity:0.9;">授業の最初もしくは前半に出席を取る　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @attendance2b %></span></h5>
+             <% elsif @nv2 == @attendance3b %>
+            <h5><span class="infoattendance"style="opacity:0.9;">出席を取る時間が不定期　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @attendance3b %></span></h5>
+             <% elsif @nv2 == @attendance4b %>
+            <h5><span class="infoattendance"style="opacity:0.9;">授業の後半もしくは最後に出席をとる　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @attendance4b %></span></h5>
+             <% else %>
+            <h5>わかりません</h5>
+            <% end %>
+
+            <% if @nv3 == @attendance1b %>
+           <h6><span class="infoattendance"style="opacity:0.7;">授業開始前には教室にいるべし　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @attendance1b %></span></h6>
+            <% elsif @nv3 == @attendance2b %>
+           <h6><span class="infoattendance"style="opacity:0.7;">授業の最初もしくは前半に出席を取る　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @attendance2b %></span></h6>
+            <% elsif @nv3 == @attendance3b %>
+           <h6><span class="infoattendance"style="opacity:0.7;">出席を取る時間が不定期　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @attendance3b %></span></h6>
+            <% elsif @nv3 == @attendance4b %>
+           <h6><span class="infoattendance"style="opacity:0.7;">授業の後半もしくは最後に出席をとる　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @attendance4b %></span></h6>
+            <% else %>
+           <h6>わかりません</h6>
+           <% end %>
+
+           <% if @nv1 != @attendance1b && @nv2 != @attendance1b && @nv3 != @attendance1b %>
+          <p><span class="infoattendance"style="opacity:0.5;">授業開始前には教室にいるべし　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @attendance1b %></span></p>
+           <% elsif  @nv1 != @attendance2b && @nv2 != @attendance2b && @nv3 != @attendance2b %>
+          <p><span class="infoattendance"style="opacity:0.5;">授業の最初もしくは前半に出席を取る　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @attendance2b %></span></p>
+           <% elsif  @nv1 != @attendance3b && @nv2 != @attendance3b && @nv3 != @attendance3b %>
+          <p><span class="infoattendance"style="opacity:0.5;">出席を取る時間が不定期　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @attendance3b %></span></p>
+           <% elsif  @nv1 != @attendance4b && @nv2 != @attendance4b && @nv3 != @attendance4b %>
+          <p><span class="infoattendance"style="opacity:0.5;">授業の後半もしくは最後に出席をとる　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @attendance4b %></span></p>
+           <% else %>
+          <p>わかりません</p>
+          <% end %>
+
+            </div>
+            <div style="<% if
+            @attendance1b != @attendance2b &&
+            @attendance1b != @attendance3b &&
+            @attendance1b != @attendance4b &&
+            @attendance2b != @attendance3b &&
+            @attendance2b != @attendance4b &&
+            @attendance3b != @attendance4b %> display:none; <% else %>display:block; <% end %>">
+            <div>
+              <% @attendancemax.each do |k| %>
+                <% @attendancemaxx.first(1).each do |t|%>
+                 <h4><span class="infoattendance"style="border:2px solid black"><%= k %>　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= t %></span></h4>
+                <% end %>
+              <% end %>
+            </div>
+            <div style = "<% if @attendance1b == @attendance2b && @attendance2b == @attendance3b && @attendance3b == @attendance4b %>display:none;<% else %> display:block;<% end %> ">
+              <% @attendancemiddle.each do |w| %>
+               <% @attendancemiddlee.first(1).each do |y| %>
+               <h6><span class="infoattendance"style="opacity:0.7;"><%= w %>　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= y %></span></h6>
+               <% end %>
+             <% end %>
+              <% @attendancemin.each do |k| %>
+                <% @attendanceminn.first(1).each do |t|%>
+                 <p><span class="infoattendance"style="opacity:0.7; font-size:0.8em;"><%= k %>　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= t %></span></p>
+                <% end %>
+              <% end %>
+            </div>
+            </div>
+            <h5 style="margin:30px 0;text-align:center;"><span class="titles">　代返は…？？　</span></h5>
+            <h6 style="<% if @daihen == @nodaihen %>display:none;<% else %> display:block;<% end %>">&ensp;<i class="fas fa-hand-point-right"></i>&ensp;<% if @daihen > @nodaihen %>できる！　　&ensp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @daihen %> <% elsif @nodaihen > @daihen %>できない…　&ensp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @nodaihen %> <% else %>わからない<% end %></h6>
+            <h6 style="<% if @daihen == @nodaihen %>display:block; <% else %>display:none;<% end %>">&ensp;<i class="fas fa-hand-point-right"></i>&ensp;できる！　　&ensp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @daihen %></h6>
+            <h6 style="<% if @daihen == @nodaihen %>display:block; <% else %>display:none;<% end %>">&ensp;<i class="fas fa-hand-point-right"></i>&ensp;できない…　&ensp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @nodaihen %></h6>
+            <p style="<% if @daihen == @nodaihen %>display:none;<% else %> opacity:0.5;<% end %>">&ensp;&ensp;<i class="fas fa-hand-point-right"></i>&ensp;<% if @daihen > @nodaihen %>できない…　&ensp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @nodaihen %> <% elsif @nodaihen > @daihen %>できる！　　&ensp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @daihen %><% else %>わからない<% end %></p>
+           </div>
+           </div>
+           <div class="test-show-container"style="<% if @lecture.lasttest == 0 || @lecture.lasttest == nil && @lecture.midtest == 0 || @lecture.midtest == nil %>display:none;<% else %>display:block;<% end %>"">
+             <h2 style="width:80%;padding-bottom:10px;border-bottom:2px dashed black;margin:20px auto 30px auto;text-align:center;">テストについて</h2>
+             <h4 style="text-align:center;"><span style="border-bottom:none;">テストの難しさ</span></h4>
+             <h6 style="margin-bottom:30px;text-align:center;"><span>(数字が大きいほど難しい)</span></h6>
+             <h6 style="margin-bottom:20px;text-align:center;"><span style="border-bottom:none;"class="star-rating-js" data-rating-value= "<%= @displayTestlevels10x %>" data-rating-max="10"></span> <span style="font-size:1.6em;">&nbsp;<%= @displayTestlevels %></span><span style="font-size:0.9em;">&nbsp;(<%= @howmanyTestlevels %>)</span></h6>
+             <!-- テスト期間のヤバさ-->
+             <div style="width:95%;margin:0 auto;">
+             <h5 class="titles" style="margin:30px 0;text-align:center;font-size:1.2em;">テスト期間中の他授業への影響は…</h5>
+             <div style="<% if
+             @prepare1b != @prepare2b &&
+             @prepare1b != @prepare3b &&
+             @prepare1b != @prepare4b &&
+             @prepare1b != @prepare5b &&
+             @prepare2b != @prepare3b &&
+             @prepare2b != @prepare4b &&
+             @prepare2b != @prepare5b &&
+             @prepare3b != @prepare4b &&
+             @prepare3b != @prepare5b &&
+             @prepare4b != @prepare5b
+             %>display:block; <% else %>display:none;<% end %>
+             ">
+               <% if @nb1 == @prepare1b %>
+              <h4><span class="infoprepare"style="border:2px solid black">この授業のテスト勉強だけで精一杯　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @prepare1b %></span></h4>
+               <% elsif @nb1 == @prepare2b %>
+              <h4><span class="infoprepare"style="border:2px solid black">かなり時間を取られる　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @prepare2b %></span></h4>
+               <% elsif @nb1 == @prepare3b %>
+              <h4><span class="infoprepare"style="border:2px solid black">他授業優先でも、計画的にやれば大丈夫　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @prepare3b %></span></h4>
+               <% elsif @nb1 == @prepare4b %>
+              <h4><span class="infoprepare"style="border:2px solid black">一夜漬けで大丈夫　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @prepare4b %></span></h4>
+              <% elsif @nb1 == @prepare5b %>
+              <h4><span class="infoprepare"style="border:2px solid black">ノー勉でも余裕　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @prepare5b %></span></h4>
+               <% else %>
+              <h4>わかりません</h4>
+              <% end %>
+
+              <% if @nb2 == @prepare1b %>
+             <h5><span class="infoprepare"style="opacity:0.9;">この授業のテスト勉強だけで精一杯　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @prepare1b %></span></h5>
+              <% elsif @nb2 == @prepare2b %>
+             <h5><span class="infoprepare"style="opacity:0.9;">かなり時間を取られる　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @prepare2b %></span></h5>
+              <% elsif @nb2 == @prepare3b %>
+             <h5><span class="infoprepare"style="opacity:0.9;">他授業優先でも、計画的にやれば大丈夫　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @prepare3b %></span></h5>
+              <% elsif @nb2 == @prepare4b %>
+             <h5><span class="infoprepare"style="opacity:0.9;">一夜漬けで大丈夫　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @prepare4b %></span></h5>
+             <% elsif @nb2 == @prepare5b %>
+             <h5><span class="infoprepare"style="opacity:0.9;">ノー勉でも余裕　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @prepare5b %></span></h5>
+              <% else %>
+             <h5>わかりません</h5>
+             <% end %>
+
+             <% if @nb3 == @prepare1b %>
+            <h6><span class="infoprepare"style="opacity:0.7;">この授業のテスト勉強だけで精一杯　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @prepare1b %></span></h6>
+             <% elsif @nb3 == @prepare2b %>
+            <h6><span class="infoprepare"style="opacity:0.7;">かなり時間を取られる　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @prepare2b %></span></h6>
+             <% elsif @nb3 == @prepare3b %>
+            <h6><span class="infoprepare"style="opacity:0.7;">他授業優先でも、計画的にやれば大丈夫　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @prepare3b %></span></h6>
+             <% elsif @nb3 == @prepare4b %>
+            <h6><span class="infoprepare"style="opacity:0.7;">一夜漬けで大丈夫　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @prepare4b %></span></h6>
+            <% elsif @nb3 == @prepare5b %>
+            <h6><span class="infoprepare"style="opacity:0.7;">ノー勉でも余裕　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @prepare5b %></span></h6>
+             <% else %>
+            <h6>わかりません</h6>
+            <% end %>
+
+            <% if @nb1 != @prepare1b && @nb2 != @prepare1b && @nb3 != @prepare1b %>
+           <p><span class="infoprepare"style="opacity:0.5;">この授業のテスト勉強だけで精一杯　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @prepare1b %></span></p><i class="fas fa-child"></i>&nbsp;×&nbsp;
+            <% elsif  @nb1 != @prepare2b && @nb2 != @prepare2b && @nb3 != @prepare2b %>
+           <p><span class="infoprepare"style="opacity:0.5;">かなり時間を取られる　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @prepare2b %></span></p><i class="fas fa-child"></i>&nbsp;×&nbsp;
+            <% elsif  @nb1 != @prepare3b && @nb2 != @prepare3b && @nb3 != @prepare3b %>
+           <p><span class="infoprepare"style="opacity:0.5;">他授業優先でも、計画的にやれば大丈夫　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @prepare3b %></span></p><i class="fas fa-child"></i>&nbsp;×&nbsp;
+            <% elsif  @nb1 != @prepare4b && @nb2 != @prepare4b && @nb3 != @prepare4b %>
+           <p><span class="infoprepare"style="opacity:0.5;">一夜漬けで大丈夫　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @prepare4b %></span></p><i class="fas fa-child"></i>&nbsp;×&nbsp;
+           <% elsif  @nb1 != @prepare5b && @nb2 != @prepare5b && @nb3 != @prepare5b %>
+           <p><span class="infoprepare"style="opacity:0.5;">一夜漬けで大丈夫　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @prepare5b %></span></p><i class="fas fa-child"></i>&nbsp;×&nbsp;
+            <% else %>
+           <p>わかりません</p>
+           <% end %>
+
+             </div>
+             <div style="<% if
+             @prepare1b != @prepare2b &&
+             @prepare1b != @prepare3b &&
+             @prepare1b != @prepare4b &&
+             @prepare2b != @prepare3b &&
+             @prepare2b != @prepare4b &&
+             @prepare3b != @prepare4b %> display:none; <% else %>display:block; <% end %>">
+             <div>
+               <% @preparemax.each do |k| %>
+                 <% @preparemaxx.first(1).each do |t|%>
+                  <h4><span class="infoprepare"style="border:2px solid black"><%= k %>　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= t %></span></h4>
+                 <% end %>
+               <% end %>
+             </div>
+             <div style = "<% if @prepare1b == @prepare2b && @prepare2b == @prepare3b && @prepare3b == @prepare4b %>display:none;<% else %> display:block;<% end %> ">
+               <% @preparemiddle.each do |w| %>
+                <% @preparemiddlee.first(1).each do |y| %>
+                <h6><span class="infoprepare"style="opacity:0.7;"><%= w %>　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= y %></span></h6>
+                <% end %>
+              <% end %>
+               <% @preparemin.each do |k| %>
+                 <% @prepareminn.first(1).each do |t|%>
+                  <p><span class="infoprepare"style="opacity:0.7; font-size:0.8em;"><%= k %>　&nbsp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= t %></span></p>
+                 <% end %>
+               <% end %>
+             </div>
+             </div>
+             </div>
+             <div class="testpaper">
+             <h4 style="margin:30px 0;text-align:center;"><span class="titles">　テスト後問題用紙は…　</span></h4>
+             <h5 style="<% if @return == @noreturn %>display:none;<% else %> display:block;<% end %>">&ensp;<i class="fas fa-hand-point-right"></i>&ensp;<% if @return > @noreturn %>持ち帰れる！　&ensp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @return %> <% elsif @noreturn > @return %>回収される…　&ensp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @noreturn %> <% else %>わからない<% end %></h5>
+             <h5 style="<% if @return == @noreturn %>display:block; <% else %>display:none;<% end %>">&ensp;<i class="fas fa-hand-point-right"></i>&ensp;持ち帰れる！　&ensp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%=@return %></h5>
+             <h5 style="<% if @return == @noreturn %>display:block; <% else %>display:none;<% end %>">&ensp;<i class="fas fa-hand-point-right"></i>&ensp;回収される…　&ensp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%=@noreturn %></h5>
+             <p style="<% if @return == @noreturn %>display:none;<% else %> opacity:0.5;<% end %>">&ensp;&ensp;<i class="fas fa-hand-point-right"></i>&ensp;<% if @return >@noreturn%>回収される…　&ensp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @noreturn %> <% elsif @noreturn > @return %>持ち帰れる！　&ensp;<i class="fas fa-child"></i>&nbsp;×&nbsp;<%= @return %><% else %>わからない<% end %></p>
+             </div>
+            </div>
+            <div class="lec-comments-container">
+              <div class="lec-comment-header">
+                みんなの声
+              </div>
+              <% @comments.each do |t| %>
+              <div class="each-lec-container">
+              <%= t.commentlec %>
+              </div>
+              <% end %>
+            </div>
+    </div>
+
+    <!---------スマートフォン用終わり--------------->
       <div class="col-lg-11 details-container" > <!--showの用紙-->
      <div class="basic-info-adjuster">
       <div style="margin-left:30px;">
-          <h6 class="label-department">&thinsp;<strong><%= @lecture.department %></strong></h6>
+        <h6 class="label-department">&thinsp;<strong><%= @lecture.department %></strong></h6>
         <h1 style="margin:20px 0;font-weight:bold; <% if @lecture.name.length > 14 %>font-size:1.9em; <% else %>font-size:2.1em; <% end %>"><%= @lecture.name %></h1>
         <span style = "<% if @lecture.attendance == 0 || @lecture.attendance == nil%> opacity:0.3; <% else %> display:inline-block; <% end %>">
           <span >出席&nbsp;<span style="font-weight:bold;"><%= @lecture.attendance %>％</span></span>
@@ -56,10 +341,7 @@
                </div>
                <div class="about-easy">
                  <h3 style="margin-left:40px; margin-bottom:10px;display:inline-block">楽単度<span style="font-size:0.5em;">&ensp;(数字が大きいほど楽単）</span><span style="font-size:0.6em;"></span></h3>
-
                   <h1 style="margin-left:30px; margin-bottom:20px;"><span class="star-rating-js" data-rating-value= "<%= @displayEasy10x %>" data-rating-max="10"></span> <%= @displayEasy %><span style="font-size:0.5em;">&ensp;(<%= @howmanyEasy %>)</span></h1>
-
-
                </div>
               <div style=" width:570px;">
                 <h3 style="margin-left:40px; margin-bottom:10px;">退屈度<span style="font-size:0.5em;">（数字が大きいほど&thinsp;暇）</span></h3>
@@ -76,10 +358,8 @@
                 <span class="failbar" style="width: <%= @displayHowmuchNo%>%;"> <%= @displayHowmuchNo%>%</span>
               </div>
             <div class="pie-box2">
-              <div style="margin:40px auto 0 auto;">
-              <h4 style="text-align:center;">この授業はおすすめできる？</h3>
-              </div>
               <div class="pie-contaier2">
+                <h4 style="text-align:center;">この授業はおすすめできる？</h4>
                 <canvas id="myChart"></canvas>
                 <script>draw_graph();</script>
               </div>
