@@ -70,5 +70,5 @@ gem 'nested_form'
 group :production do
   gem 'pg'
 gem 'execjs'
-gem 'therubyracer', platforms: :ruby
+gem 'mini_racer'
 end
